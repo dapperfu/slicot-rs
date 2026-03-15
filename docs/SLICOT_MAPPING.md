@@ -180,8 +180,8 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | MB02CY | mb02 | mb02cy | not started |
 | MB02DD | mb02 | mb02dd | not started |
 | MB02ED | mb02 | mb02ed | done |
-| MB02FD | mb02 | mb02fd | not started |
-| MB02GD | mb02 | mb02gd | not started |
+| MB02FD | mb02 | mb02fd | done |
+| MB02GD | mb02 | mb02gd | done |
 | MB02HD | mb02 | mb02hd | not started |
 | MB02ID | mb02 | mb02id | not started |
 | MB02JD | mb02 | mb02jd | not started |
