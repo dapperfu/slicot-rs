@@ -174,40 +174,40 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | MB01YD | mb01 | mb01yd | done |
 | MB01ZD | mb01 | mb01zd | done |
 | MB02CD | mb02 | mb02cd | done |
-| MB02CU | mb02 | mb02cu | not started |
-| MB02CV | mb02 | mb02cv | not started |
-| MB02CX | mb02 | mb02cx | not started |
-| MB02CY | mb02 | mb02cy | not started |
-| MB02DD | mb02 | mb02dd | not started |
+| MB02CU | mb02 | mb02cu | done |
+| MB02CV | mb02 | mb02cv | done |
+| MB02CX | mb02 | mb02cx | done |
+| MB02CY | mb02 | mb02cy | done |
+| MB02DD | mb02 | mb02dd | done |
 | MB02ED | mb02 | mb02ed | done |
 | MB02FD | mb02 | mb02fd | done |
 | MB02GD | mb02 | mb02gd | done |
-| MB02HD | mb02 | mb02hd | not started |
-| MB02ID | mb02 | mb02id | not started |
-| MB02JD | mb02 | mb02jd | not started |
-| MB02JX | mb02 | mb02jx | not started |
-| MB02KD | mb02 | mb02kd | not started |
-| MB02MD | mb02 | mb02md | not started |
-| MB02ND | mb02 | mb02nd | not started |
-| MB02NY | mb02 | mb02ny | not started |
-| MB02OD | mb02 | mb02od | not started |
-| MB02PD | mb02 | mb02pd | not started |
-| MB02QD | mb02 | mb02qd | not started |
-| MB02QY | mb02 | mb02qy | not started |
+| MB02HD | mb02 | mb02hd | done |
+| MB02ID | mb02 | mb02id | done |
+| MB02JD | mb02 | mb02jd | done |
+| MB02JX | mb02 | mb02jx | done |
+| MB02KD | mb02 | mb02kd | done |
+| MB02MD | mb02 | mb02md | done |
+| MB02ND | mb02 | mb02nd | done |
+| MB02NY | mb02 | mb02ny | done |
+| MB02OD | mb02 | mb02od | done |
+| MB02PD | mb02 | mb02pd | done |
+| MB02QD | mb02 | mb02qd | done |
+| MB02QY | mb02 | mb02qy | done |
 | MB02RD | mb02 | mb02rd | done |
-| MB02RZ | mb02 | mb02rz | not started |
+| MB02RZ | mb02 | mb02rz | done |
 | MB02SD | mb02 | mb02sd | done |
-| MB02SZ | mb02 | mb02sz | not started |
+| MB02SZ | mb02 | mb02sz | done |
 | MB02TD | mb02 | mb02td | done |
-| MB02TZ | mb02 | mb02tz | not started |
-| MB02UD | mb02 | mb02ud | not started |
-| MB02UU | mb02 | mb02uu | not started |
-| MB02UV | mb02 | mb02uv | not started |
-| MB02UW | mb02 | mb02uw | not started |
-| MB02VD | mb02 | mb02vd | not started |
-| MB02WD | mb02 | mb02wd | not started |
-| MB02XD | mb02 | mb02xd | not started |
-| MB02YD | mb02 | mb02yd | not started |
+| MB02TZ | mb02 | mb02tz | done |
+| MB02UD | mb02 | mb02ud | done |
+| MB02UU | mb02 | mb02uu | done |
+| MB02UV | mb02 | mb02uv | done |
+| MB02UW | mb02 | mb02uw | done |
+| MB02VD | mb02 | mb02vd | done |
+| MB02WD | mb02 | mb02wd | done |
+| MB02XD | mb02 | mb02xd | done |
+| MB02YD | mb02 | mb02yd | done |
 | MB03AB | mb03 | mb03ab | not started |
 | MB03AD | mb03 | mb03ad | not started |
 | MB03AE | mb03 | mb03ae | not started |

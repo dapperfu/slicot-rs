@@ -37,7 +37,7 @@ Implemented vs unimplemented SLICOT routines. The authoritative per-routine list
 | ma01 | 6 | 0 | 6 | 100 |
 | ma02 | 28 | 0 | 28 | 100 |
 | mb01 | 35 | 0 | 35 | 100 |
-| mb02 | 7 | 28 | 35 | 20 |
+| mb02 | 35 | 0 | 35 | 100 |
 | mb03 | 0 | 79 | 79 | 0 |
 | mb04 | 0 | 70 | 70 | 0 |
 | mb05 | 0 | 5 | 5 | 0 |
@@ -78,7 +78,7 @@ Implemented vs unimplemented SLICOT routines. The authoritative per-routine list
 | zgeg | 0 | 2 | 2 | 0 |
 | zlat | 0 | 1 | 1 | 0 |
 
-| **Total** | **177** | **448** | **625** | **28** |
+| **Total** | **205** | **420** | **625** | **32** |
 
 ## Full table (all routines)
 
@@ -254,40 +254,40 @@ Implemented vs unimplemented SLICOT routines. The authoritative per-routine list
 | MB01YD | mb01 | mb01yd | Implemented |
 | MB01ZD | mb01 | mb01zd | Implemented |
 | MB02CD | mb02 | mb02cd | Implemented |
-| MB02CU | mb02 | mb02cu | Unimplemented |
-| MB02CV | mb02 | mb02cv | Unimplemented |
-| MB02CX | mb02 | mb02cx | Unimplemented |
-| MB02CY | mb02 | mb02cy | Unimplemented |
-| MB02DD | mb02 | mb02dd | Unimplemented |
+| MB02CU | mb02 | mb02cu | Implemented |
+| MB02CV | mb02 | mb02cv | Implemented |
+| MB02CX | mb02 | mb02cx | Implemented |
+| MB02CY | mb02 | mb02cy | Implemented |
+| MB02DD | mb02 | mb02dd | Implemented |
 | MB02ED | mb02 | mb02ed | Implemented |
 | MB02FD | mb02 | mb02fd | Implemented |
 | MB02GD | mb02 | mb02gd | Implemented |
-| MB02HD | mb02 | mb02hd | Unimplemented |
-| MB02ID | mb02 | mb02id | Unimplemented |
-| MB02JD | mb02 | mb02jd | Unimplemented |
-| MB02JX | mb02 | mb02jx | Unimplemented |
-| MB02KD | mb02 | mb02kd | Unimplemented |
-| MB02MD | mb02 | mb02md | Unimplemented |
-| MB02ND | mb02 | mb02nd | Unimplemented |
-| MB02NY | mb02 | mb02ny | Unimplemented |
-| MB02OD | mb02 | mb02od | Unimplemented |
-| MB02PD | mb02 | mb02pd | Unimplemented |
-| MB02QD | mb02 | mb02qd | Unimplemented |
-| MB02QY | mb02 | mb02qy | Unimplemented |
+| MB02HD | mb02 | mb02hd | Implemented |
+| MB02ID | mb02 | mb02id | Implemented |
+| MB02JD | mb02 | mb02jd | Implemented |
+| MB02JX | mb02 | mb02jx | Implemented |
+| MB02KD | mb02 | mb02kd | Implemented |
+| MB02MD | mb02 | mb02md | Implemented |
+| MB02ND | mb02 | mb02nd | Implemented |
+| MB02NY | mb02 | mb02ny | Implemented |
+| MB02OD | mb02 | mb02od | Implemented |
+| MB02PD | mb02 | mb02pd | Implemented |
+| MB02QD | mb02 | mb02qd | Implemented |
+| MB02QY | mb02 | mb02qy | Implemented |
 | MB02RD | mb02 | mb02rd | Implemented |
-| MB02RZ | mb02 | mb02rz | Unimplemented |
+| MB02RZ | mb02 | mb02rz | Implemented |
 | MB02SD | mb02 | mb02sd | Implemented |
-| MB02SZ | mb02 | mb02sz | Unimplemented |
+| MB02SZ | mb02 | mb02sz | Implemented |
 | MB02TD | mb02 | mb02td | Implemented |
-| MB02TZ | mb02 | mb02tz | Unimplemented |
-| MB02UD | mb02 | mb02ud | Unimplemented |
-| MB02UU | mb02 | mb02uu | Unimplemented |
-| MB02UV | mb02 | mb02uv | Unimplemented |
-| MB02UW | mb02 | mb02uw | Unimplemented |
-| MB02VD | mb02 | mb02vd | Unimplemented |
-| MB02WD | mb02 | mb02wd | Unimplemented |
-| MB02XD | mb02 | mb02xd | Unimplemented |
-| MB02YD | mb02 | mb02yd | Unimplemented |
+| MB02TZ | mb02 | mb02tz | Implemented |
+| MB02UD | mb02 | mb02ud | Implemented |
+| MB02UU | mb02 | mb02uu | Implemented |
+| MB02UV | mb02 | mb02uv | Implemented |
+| MB02UW | mb02 | mb02uw | Implemented |
+| MB02VD | mb02 | mb02vd | Implemented |
+| MB02WD | mb02 | mb02wd | Implemented |
+| MB02XD | mb02 | mb02xd | Implemented |
+| MB02YD | mb02 | mb02yd | Implemented |
 | MB03AB | mb03 | mb03ab | Unimplemented |
 | MB03AD | mb03 | mb03ad | Unimplemented |
 | MB03AE | mb03 | mb03ae | Unimplemented |
