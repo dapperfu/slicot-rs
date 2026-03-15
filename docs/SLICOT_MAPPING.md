@@ -54,56 +54,56 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | AB13HD | ab13 | ab13hd | stub |
 | AB13MD | ab13 | ab13md | stub |
 | AB8NXZ | ab8n | ab8nxz | stub |
-| AG07BD | ag07 | ag07bd | not started |
-| AG08BD | ag08 | ag08bd | not started |
-| AG08BY | ag08 | ag08by | not started |
-| AG08BZ | ag08 | ag08bz | not started |
-| AG8BYZ | ag8b | ag8byz | not started |
-| BB01AD | bb01 | bb01ad | not started |
-| BB02AD | bb02 | bb02ad | not started |
-| BB03AD | bb03 | bb03ad | not started |
-| BB04AD | bb04 | bb04ad | not started |
-| BD01AD | bd01 | bd01ad | not started |
-| BD02AD | bd02 | bd02ad | not started |
-| DE01OD | de01 | de01od | not started |
-| DE01PD | de01 | de01pd | not started |
-| DF01MD | df01 | df01md | not started |
-| DG01MD | dg01 | dg01md | not started |
-| DG01ND | dg01 | dg01nd | not started |
-| DG01NY | dg01 | dg01ny | not started |
-| DG01OD | dg01 | dg01od | not started |
-| DGEGS | dgeg | dgegs | not started |
-| DGEGV | dgeg | dgegv | not started |
-| DK01MD | dk01 | dk01md | not started |
-| DLACPY_SLC | dlac | dlacpy_slc | not started |
-| DLATZM | dlat | dlatzm | not started |
-| FB01QD | fb01 | fb01qd | not started |
-| FB01RD | fb01 | fb01rd | not started |
-| FB01SD | fb01 | fb01sd | not started |
-| FB01TD | fb01 | fb01td | not started |
-| FB01VD | fb01 | fb01vd | not started |
-| FD01AD | fd01 | fd01ad | not started |
-| IB01AD | ib01 | ib01ad | not started |
-| IB01BD | ib01 | ib01bd | not started |
-| IB01CD | ib01 | ib01cd | not started |
-| IB01MD | ib01 | ib01md | not started |
-| IB01MY | ib01 | ib01my | not started |
-| IB01ND | ib01 | ib01nd | not started |
-| IB01OD | ib01 | ib01od | not started |
-| IB01OY | ib01 | ib01oy | not started |
-| IB01PD | ib01 | ib01pd | not started |
-| IB01PX | ib01 | ib01px | not started |
-| IB01PY | ib01 | ib01py | not started |
-| IB01QD | ib01 | ib01qd | not started |
-| IB01RD | ib01 | ib01rd | not started |
-| IB03AD | ib03 | ib03ad | not started |
-| IB03BD | ib03 | ib03bd | not started |
-| MA01AD | ma01 | ma01ad | not started |
-| MA01BD | ma01 | ma01bd | not started |
-| MA01BZ | ma01 | ma01bz | not started |
-| MA01DD | ma01 | ma01dd | not started |
-| MA01DZ | ma01 | ma01dz | not started |
-| MA02AD | ma02 | ma02ad | not started |
+| AG07BD | ag07 | ag07bd | stub |
+| AG08BD | ag08 | ag08bd | stub |
+| AG08BY | ag08 | ag08by | stub |
+| AG08BZ | ag08 | ag08bz | stub |
+| AG8BYZ | ag8b | ag8byz | stub |
+| BB01AD | bb01 | bb01ad | stub |
+| BB02AD | bb02 | bb02ad | stub |
+| BB03AD | bb03 | bb03ad | stub |
+| BB04AD | bb04 | bb04ad | stub |
+| BD01AD | bd01 | bd01ad | stub |
+| BD02AD | bd02 | bd02ad | stub |
+| DE01OD | de01 | de01od | stub |
+| DE01PD | de01 | de01pd | stub |
+| DF01MD | df01 | df01md | stub |
+| DG01MD | dg01 | dg01md | stub |
+| DG01ND | dg01 | dg01nd | stub |
+| DG01NY | dg01 | dg01ny | stub |
+| DG01OD | dg01 | dg01od | stub |
+| DGEGS | dgeg | dgegs | stub |
+| DGEGV | dgeg | dgegv | stub |
+| DK01MD | dk01 | dk01md | stub |
+| DLACPY_SLC | dlac | dlacpy_slc | stub |
+| DLATZM | dlat | dlatzm | stub |
+| FB01QD | fb01 | fb01qd | stub |
+| FB01RD | fb01 | fb01rd | stub |
+| FB01SD | fb01 | fb01sd | stub |
+| FB01TD | fb01 | fb01td | stub |
+| FB01VD | fb01 | fb01vd | stub |
+| FD01AD | fd01 | fd01ad | stub |
+| IB01AD | ib01 | ib01ad | stub |
+| IB01BD | ib01 | ib01bd | stub |
+| IB01CD | ib01 | ib01cd | stub |
+| IB01MD | ib01 | ib01md | stub |
+| IB01MY | ib01 | ib01my | stub |
+| IB01ND | ib01 | ib01nd | stub |
+| IB01OD | ib01 | ib01od | stub |
+| IB01OY | ib01 | ib01oy | stub |
+| IB01PD | ib01 | ib01pd | stub |
+| IB01PX | ib01 | ib01px | stub |
+| IB01PY | ib01 | ib01py | stub |
+| IB01QD | ib01 | ib01qd | stub |
+| IB01RD | ib01 | ib01rd | stub |
+| IB03AD | ib03 | ib03ad | stub |
+| IB03BD | ib03 | ib03bd | stub |
+| MA01AD | ma01 | ma01ad | stub |
+| MA01BD | ma01 | ma01bd | stub |
+| MA01BZ | ma01 | ma01bz | stub |
+| MA01DD | ma01 | ma01dd | stub |
+| MA01DZ | ma01 | ma01dz | stub |
+| MA02AD | ma02 | ma02ad | stub |
 | MA02AZ | ma02 | ma02az | not started |
 | MA02BD | ma02 | ma02bd | not started |
 | MA02BZ | ma02 | ma02bz | not started |
