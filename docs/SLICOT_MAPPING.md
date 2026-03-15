@@ -573,15 +573,15 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | TB04BW | tb04 | tb04bw | not started |
 | TB04BX | tb04 | tb04bx | not started |
 | TB04CD | tb04 | tb04cd | not started |
-| TB05AD | tb05 | tb05ad | not started |
-| TC01OD | tc01 | tc01od | not started |
-| TC04AD | tc04 | tc04ad | not started |
-| TC05AD | tc05 | tc05ad | not started |
-| TD03AD | td03 | td03ad | not started |
+| TB05AD | tb05 | tb05ad | done |
+| TC01OD | tc01 | tc01od | done |
+| TC04AD | tc04 | tc04ad | done |
+| TC05AD | tc05 | tc05ad | done |
+| TD03AD | td03 | td03ad | done |
 | TD03AY | td03 | td03ay | not started |
-| TD04AD | td04 | td04ad | not started |
-| TD05AD | td05 | td05ad | not started |
-| TF01MD | tf01 | tf01md | not started |
+| TD04AD | td04 | td04ad | done |
+| TD05AD | td05 | td05ad | done |
+| TF01MD | tf01 | tf01md | done |
 | TF01MX | tf01 | tf01mx | not started |
 | TF01MY | tf01 | tf01my | not started |
 | TF01ND | tf01 | tf01nd | not started |
