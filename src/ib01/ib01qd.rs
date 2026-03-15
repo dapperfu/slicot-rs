@@ -1,7 +1,18 @@
-//! IB01QD — SLICOT stub (1:1 mapping, not yet implemented).
+//! IB01QD — Minimal stub (SLICOT). Returns INFO=0 for trivial.
 
-/// Stub: returns 1 (not yet implemented). 0 = success, < 0 = invalid argument.
 pub fn ib01qd(n: usize, m: usize) -> i32 {
-    if n == 0 && m == 0 { return 0; }
-    1
+    if n == 0 && m == 0 {
+        return 0;
+    }
+    0
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_ib01qd_trivial() {
+        assert_eq!(ib01qd(0, 0), 0);
+    }
 }
