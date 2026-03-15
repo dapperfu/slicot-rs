@@ -104,55 +104,55 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | MA01DD | ma01 | ma01dd | stub |
 | MA01DZ | ma01 | ma01dz | stub |
 | MA02AD | ma02 | ma02ad | stub |
-| MA02AZ | ma02 | ma02az | not started |
-| MA02BD | ma02 | ma02bd | not started |
-| MA02BZ | ma02 | ma02bz | not started |
-| MA02CD | ma02 | ma02cd | not started |
-| MA02CZ | ma02 | ma02cz | not started |
-| MA02DD | ma02 | ma02dd | not started |
-| MA02ED | ma02 | ma02ed | not started |
-| MA02ES | ma02 | ma02es | not started |
-| MA02EZ | ma02 | ma02ez | not started |
-| MA02FD | ma02 | ma02fd | not started |
-| MA02GD | ma02 | ma02gd | not started |
-| MA02GZ | ma02 | ma02gz | not started |
-| MA02NZ | ma02 | ma02nz | not started |
-| MA02PD | ma02 | ma02pd | not started |
-| MA02PZ | ma02 | ma02pz | not started |
-| MA02RD | ma02 | ma02rd | not started |
-| MB01KD | mb01 | mb01kd | not started |
-| MB01LD | mb01 | mb01ld | not started |
-| MB01MD | mb01 | mb01md | not started |
-| MB01ND | mb01 | mb01nd | not started |
-| MB01OC | mb01 | mb01oc | not started |
-| MB01OD | mb01 | mb01od | not started |
-| MB01OE | mb01 | mb01oe | not started |
-| MB01OH | mb01 | mb01oh | not started |
-| MB01OO | mb01 | mb01oo | not started |
-| MB01OS | mb01 | mb01os | not started |
-| MB01OT | mb01 | mb01ot | not started |
-| MB01PD | mb01 | mb01pd | not started |
-| MB01QD | mb01 | mb01qd | not started |
-| MB01RB | mb01 | mb01rb | not started |
-| MB01RD | mb01 | mb01rd | not started |
-| MB01RH | mb01 | mb01rh | not started |
-| MB01RT | mb01 | mb01rt | not started |
-| MB01RU | mb01 | mb01ru | not started |
-| MB01RW | mb01 | mb01rw | not started |
-| MB01RX | mb01 | mb01rx | not started |
-| MB01RY | mb01 | mb01ry | not started |
-| MB01SD | mb01 | mb01sd | not started |
-| MB01SS | mb01 | mb01ss | not started |
-| MB01TD | mb01 | mb01td | not started |
-| MB01UD | mb01 | mb01ud | not started |
-| MB01UW | mb01 | mb01uw | not started |
-| MB01UX | mb01 | mb01ux | not started |
-| MB01UY | mb01 | mb01uy | not started |
-| MB01UZ | mb01 | mb01uz | not started |
-| MB01VD | mb01 | mb01vd | not started |
-| MB01WD | mb01 | mb01wd | not started |
-| MB01XD | mb01 | mb01xd | not started |
-| MB01XY | mb01 | mb01xy | not started |
+| MA02AZ | ma02 | ma02az | stub |
+| MA02BD | ma02 | ma02bd | stub |
+| MA02BZ | ma02 | ma02bz | stub |
+| MA02CD | ma02 | ma02cd | stub |
+| MA02CZ | ma02 | ma02cz | stub |
+| MA02DD | ma02 | ma02dd | stub |
+| MA02ED | ma02 | ma02ed | stub |
+| MA02ES | ma02 | ma02es | stub |
+| MA02EZ | ma02 | ma02ez | stub |
+| MA02FD | ma02 | ma02fd | stub |
+| MA02GD | ma02 | ma02gd | stub |
+| MA02GZ | ma02 | ma02gz | stub |
+| MA02NZ | ma02 | ma02nz | stub |
+| MA02PD | ma02 | ma02pd | stub |
+| MA02PZ | ma02 | ma02pz | stub |
+| MA02RD | ma02 | ma02rd | stub |
+| MB01KD | mb01 | mb01kd | stub |
+| MB01LD | mb01 | mb01ld | stub |
+| MB01MD | mb01 | mb01md | stub |
+| MB01ND | mb01 | mb01nd | stub |
+| MB01OC | mb01 | mb01oc | stub |
+| MB01OD | mb01 | mb01od | stub |
+| MB01OE | mb01 | mb01oe | stub |
+| MB01OH | mb01 | mb01oh | stub |
+| MB01OO | mb01 | mb01oo | stub |
+| MB01OS | mb01 | mb01os | stub |
+| MB01OT | mb01 | mb01ot | stub |
+| MB01PD | mb01 | mb01pd | stub |
+| MB01QD | mb01 | mb01qd | stub |
+| MB01RB | mb01 | mb01rb | stub |
+| MB01RD | mb01 | mb01rd | stub |
+| MB01RH | mb01 | mb01rh | stub |
+| MB01RT | mb01 | mb01rt | stub |
+| MB01RU | mb01 | mb01ru | stub |
+| MB01RW | mb01 | mb01rw | stub |
+| MB01RX | mb01 | mb01rx | stub |
+| MB01RY | mb01 | mb01ry | stub |
+| MB01SD | mb01 | mb01sd | stub |
+| MB01SS | mb01 | mb01ss | stub |
+| MB01TD | mb01 | mb01td | stub |
+| MB01UD | mb01 | mb01ud | stub |
+| MB01UW | mb01 | mb01uw | stub |
+| MB01UX | mb01 | mb01ux | stub |
+| MB01UY | mb01 | mb01uy | stub |
+| MB01UZ | mb01 | mb01uz | stub |
+| MB01VD | mb01 | mb01vd | stub |
+| MB01WD | mb01 | mb01wd | stub |
+| MB01XD | mb01 | mb01xd | stub |
+| MB01XY | mb01 | mb01xy | stub |
 | MB01YD | mb01 | mb01yd | not started |
 | MB01ZD | mb01 | mb01zd | not started |
 | MB02CD | mb02 | mb02cd | not started |
