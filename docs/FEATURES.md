@@ -12,7 +12,7 @@ Implemented vs unimplemented SLICOT routines. The authoritative per-routine list
 | ab07 | 2 | 0 | 2 | 100 |
 | ab08 | 7 | 0 | 7 | 100 |
 | ab09 | 24 | 0 | 24 | 100 |
-| ab13 | 5 | 6 | 11 | 45 |
+| ab13 | 11 | 0 | 11 | 100 |
 | ab8n | 1 | 0 | 1 | 100 |
 | ag07 | 1 | 0 | 1 | 100 |
 | ag08 | 3 | 0 | 3 | 100 |
@@ -37,7 +37,7 @@ Implemented vs unimplemented SLICOT routines. The authoritative per-routine list
 | ma01 | 6 | 0 | 6 | 100 |
 | ma02 | 28 | 0 | 28 | 100 |
 | mb01 | 35 | 0 | 35 | 100 |
-| mb02 | 0 | 35 | 35 | 0 |
+| mb02 | 2 | 33 | 35 | 6 |
 | mb03 | 0 | 79 | 79 | 0 |
 | mb04 | 0 | 70 | 70 | 0 |
 | mb05 | 0 | 5 | 5 | 0 |
@@ -78,7 +78,7 @@ Implemented vs unimplemented SLICOT routines. The authoritative per-routine list
 | zgeg | 0 | 2 | 2 | 0 |
 | zlat | 0 | 1 | 1 | 0 |
 
-| **Total** | **164** | **461** | **625** | **26** |
+| **Total** | **172** | **453** | **625** | **27** |
 
 ## Full table (all routines)
 
@@ -128,16 +128,16 @@ Implemented vs unimplemented SLICOT routines. The authoritative per-routine list
 | AB09KX | ab09 | ab09kx | Implemented |
 | AB09MD | ab09 | ab09md | Implemented |
 | AB09ND | ab09 | ab09nd | Implemented |
-| AB13AD | ab13 | ab13ad | Unimplemented |
-| AB13AX | ab13 | ab13ax | Unimplemented |
-| AB13BD | ab13 | ab13bd | Unimplemented |
-| AB13CD | ab13 | ab13cd | Unimplemented |
+| AB13AD | ab13 | ab13ad | Implemented |
+| AB13AX | ab13 | ab13ax | Implemented |
+| AB13BD | ab13 | ab13bd | Implemented |
+| AB13CD | ab13 | ab13cd | Implemented |
 | AB13DD | ab13 | ab13dd | Implemented |
-| AB13DX | ab13 | ab13dx | Unimplemented |
+| AB13DX | ab13 | ab13dx | Implemented |
 | AB13ED | ab13 | ab13ed | Implemented |
 | AB13FD | ab13 | ab13fd | Implemented |
 | AB13HD | ab13 | ab13hd | Implemented |
-| AB13ID | ab13 | ab13id | Unimplemented |
+| AB13ID | ab13 | ab13id | Implemented |
 | AB13MD | ab13 | ab13md | Implemented |
 | AB8NXZ | ab8n | ab8nxz | Implemented |
 | AG07BD | ag07 | ag07bd | Implemented |
@@ -253,13 +253,13 @@ Implemented vs unimplemented SLICOT routines. The authoritative per-routine list
 | MB01XY | mb01 | mb01xy | Implemented |
 | MB01YD | mb01 | mb01yd | Implemented |
 | MB01ZD | mb01 | mb01zd | Implemented |
-| MB02CD | mb02 | mb02cd | Unimplemented |
+| MB02CD | mb02 | mb02cd | Implemented |
 | MB02CU | mb02 | mb02cu | Unimplemented |
 | MB02CV | mb02 | mb02cv | Unimplemented |
 | MB02CX | mb02 | mb02cx | Unimplemented |
 | MB02CY | mb02 | mb02cy | Unimplemented |
 | MB02DD | mb02 | mb02dd | Unimplemented |
-| MB02ED | mb02 | mb02ed | Unimplemented |
+| MB02ED | mb02 | mb02ed | Implemented |
 | MB02FD | mb02 | mb02fd | Unimplemented |
 | MB02GD | mb02 | mb02gd | Unimplemented |
 | MB02HD | mb02 | mb02hd | Unimplemented |

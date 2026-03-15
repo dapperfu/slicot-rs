@@ -28,12 +28,12 @@ Check off each when the routine is implemented in pure Rust, has at least one te
 ### Phase 1: Complete partial modules (20)
 
 #### ab13 (6)
-- [ ] AB13AD
-- [ ] AB13AX
-- [ ] AB13BD
-- [ ] AB13CD
-- [ ] AB13DX
-- [ ] AB13ID
+- [x] AB13AD
+- [x] AB13AX
+- [x] AB13BD
+- [x] AB13CD
+- [x] AB13DX
+- [x] AB13ID
 
 #### ma01 (1)
 - [x] MA01CD
@@ -57,13 +57,13 @@ Check off each when the routine is implemented in pure Rust, has at least one te
 
 ### Phase 2: mb02 (35)
 
-- [ ] MB02CD
+- [x] MB02CD
 - [ ] MB02CU
 - [ ] MB02CV
 - [ ] MB02CX
 - [ ] MB02CY
 - [ ] MB02DD
-- [ ] MB02ED
+- [x] MB02ED
 - [ ] MB02FD
 - [ ] MB02GD
 - [ ] MB02HD

@@ -48,16 +48,16 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | AB09KX | ab09 | ab09kx | done |
 | AB09MD | ab09 | ab09md | done |
 | AB09ND | ab09 | ab09nd | done |
-| AB13AD | ab13 | ab13ad | not started |
-| AB13AX | ab13 | ab13ax | not started |
-| AB13BD | ab13 | ab13bd | not started |
-| AB13CD | ab13 | ab13cd | not started |
+| AB13AD | ab13 | ab13ad | done |
+| AB13AX | ab13 | ab13ax | done |
+| AB13BD | ab13 | ab13bd | done |
+| AB13CD | ab13 | ab13cd | done |
 | AB13DD | ab13 | ab13dd | done |
-| AB13DX | ab13 | ab13dx | not started |
+| AB13DX | ab13 | ab13dx | done |
 | AB13ED | ab13 | ab13ed | done |
 | AB13FD | ab13 | ab13fd | done |
 | AB13HD | ab13 | ab13hd | done |
-| AB13ID | ab13 | ab13id | not started |
+| AB13ID | ab13 | ab13id | done |
 | AB13MD | ab13 | ab13md | done |
 | AB8NXZ | ab8n | ab8nxz | done |
 | AG07BD | ag07 | ag07bd | done |
@@ -173,13 +173,13 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | MB01XY | mb01 | mb01xy | done |
 | MB01YD | mb01 | mb01yd | done |
 | MB01ZD | mb01 | mb01zd | done |
-| MB02CD | mb02 | mb02cd | not started |
+| MB02CD | mb02 | mb02cd | done |
 | MB02CU | mb02 | mb02cu | not started |
 | MB02CV | mb02 | mb02cv | not started |
 | MB02CX | mb02 | mb02cx | not started |
 | MB02CY | mb02 | mb02cy | not started |
 | MB02DD | mb02 | mb02dd | not started |
-| MB02ED | mb02 | mb02ed | not started |
+| MB02ED | mb02 | mb02ed | done |
 | MB02FD | mb02 | mb02fd | not started |
 | MB02GD | mb02 | mb02gd | not started |
 | MB02HD | mb02 | mb02hd | not started |
