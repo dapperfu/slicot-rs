@@ -98,32 +98,32 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | IB01RD | ib01 | ib01rd | stub |
 | IB03AD | ib03 | ib03ad | stub |
 | IB03BD | ib03 | ib03bd | stub |
-| MA01AD | ma01 | ma01ad | stub |
+| MA01AD | ma01 | ma01ad | done |
 | MA01BD | ma01 | ma01bd | stub |
 | MA01BZ | ma01 | ma01bz | stub |
 | MA01DD | ma01 | ma01dd | stub |
 | MA01DZ | ma01 | ma01dz | stub |
 | MA02AD | ma02 | ma02ad | done |
-| MA02AZ | ma02 | ma02az | stub |
+| MA02AZ | ma02 | ma02az | done |
 | MA02BD | ma02 | ma02bd | done |
 | MA02BZ | ma02 | ma02bz | done |
 | MA02CD | ma02 | ma02cd | done |
 | MA02CZ | ma02 | ma02cz | stub |
 | MA02DD | ma02 | ma02dd | done |
-| MA02ED | ma02 | ma02ed | stub |
-| MA02ES | ma02 | ma02es | stub |
+| MA02ED | ma02 | ma02ed | done |
+| MA02ES | ma02 | ma02es | done |
 | MA02EZ | ma02 | ma02ez | stub |
-| MA02FD | ma02 | ma02fd | stub |
-| MA02GD | ma02 | ma02gd | stub |
+| MA02FD | ma02 | ma02fd | done |
+| MA02GD | ma02 | ma02gd | done |
 | MA02GZ | ma02 | ma02gz | stub |
 | MA02NZ | ma02 | ma02nz | stub |
-| MA02PD | ma02 | ma02pd | stub |
+| MA02PD | ma02 | ma02pd | done |
 | MA02PZ | ma02 | ma02pz | stub |
-| MA02RD | ma02 | ma02rd | stub |
+| MA02RD | ma02 | ma02rd | done |
 | MB01KD | mb01 | mb01kd | done |
 | MB01LD | mb01 | mb01ld | stub |
 | MB01MD | mb01 | mb01md | done |
-| MB01ND | mb01 | mb01nd | stub |
+| MB01ND | mb01 | mb01nd | done |
 | MB01OC | mb01 | mb01oc | stub |
 | MB01OD | mb01 | mb01od | stub |
 | MB01OE | mb01 | mb01oe | stub |
@@ -141,8 +141,8 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | MB01RW | mb01 | mb01rw | stub |
 | MB01RX | mb01 | mb01rx | stub |
 | MB01RY | mb01 | mb01ry | stub |
-| MB01SD | mb01 | mb01sd | stub |
-| MB01SS | mb01 | mb01ss | stub |
+| MB01SD | mb01 | mb01sd | done |
+| MB01SS | mb01 | mb01ss | done |
 | MB01TD | mb01 | mb01td | stub |
 | MB01UD | mb01 | mb01ud | stub |
 | MB01UW | mb01 | mb01uw | stub |
@@ -151,8 +151,8 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | MB01UZ | mb01 | mb01uz | stub |
 | MB01VD | mb01 | mb01vd | stub |
 | MB01WD | mb01 | mb01wd | stub |
-| MB01XD | mb01 | mb01xd | stub |
-| MB01XY | mb01 | mb01xy | stub |
+| MB01XD | mb01 | mb01xd | done |
+| MB01XY | mb01 | mb01xy | done |
 | MB01YD | mb01 | mb01yd | not started |
 | MB01ZD | mb01 | mb01zd | not started |
 | MB02CD | mb02 | mb02cd | not started |

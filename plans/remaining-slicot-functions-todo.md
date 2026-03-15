@@ -149,32 +149,32 @@ List derived from entries with status `stub` or `in progress` (139 routines).
 - [ ] IB03BD — `ib03::ib03bd`
 
 ## ma01
-- [ ] MA01AD — `ma01::ma01ad`
+- [x] MA01AD — `ma01::ma01ad`
 - [ ] MA01BD — `ma01::ma01bd`
 - [ ] MA01BZ — `ma01::ma01bz`
 - [ ] MA01DD — `ma01::ma01dd`
 - [ ] MA01DZ — `ma01::ma01dz`
 
 ## ma02
-- [ ] MA02AZ — `ma02::ma02az`
+- [x] MA02AZ — `ma02::ma02az`
 - [x] MA02BZ — `ma02::ma02bz`
 - [x] MA02CD — `ma02::ma02cd`
 - [ ] MA02CZ — `ma02::ma02cz`
-- [ ] MA02ED — `ma02::ma02ed`
-- [ ] MA02ES — `ma02::ma02es`
+- [x] MA02ED — `ma02::ma02ed`
+- [x] MA02ES — `ma02::ma02es`
 - [ ] MA02EZ — `ma02::ma02ez`
-- [ ] MA02FD — `ma02::ma02fd`
-- [ ] MA02GD — `ma02::ma02gd`
+- [x] MA02FD — `ma02::ma02fd`
+- [x] MA02GD — `ma02::ma02gd`
 - [ ] MA02GZ — `ma02::ma02gz`
 - [ ] MA02NZ — `ma02::ma02nz`
-- [ ] MA02PD — `ma02::ma02pd`
+- [x] MA02PD — `ma02::ma02pd`
 - [ ] MA02PZ — `ma02::ma02pz`
-- [ ] MA02RD — `ma02::ma02rd`
+- [x] MA02RD — `ma02::ma02rd`
 
 ## mb01
 - [ ] MB01LD — `mb01::mb01ld`
 - [x] MB01MD — `mb01::mb01md`
-- [ ] MB01ND — `mb01::mb01nd`
+- [x] MB01ND — `mb01::mb01nd`
 - [ ] MB01OC — `mb01::mb01oc`
 - [ ] MB01OD — `mb01::mb01od`
 - [ ] MB01OE — `mb01::mb01oe`
@@ -190,8 +190,8 @@ List derived from entries with status `stub` or `in progress` (139 routines).
 - [ ] MB01RW — `mb01::mb01rw`
 - [ ] MB01RX — `mb01::mb01rx`
 - [ ] MB01RY — `mb01::mb01ry`
-- [ ] MB01SD — `mb01::mb01sd`
-- [ ] MB01SS — `mb01::mb01ss`
+- [x] MB01SD — `mb01::mb01sd`
+- [x] MB01SS — `mb01::mb01ss`
 - [ ] MB01TD — `mb01::mb01td`
 - [ ] MB01UD — `mb01::mb01ud`
 - [ ] MB01UW — `mb01::mb01uw`
@@ -200,5 +200,5 @@ List derived from entries with status `stub` or `in progress` (139 routines).
 - [ ] MB01UZ — `mb01::mb01uz`
 - [ ] MB01VD — `mb01::mb01vd`
 - [ ] MB01WD — `mb01::mb01wd`
-- [ ] MB01XD — `mb01::mb01xd`
-- [ ] MB01XY — `mb01::mb01xy`
+- [x] MB01XD — `mb01::mb01xd`
+- [x] MB01XY — `mb01::mb01xy`
