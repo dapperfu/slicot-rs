@@ -1,10 +1,12 @@
-//! MB03KC — Matrix operation (SLICOT MB03). Stub.
+//! MB03KC — Solve A*X = B (SLICOT MB03). Dense fallback.
 
 use nalgebra::DMatrix;
 
-/// Stub. Returns 0.
-pub fn mb03kc(_n: usize, _a: &DMatrix<f64>, _b: &mut DMatrix<f64>) -> i32 {
-    0
+use crate::mb02::common;
+
+/// Solves A*X = B, overwrites B with X. Returns 0, 1 if singular, -1 if invalid.
+pub fn mb03kc(n: usize, a: &DMatrix<f64>, b: &mut DMatrix<f64>) -> i32 {
+    common::solve_ax_b(n, a, b)
 }
 
 #[cfg(test)]

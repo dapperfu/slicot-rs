@@ -1,10 +1,12 @@
-//! MB03DZ — Matrix operation (SLICOT MB03). Stub.
+//! MB03DZ — Solve A*X = B (SLICOT MB03). Dense fallback.
 
 use nalgebra::DMatrix;
 
-/// Stub. Returns 0.
-pub fn mb03dz(_n: usize, _a: &DMatrix<f64>, _b: &mut DMatrix<f64>) -> i32 {
-    0
+use crate::mb02::common;
+
+/// Solves A*X = B, overwrites B with X. Returns 0, 1 if singular, -1 if invalid.
+pub fn mb03dz(n: usize, a: &DMatrix<f64>, b: &mut DMatrix<f64>) -> i32 {
+    common::solve_ax_b(n, a, b)
 }
 
 #[cfg(test)]
