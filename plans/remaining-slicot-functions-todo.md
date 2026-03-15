@@ -199,6 +199,6 @@ List derived from entries with status `stub` or `in progress` (139 routines).
 - [x] MB01UY — `mb01::mb01uy`
 - [ ] MB01UZ — `mb01::mb01uz`
 - [x] MB01VD — `mb01::mb01vd`
-- [ ] MB01WD — `mb01::mb01wd`
+- [x] MB01WD — `mb01::mb01wd`
 - [x] MB01XD — `mb01::mb01xd`
 - [x] MB01XY — `mb01::mb01xy`

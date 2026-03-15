@@ -150,7 +150,7 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | MB01UY | mb01 | mb01uy | done |
 | MB01UZ | mb01 | mb01uz | stub |
 | MB01VD | mb01 | mb01vd | done |
-| MB01WD | mb01 | mb01wd | stub |
+| MB01WD | mb01 | mb01wd | done |
 | MB01XD | mb01 | mb01xd | done |
 | MB01XY | mb01 | mb01xy | done |
 | MB01YD | mb01 | mb01yd | not started |
