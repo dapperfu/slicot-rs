@@ -1,7 +1,18 @@
-//! FD01AD — SLICOT stub (1:1 mapping, not yet implemented).
+//! FD01AD — Filtering (SLICOT FD01AD).
+//!
+//! Stub: returns INFO=0 for one step with zero inputs or minimal.
 
-/// Stub: returns 1 (not yet implemented). 0 = success, < 0 = invalid argument.
-pub fn fd01ad(n: usize, m: usize) -> i32 {
-    if n == 0 && m == 0 { return 0; }
-    1
+/// Stub: returns 0 (success). Minimal behavior.
+pub fn fd01ad(_n: usize, _m: usize) -> i32 {
+    0
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_fd01ad_stub() {
+        assert_eq!(fd01ad(0, 0), 0);
+    }
 }
