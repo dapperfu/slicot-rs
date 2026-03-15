@@ -388,29 +388,29 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | MC03ND | mc03 | mc03nd | done |
 | MC03NX | mc03 | mc03nx | done |
 | MC03NY | mc03 | mc03ny | done |
-| MD03AD | md03 | md03ad | not started |
-| MD03BA | md03 | md03ba | not started |
-| MD03BB | md03 | md03bb | not started |
-| MD03BD | md03 | md03bd | not started |
-| MD03BF | md03 | md03bf | not started |
-| MD03BX | md03 | md03bx | not started |
-| MD03BY | md03 | md03by | not started |
-| NF01AD | nf01 | nf01ad | not started |
-| NF01AY | nf01 | nf01ay | not started |
-| NF01BA | nf01 | nf01ba | not started |
-| NF01BB | nf01 | nf01bb | not started |
-| NF01BD | nf01 | nf01bd | not started |
-| NF01BE | nf01 | nf01be | not started |
-| NF01BF | nf01 | nf01bf | not started |
-| NF01BP | nf01 | nf01bp | not started |
-| NF01BQ | nf01 | nf01bq | not started |
-| NF01BR | nf01 | nf01br | not started |
-| NF01BS | nf01 | nf01bs | not started |
-| NF01BU | nf01 | nf01bu | not started |
-| NF01BV | nf01 | nf01bv | not started |
-| NF01BW | nf01 | nf01bw | not started |
-| NF01BX | nf01 | nf01bx | not started |
-| NF01BY | nf01 | nf01by | not started |
+| MD03AD | md03 | md03ad | done |
+| MD03BA | md03 | md03ba | done |
+| MD03BB | md03 | md03bb | done |
+| MD03BD | md03 | md03bd | done |
+| MD03BF | md03 | md03bf | done |
+| MD03BX | md03 | md03bx | done |
+| MD03BY | md03 | md03by | done |
+| NF01AD | nf01 | nf01ad | done |
+| NF01AY | nf01 | nf01ay | done |
+| NF01BA | nf01 | nf01ba | done |
+| NF01BB | nf01 | nf01bb | done |
+| NF01BD | nf01 | nf01bd | done |
+| NF01BE | nf01 | nf01be | done |
+| NF01BF | nf01 | nf01bf | done |
+| NF01BP | nf01 | nf01bp | done |
+| NF01BQ | nf01 | nf01bq | done |
+| NF01BR | nf01 | nf01br | done |
+| NF01BS | nf01 | nf01bs | done |
+| NF01BU | nf01 | nf01bu | done |
+| NF01BV | nf01 | nf01bv | done |
+| NF01BW | nf01 | nf01bw | done |
+| NF01BX | nf01 | nf01bx | done |
+| NF01BY | nf01 | nf01by | done |
 | SB01BD | sb01 | sb01bd | done |
 | SB01BX | sb01 | sb01bx | done |
 | SB01BY | sb01 | sb01by | done |

@@ -202,3 +202,53 @@ List derived from entries with status `stub` or `in progress` (139 routines).
 - [x] MB01WD — `mb01::mb01wd`
 - [x] MB01XD — `mb01::mb01xd`
 - [x] MB01XY — `mb01::mb01xy`
+
+## mc01
+- [x] MC01MD — `mc01::mc01md`
+- [x] MC01ND — `mc01::mc01nd`
+- [x] MC01OD — `mc01::mc01od`
+- [x] MC01PD — `mc01::mc01pd`
+- [x] MC01PY — `mc01::mc01py`
+- [x] MC01QD — `mc01::mc01qd`
+- [x] MC01RD — `mc01::mc01rd`
+- [x] MC01SD — `mc01::mc01sd`
+- [x] MC01SW — `mc01::mc01sw`
+- [x] MC01SX — `mc01::mc01sx`
+- [x] MC01SY — `mc01::mc01sy`
+- [x] MC01TD — `mc01::mc01td`
+- [x] MC01VD — `mc01::mc01vd`
+- [x] MC01WD — `mc01::mc01wd`
+- [x] MC01XD — `mc01::mc01xd`
+
+## mc03
+- [x] MC03MD — `mc03::mc03md`
+- [x] MC03ND — `mc03::mc03nd`
+- [x] MC03NX — `mc03::mc03nx`
+- [x] MC03NY — `mc03::mc03ny`
+
+## md03
+- [x] MD03AD — `md03::md03ad`
+- [x] MD03BA — `md03::md03ba`
+- [x] MD03BB — `md03::md03bb`
+- [x] MD03BD — `md03::md03bd`
+- [x] MD03BF — `md03::md03bf`
+- [x] MD03BX — `md03::md03bx`
+- [x] MD03BY — `md03::md03by`
+
+## nf01
+- [x] NF01AD — `nf01::nf01ad`
+- [x] NF01AY — `nf01::nf01ay`
+- [x] NF01BA — `nf01::nf01ba`
+- [x] NF01BB — `nf01::nf01bb`
+- [x] NF01BD — `nf01::nf01bd`
+- [x] NF01BE — `nf01::nf01be`
+- [x] NF01BF — `nf01::nf01bf`
+- [x] NF01BP — `nf01::nf01bp`
+- [x] NF01BQ — `nf01::nf01bq`
+- [x] NF01BR — `nf01::nf01br`
+- [x] NF01BS — `nf01::nf01bs`
+- [x] NF01BU — `nf01::nf01bu`
+- [x] NF01BV — `nf01::nf01bv`
+- [x] NF01BW — `nf01::nf01bw`
+- [x] NF01BX — `nf01::nf01bx`
+- [x] NF01BY — `nf01::nf01by`

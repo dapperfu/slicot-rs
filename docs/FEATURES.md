@@ -46,16 +46,16 @@ Implemented vs unimplemented SLICOT routines. The authoritative per-routine list
 | mb3o | 0 | 1 | 1 | 0 |
 | mb3p | 0 | 1 | 1 | 0 |
 | mb4d | 0 | 3 | 3 | 0 |
-| mc01 | 0 | 15 | 15 | 0 |
-| mc03 | 0 | 4 | 4 | 0 |
-| md03 | 0 | 7 | 7 | 0 |
-| nf01 | 0 | 16 | 16 | 0 |
-| sb01 | 0 | 6 | 6 | 0 |
-| sb02 | 0 | 21 | 21 | 0 |
-| sb03 | 0 | 24 | 24 | 0 |
-| sb04 | 0 | 24 | 24 | 0 |
-| sb06 | 0 | 1 | 1 | 0 |
-| sb08 | 0 | 10 | 10 | 0 |
+| mc01 | 15 | 0 | 15 | 100 |
+| mc03 | 4 | 0 | 4 | 100 |
+| md03 | 7 | 0 | 7 | 100 |
+| nf01 | 16 | 0 | 16 | 100 |
+| sb01 | 6 | 0 | 6 | 100 |
+| sb02 | 21 | 0 | 21 | 100 |
+| sb03 | 24 | 0 | 24 | 100 |
+| sb04 | 24 | 0 | 24 | 100 |
+| sb06 | 1 | 0 | 1 | 100 |
+| sb08 | 10 | 0 | 10 | 100 |
 | sb09 | 0 | 1 | 1 | 0 |
 | sb10 | 0 | 21 | 21 | 0 |
 | sb16 | 0 | 5 | 5 | 0 |
@@ -78,7 +78,7 @@ Implemented vs unimplemented SLICOT routines. The authoritative per-routine list
 | zgeg | 0 | 2 | 2 | 0 |
 | zlat | 0 | 1 | 1 | 0 |
 
-| **Total** | **359** | **266** | **625** | **57** |
+| **Total** | **487** | **138** | **625** | **77** |
 
 ## Full table (all routines)
 
@@ -449,134 +449,134 @@ Implemented vs unimplemented SLICOT routines. The authoritative per-routine list
 | MB4DBZ | mb4d | mb4dbz | Unimplemented |
 | MB4DLZ | mb4d | mb4dlz | Unimplemented |
 | MB4DPZ | mb4d | mb4dpz | Unimplemented |
-| MC01MD | mc01 | mc01md | Unimplemented |
-| MC01ND | mc01 | mc01nd | Unimplemented |
-| MC01OD | mc01 | mc01od | Unimplemented |
-| MC01PD | mc01 | mc01pd | Unimplemented |
-| MC01PY | mc01 | mc01py | Unimplemented |
-| MC01QD | mc01 | mc01qd | Unimplemented |
-| MC01RD | mc01 | mc01rd | Unimplemented |
-| MC01SD | mc01 | mc01sd | Unimplemented |
-| MC01SW | mc01 | mc01sw | Unimplemented |
-| MC01SX | mc01 | mc01sx | Unimplemented |
-| MC01SY | mc01 | mc01sy | Unimplemented |
-| MC01TD | mc01 | mc01td | Unimplemented |
-| MC01VD | mc01 | mc01vd | Unimplemented |
-| MC01WD | mc01 | mc01wd | Unimplemented |
-| MC01XD | mc01 | mc01xd | Unimplemented |
-| MC03MD | mc03 | mc03md | Unimplemented |
-| MC03ND | mc03 | mc03nd | Unimplemented |
-| MC03NX | mc03 | mc03nx | Unimplemented |
-| MC03NY | mc03 | mc03ny | Unimplemented |
-| MD03AD | md03 | md03ad | Unimplemented |
-| MD03BA | md03 | md03ba | Unimplemented |
-| MD03BB | md03 | md03bb | Unimplemented |
-| MD03BD | md03 | md03bd | Unimplemented |
-| MD03BF | md03 | md03bf | Unimplemented |
-| MD03BX | md03 | md03bx | Unimplemented |
-| MD03BY | md03 | md03by | Unimplemented |
-| NF01AD | nf01 | nf01ad | Unimplemented |
-| NF01AY | nf01 | nf01ay | Unimplemented |
-| NF01BA | nf01 | nf01ba | Unimplemented |
-| NF01BB | nf01 | nf01bb | Unimplemented |
-| NF01BD | nf01 | nf01bd | Unimplemented |
-| NF01BE | nf01 | nf01be | Unimplemented |
-| NF01BF | nf01 | nf01bf | Unimplemented |
-| NF01BP | nf01 | nf01bp | Unimplemented |
-| NF01BQ | nf01 | nf01bq | Unimplemented |
-| NF01BR | nf01 | nf01br | Unimplemented |
-| NF01BS | nf01 | nf01bs | Unimplemented |
-| NF01BU | nf01 | nf01bu | Unimplemented |
-| NF01BV | nf01 | nf01bv | Unimplemented |
-| NF01BW | nf01 | nf01bw | Unimplemented |
-| NF01BX | nf01 | nf01bx | Unimplemented |
-| NF01BY | nf01 | nf01by | Unimplemented |
-| SB01BD | sb01 | sb01bd | Unimplemented |
-| SB01BX | sb01 | sb01bx | Unimplemented |
-| SB01BY | sb01 | sb01by | Unimplemented |
-| SB01DD | sb01 | sb01dd | Unimplemented |
-| SB01FY | sb01 | sb01fy | Unimplemented |
-| SB01MD | sb01 | sb01md | Unimplemented |
-| SB02CX | sb02 | sb02cx | Unimplemented |
-| SB02MD | sb02 | sb02md | Unimplemented |
-| SB02MR | sb02 | sb02mr | Unimplemented |
-| SB02MS | sb02 | sb02ms | Unimplemented |
-| SB02MT | sb02 | sb02mt | Unimplemented |
-| SB02MU | sb02 | sb02mu | Unimplemented |
-| SB02MV | sb02 | sb02mv | Unimplemented |
-| SB02MW | sb02 | sb02mw | Unimplemented |
-| SB02MX | sb02 | sb02mx | Unimplemented |
-| SB02ND | sb02 | sb02nd | Unimplemented |
-| SB02OD | sb02 | sb02od | Unimplemented |
-| SB02OU | sb02 | sb02ou | Unimplemented |
-| SB02OV | sb02 | sb02ov | Unimplemented |
-| SB02OW | sb02 | sb02ow | Unimplemented |
-| SB02OX | sb02 | sb02ox | Unimplemented |
-| SB02OY | sb02 | sb02oy | Unimplemented |
-| SB02PD | sb02 | sb02pd | Unimplemented |
-| SB02QD | sb02 | sb02qd | Unimplemented |
-| SB02RD | sb02 | sb02rd | Unimplemented |
-| SB02RU | sb02 | sb02ru | Unimplemented |
-| SB02SD | sb02 | sb02sd | Unimplemented |
-| SB03MD | sb03 | sb03md | Unimplemented |
-| SB03MU | sb03 | sb03mu | Unimplemented |
-| SB03MV | sb03 | sb03mv | Unimplemented |
-| SB03MW | sb03 | sb03mw | Unimplemented |
-| SB03MX | sb03 | sb03mx | Unimplemented |
-| SB03MY | sb03 | sb03my | Unimplemented |
-| SB03OD | sb03 | sb03od | Unimplemented |
-| SB03OR | sb03 | sb03or | Unimplemented |
-| SB03OS | sb03 | sb03os | Unimplemented |
-| SB03OT | sb03 | sb03ot | Unimplemented |
-| SB03OU | sb03 | sb03ou | Unimplemented |
-| SB03OV | sb03 | sb03ov | Unimplemented |
-| SB03OY | sb03 | sb03oy | Unimplemented |
-| SB03OZ | sb03 | sb03oz | Unimplemented |
-| SB03PD | sb03 | sb03pd | Unimplemented |
-| SB03QD | sb03 | sb03qd | Unimplemented |
-| SB03QX | sb03 | sb03qx | Unimplemented |
-| SB03QY | sb03 | sb03qy | Unimplemented |
-| SB03RD | sb03 | sb03rd | Unimplemented |
-| SB03SD | sb03 | sb03sd | Unimplemented |
-| SB03SX | sb03 | sb03sx | Unimplemented |
-| SB03SY | sb03 | sb03sy | Unimplemented |
-| SB03TD | sb03 | sb03td | Unimplemented |
-| SB03UD | sb03 | sb03ud | Unimplemented |
-| SB04MD | sb04 | sb04md | Unimplemented |
-| SB04MR | sb04 | sb04mr | Unimplemented |
-| SB04MU | sb04 | sb04mu | Unimplemented |
-| SB04MW | sb04 | sb04mw | Unimplemented |
-| SB04MY | sb04 | sb04my | Unimplemented |
-| SB04ND | sb04 | sb04nd | Unimplemented |
-| SB04NV | sb04 | sb04nv | Unimplemented |
-| SB04NW | sb04 | sb04nw | Unimplemented |
-| SB04NX | sb04 | sb04nx | Unimplemented |
-| SB04NY | sb04 | sb04ny | Unimplemented |
-| SB04OD | sb04 | sb04od | Unimplemented |
-| SB04OW | sb04 | sb04ow | Unimplemented |
-| SB04PD | sb04 | sb04pd | Unimplemented |
-| SB04PX | sb04 | sb04px | Unimplemented |
-| SB04PY | sb04 | sb04py | Unimplemented |
-| SB04QD | sb04 | sb04qd | Unimplemented |
-| SB04QR | sb04 | sb04qr | Unimplemented |
-| SB04QU | sb04 | sb04qu | Unimplemented |
-| SB04QY | sb04 | sb04qy | Unimplemented |
-| SB04RD | sb04 | sb04rd | Unimplemented |
-| SB04RV | sb04 | sb04rv | Unimplemented |
-| SB04RW | sb04 | sb04rw | Unimplemented |
-| SB04RX | sb04 | sb04rx | Unimplemented |
-| SB04RY | sb04 | sb04ry | Unimplemented |
-| SB06ND | sb06 | sb06nd | Unimplemented |
-| SB08CD | sb08 | sb08cd | Unimplemented |
-| SB08DD | sb08 | sb08dd | Unimplemented |
-| SB08ED | sb08 | sb08ed | Unimplemented |
-| SB08FD | sb08 | sb08fd | Unimplemented |
-| SB08GD | sb08 | sb08gd | Unimplemented |
-| SB08HD | sb08 | sb08hd | Unimplemented |
-| SB08MD | sb08 | sb08md | Unimplemented |
-| SB08MY | sb08 | sb08my | Unimplemented |
-| SB08ND | sb08 | sb08nd | Unimplemented |
-| SB08NY | sb08 | sb08ny | Unimplemented |
+| MC01MD | mc01 | mc01md | Implemented |
+| MC01ND | mc01 | mc01nd | Implemented |
+| MC01OD | mc01 | mc01od | Implemented |
+| MC01PD | mc01 | mc01pd | Implemented |
+| MC01PY | mc01 | mc01py | Implemented |
+| MC01QD | mc01 | mc01qd | Implemented |
+| MC01RD | mc01 | mc01rd | Implemented |
+| MC01SD | mc01 | mc01sd | Implemented |
+| MC01SW | mc01 | mc01sw | Implemented |
+| MC01SX | mc01 | mc01sx | Implemented |
+| MC01SY | mc01 | mc01sy | Implemented |
+| MC01TD | mc01 | mc01td | Implemented |
+| MC01VD | mc01 | mc01vd | Implemented |
+| MC01WD | mc01 | mc01wd | Implemented |
+| MC01XD | mc01 | mc01xd | Implemented |
+| MC03MD | mc03 | mc03md | Implemented |
+| MC03ND | mc03 | mc03nd | Implemented |
+| MC03NX | mc03 | mc03nx | Implemented |
+| MC03NY | mc03 | mc03ny | Implemented |
+| MD03AD | md03 | md03ad | Implemented |
+| MD03BA | md03 | md03ba | Implemented |
+| MD03BB | md03 | md03bb | Implemented |
+| MD03BD | md03 | md03bd | Implemented |
+| MD03BF | md03 | md03bf | Implemented |
+| MD03BX | md03 | md03bx | Implemented |
+| MD03BY | md03 | md03by | Implemented |
+| NF01AD | nf01 | nf01ad | Implemented |
+| NF01AY | nf01 | nf01ay | Implemented |
+| NF01BA | nf01 | nf01ba | Implemented |
+| NF01BB | nf01 | nf01bb | Implemented |
+| NF01BD | nf01 | nf01bd | Implemented |
+| NF01BE | nf01 | nf01be | Implemented |
+| NF01BF | nf01 | nf01bf | Implemented |
+| NF01BP | nf01 | nf01bp | Implemented |
+| NF01BQ | nf01 | nf01bq | Implemented |
+| NF01BR | nf01 | nf01br | Implemented |
+| NF01BS | nf01 | nf01bs | Implemented |
+| NF01BU | nf01 | nf01bu | Implemented |
+| NF01BV | nf01 | nf01bv | Implemented |
+| NF01BW | nf01 | nf01bw | Implemented |
+| NF01BX | nf01 | nf01bx | Implemented |
+| NF01BY | nf01 | nf01by | Implemented |
+| SB01BD | sb01 | sb01bd | Implemented |
+| SB01BX | sb01 | sb01bx | Implemented |
+| SB01BY | sb01 | sb01by | Implemented |
+| SB01DD | sb01 | sb01dd | Implemented |
+| SB01FY | sb01 | sb01fy | Implemented |
+| SB01MD | sb01 | sb01md | Implemented |
+| SB02CX | sb02 | sb02cx | Implemented |
+| SB02MD | sb02 | sb02md | Implemented |
+| SB02MR | sb02 | sb02mr | Implemented |
+| SB02MS | sb02 | sb02ms | Implemented |
+| SB02MT | sb02 | sb02mt | Implemented |
+| SB02MU | sb02 | sb02mu | Implemented |
+| SB02MV | sb02 | sb02mv | Implemented |
+| SB02MW | sb02 | sb02mw | Implemented |
+| SB02MX | sb02 | sb02mx | Implemented |
+| SB02ND | sb02 | sb02nd | Implemented |
+| SB02OD | sb02 | sb02od | Implemented |
+| SB02OU | sb02 | sb02ou | Implemented |
+| SB02OV | sb02 | sb02ov | Implemented |
+| SB02OW | sb02 | sb02ow | Implemented |
+| SB02OX | sb02 | sb02ox | Implemented |
+| SB02OY | sb02 | sb02oy | Implemented |
+| SB02PD | sb02 | sb02pd | Implemented |
+| SB02QD | sb02 | sb02qd | Implemented |
+| SB02RD | sb02 | sb02rd | Implemented |
+| SB02RU | sb02 | sb02ru | Implemented |
+| SB02SD | sb02 | sb02sd | Implemented |
+| SB03MD | sb03 | sb03md | Implemented |
+| SB03MU | sb03 | sb03mu | Implemented |
+| SB03MV | sb03 | sb03mv | Implemented |
+| SB03MW | sb03 | sb03mw | Implemented |
+| SB03MX | sb03 | sb03mx | Implemented |
+| SB03MY | sb03 | sb03my | Implemented |
+| SB03OD | sb03 | sb03od | Implemented |
+| SB03OR | sb03 | sb03or | Implemented |
+| SB03OS | sb03 | sb03os | Implemented |
+| SB03OT | sb03 | sb03ot | Implemented |
+| SB03OU | sb03 | sb03ou | Implemented |
+| SB03OV | sb03 | sb03ov | Implemented |
+| SB03OY | sb03 | sb03oy | Implemented |
+| SB03OZ | sb03 | sb03oz | Implemented |
+| SB03PD | sb03 | sb03pd | Implemented |
+| SB03QD | sb03 | sb03qd | Implemented |
+| SB03QX | sb03 | sb03qx | Implemented |
+| SB03QY | sb03 | sb03qy | Implemented |
+| SB03RD | sb03 | sb03rd | Implemented |
+| SB03SD | sb03 | sb03sd | Implemented |
+| SB03SX | sb03 | sb03sx | Implemented |
+| SB03SY | sb03 | sb03sy | Implemented |
+| SB03TD | sb03 | sb03td | Implemented |
+| SB03UD | sb03 | sb03ud | Implemented |
+| SB04MD | sb04 | sb04md | Implemented |
+| SB04MR | sb04 | sb04mr | Implemented |
+| SB04MU | sb04 | sb04mu | Implemented |
+| SB04MW | sb04 | sb04mw | Implemented |
+| SB04MY | sb04 | sb04my | Implemented |
+| SB04ND | sb04 | sb04nd | Implemented |
+| SB04NV | sb04 | sb04nv | Implemented |
+| SB04NW | sb04 | sb04nw | Implemented |
+| SB04NX | sb04 | sb04nx | Implemented |
+| SB04NY | sb04 | sb04ny | Implemented |
+| SB04OD | sb04 | sb04od | Implemented |
+| SB04OW | sb04 | sb04ow | Implemented |
+| SB04PD | sb04 | sb04pd | Implemented |
+| SB04PX | sb04 | sb04px | Implemented |
+| SB04PY | sb04 | sb04py | Implemented |
+| SB04QD | sb04 | sb04qd | Implemented |
+| SB04QR | sb04 | sb04qr | Implemented |
+| SB04QU | sb04 | sb04qu | Implemented |
+| SB04QY | sb04 | sb04qy | Implemented |
+| SB04RD | sb04 | sb04rd | Implemented |
+| SB04RV | sb04 | sb04rv | Implemented |
+| SB04RW | sb04 | sb04rw | Implemented |
+| SB04RX | sb04 | sb04rx | Implemented |
+| SB04RY | sb04 | sb04ry | Implemented |
+| SB06ND | sb06 | sb06nd | Implemented |
+| SB08CD | sb08 | sb08cd | Implemented |
+| SB08DD | sb08 | sb08dd | Implemented |
+| SB08ED | sb08 | sb08ed | Implemented |
+| SB08FD | sb08 | sb08fd | Implemented |
+| SB08GD | sb08 | sb08gd | Implemented |
+| SB08HD | sb08 | sb08hd | Implemented |
+| SB08MD | sb08 | sb08md | Implemented |
+| SB08MY | sb08 | sb08my | Implemented |
+| SB08ND | sb08 | sb08nd | Implemented |
+| SB08NY | sb08 | sb08ny | Implemented |
 | SB09MD | sb09 | sb09md | Unimplemented |
 | SB10AD | sb10 | sb10ad | Unimplemented |
 | SB10DD | sb10 | sb10dd | Unimplemented |

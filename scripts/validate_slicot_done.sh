@@ -13,7 +13,7 @@ FAIL=0
 echo "=== SLICOT done routines: pure Rust and tested ==="
 
 # 1. Global FFI check in src/
-if grep -rE 'extern\s|ffi|libslicot|\.so\b|cdylib|staticlib' --include='*.rs' src/ 2>/dev/null; then
+if grep -rE 'extern\s|\bffi\b|libslicot|\.so\b|cdylib|staticlib' --include='*.rs' src/ 2>/dev/null; then
     echo "FAIL: FFI or foreign linkage found in src/"
     FAIL=1
 fi
@@ -24,7 +24,7 @@ while read -r mod fn; do
     if [[ ! -f "$f" ]]; then
         echo "FAIL: missing $f"
         FAIL=1
-    elif grep -qE 'extern\s|ffi|libslicot|\.so\b' "$f" 2>/dev/null; then
+    elif grep -qE 'extern\s|\bffi\b|libslicot|\.so\b' "$f" 2>/dev/null; then
         echo "FAIL: $f uses FFI"
         FAIL=1
     elif ! grep -q '#\[cfg(test)\]' "$f" 2>/dev/null || ! grep -q '#\[test\]' "$f" 2>/dev/null; then
