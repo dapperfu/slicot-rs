@@ -4,29 +4,29 @@ Check off each when the routine is fully implemented and status in `docs/SLICOT_
 List derived from entries with status `stub` or `in progress` (139 routines).
 
 ## ab01
-- [ ] AB01ND — `ab01::ab01nd`
-- [ ] AB01OD — `ab01::ab01od`
+- [x] AB01ND — `ab01::ab01nd`
+- [x] AB01OD — `ab01::ab01od`
 
 ## ab05
-- [ ] AB05ND — `ab05::ab05nd`
-- [ ] AB05OD — `ab05::ab05od`
-- [ ] AB05PD — `ab05::ab05pd`
-- [ ] AB05QD — `ab05::ab05qd`
-- [ ] AB05RD — `ab05::ab05rd`
-- [ ] AB05SD — `ab05::ab05sd`
+- [x] AB05ND — `ab05::ab05nd`
+- [x] AB05OD — `ab05::ab05od`
+- [x] AB05PD — `ab05::ab05pd`
+- [x] AB05QD — `ab05::ab05qd`
+- [x] AB05RD — `ab05::ab05rd`
+- [x] AB05SD — `ab05::ab05sd`
 
 ## ab07
-- [ ] AB07MD — `ab07::ab07md`
-- [ ] AB07ND — `ab07::ab07nd`
+- [x] AB07MD — `ab07::ab07md`
+- [x] AB07ND — `ab07::ab07nd`
 
 ## ab08
-- [ ] AB08MD — `ab08::ab08md`
-- [ ] AB08MZ — `ab08::ab08mz`
-- [ ] AB08ND — `ab08::ab08nd`
-- [ ] AB08NW — `ab08::ab08nw`
-- [ ] AB08NX — `ab08::ab08nx`
-- [ ] AB08NY — `ab08::ab08ny`
-- [ ] AB08NZ — `ab08::ab08nz`
+- [x] AB08MD — `ab08::ab08md`
+- [x] AB08MZ — `ab08::ab08mz`
+- [x] AB08ND — `ab08::ab08nd`
+- [x] AB08NW — `ab08::ab08nw`
+- [x] AB08NX — `ab08::ab08nx`
+- [x] AB08NY — `ab08::ab08ny`
+- [x] AB08NZ — `ab08::ab08nz`
 
 ## ab09
 - [ ] AB09AD — `ab09::ab09ad`
@@ -76,42 +76,42 @@ List derived from entries with status `stub` or `in progress` (139 routines).
 - [ ] AG8BYZ — `ag8b::ag8byz`
 
 ## bb01
-- [ ] BB01AD — `bb01::bb01ad`
+- [x] BB01AD — `bb01::bb01ad`
 
 ## bb02
-- [ ] BB02AD — `bb02::bb02ad`
+- [x] BB02AD — `bb02::bb02ad`
 
 ## bb03
-- [ ] BB03AD — `bb03::bb03ad`
+- [x] BB03AD — `bb03::bb03ad`
 
 ## bb04
-- [ ] BB04AD — `bb04::bb04ad`
+- [x] BB04AD — `bb04::bb04ad`
 
 ## bd01
-- [ ] BD01AD — `bd01::bd01ad`
+- [x] BD01AD — `bd01::bd01ad`
 
 ## bd02
-- [ ] BD02AD — `bd02::bd02ad`
+- [x] BD02AD — `bd02::bd02ad`
 
 ## de01
-- [ ] DE01OD — `de01::de01od`
-- [ ] DE01PD — `de01::de01pd`
+- [x] DE01OD — `de01::de01od`
+- [x] DE01PD — `de01::de01pd`
 
 ## df01
-- [ ] DF01MD — `df01::df01md`
+- [x] DF01MD — `df01::df01md`
 
 ## dg01
-- [ ] DG01MD — `dg01::dg01md`
-- [ ] DG01ND — `dg01::dg01nd`
-- [ ] DG01NY — `dg01::dg01ny`
-- [ ] DG01OD — `dg01::dg01od`
+- [x] DG01MD — `dg01::dg01md`
+- [x] DG01ND — `dg01::dg01nd`
+- [x] DG01NY — `dg01::dg01ny`
+- [x] DG01OD — `dg01::dg01od`
 
 ## dgeg
 - [ ] DGEGS — `dgeg::dgegs`
 - [ ] DGEGV — `dgeg::dgegv`
 
 ## dk01
-- [ ] DK01MD — `dk01::dk01md`
+- [x] DK01MD — `dk01::dk01md`
 
 ## dlac
 - [x] DLACPY_SLC — `dlac::dlacpy_slc`
@@ -120,14 +120,14 @@ List derived from entries with status `stub` or `in progress` (139 routines).
 - [x] DLATZM — `dlat::dlatzm`
 
 ## fb01
-- [ ] FB01QD — `fb01::fb01qd`
-- [ ] FB01RD — `fb01::fb01rd`
-- [ ] FB01SD — `fb01::fb01sd`
-- [ ] FB01TD — `fb01::fb01td`
-- [ ] FB01VD — `fb01::fb01vd`
+- [x] FB01QD — `fb01::fb01qd`
+- [x] FB01RD — `fb01::fb01rd`
+- [x] FB01SD — `fb01::fb01sd`
+- [x] FB01TD — `fb01::fb01td`
+- [x] FB01VD — `fb01::fb01vd`
 
 ## fd01
-- [ ] FD01AD — `fd01::fd01ad`
+- [x] FD01AD — `fd01::fd01ad`
 
 ## ib01
 - [ ] IB01AD — `ib01::ib01ad`
