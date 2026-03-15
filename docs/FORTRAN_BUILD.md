@@ -43,6 +43,15 @@ or
 make -C SLICOT-Reference -f scripts/slicot-fortran/Makefile clean
 ```
 
+## File-based I/O for fuzzer
+
+For the fuzz pipeline, example drivers must accept optional input/output file paths. A copy of `TAB01ND` with this behaviour is in the repo:
+
+- **Convention:** `T* [input.dat [output.res]]` — no args = stdin/stdout; one arg = input file; two args = input and output files.
+- **Copy** the driver into your tree and rebuild:  
+  `cp scripts/slicot-fortran/drivers/TAB01ND.f SLICOT-Reference/examples/TAB01ND.f`  
+  then run the Fortran build again. See `scripts/slicot-fortran/drivers/README.md` for .dat/.res layout.
+
 ## Configuration
 
 Build options (compiler, flags, BLAS) are set in `SLICOT-Reference/make_Unix.inc`. By default: `FORTRAN = gfortran`, `OPTS = -O2 -fPIC -g`, `BLASLIB = -lopenblas`, `LAPACKLIB = -lopenblas`. Adjust if your OpenBLAS or LAPACK is installed elsewhere.
