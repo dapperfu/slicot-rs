@@ -1,0 +1,11 @@
+---
+description: Automatic push after commit when remote exists
+globs: []
+alwaysApply: true
+---
+
+# Git Push Requirement
+
+## Requirement
+
+ALL git commits SHALL be followed by a `git push` if and only if a remote exists.

@@ -1,0 +1,61 @@
+---
+description: General rule that all git commits must be atomic and on single files, with specific exceptions
+globs: []
+alwaysApply: true
+---
+
+# Git Commit Atomicity
+
+## Requirement
+
+ALL git commits SHALL be atomic and on single files UNLESS one of the following exceptions applies:
+
+### Exception 1: Header and Implementation Files
+
+Header files (`.h`, `.hpp`) and their corresponding implementation files (`.c`, `.cpp`) SHALL be committed together. These files cannot compile independently and MUST be kept in sync to maintain build integrity.
+
+### Exception 1a: Test Files and Code Fixes
+
+When a test file fails and code changes are made to fix the test, the test file and the file that was changed to fix the test SHALL be committed together. This ensures the test and its fix are kept in sync and the test suite remains passing.
+
+### Exception 1b: Other Tightly Coupled Files
+
+When 2 or more files are tightly coupled and must change together atomically to maintain build integrity, they SHALL be committed together. Examples include:
+- Schema and migration files
+- Configuration files and their corresponding code that depends on them
+- Interface definitions and their implementations
+
+### Exception 2: Requirements Documents and Source Code
+
+When source code implements a requirement documented in a requirements document (e.g., `.sdoc`, `.req`, requirements markdown files), the requirements document update and the source code changes SHALL be committed together. This ensures direct traceability between requirements and their implementation, linking the requirement to the code or vice versa.
+
+### Exception 2a: TODO Checkoff Traceability
+
+When a TODO item in a CURSOR plan file is checked off, the TODO checkoff SHALL be committed together with the file changes that complete that TODO. This enables traceability between requirements (plans) and implementation (code).
+
+If the TODO checkoff is for a different TODO than what tightly coupled files address, the TODO checkoff may be committed separately.
+
+### Exception 3: Atomic Feature Implementation
+
+When implementing a feature that requires changes across multiple files that must be kept in sync (e.g., API changes requiring both client and server updates, or database schema changes requiring both migration and model updates), these files SHALL be committed together if they cannot be independently built or tested.
+
+## Rationale
+
+Atomic commits on single files provide:
+- Clear git history with granular change tracking
+- Easier rollback of specific changes
+- Better code review with focused diffs
+- Accurate token usage tracking per file
+- Simpler debugging by isolating changes
+
+The exceptions ensure:
+- Build integrity is maintained (tightly coupled files compile together)
+- Requirements traceability is preserved (requirements documents and TODO checkoffs linked to code)
+- Feature completeness is maintained (related changes stay together)
+
+## Integration
+
+This rule is referenced by:
+- `git/commit-requirement.mdc` - general commit requirements
+- `cursor/plans-commit-execution.mdc` - plan execution commit requirements
+- `cursor/plans-todo-commits.mdc` - TODO checkoff commit requirements
