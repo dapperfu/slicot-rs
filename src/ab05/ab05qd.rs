@@ -21,3 +21,22 @@ pub fn ab05qd(
     }
     1
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use nalgebra::DMatrix;
+
+    #[test]
+    fn test_ab05qd_trivial() {
+        let a = DMatrix::zeros(0, 0);
+        let b = DMatrix::zeros(0, 0);
+        let c = DMatrix::zeros(0, 0);
+        let d = DMatrix::zeros(0, 0);
+        let mut at = DMatrix::zeros(0, 0);
+        let mut bt = DMatrix::zeros(0, 0);
+        let mut ct = DMatrix::zeros(0, 0);
+        let mut dt = DMatrix::zeros(0, 0);
+        assert_eq!(ab05qd(0, 0, 0, &a, &b, &c, &d, &mut at, &mut bt, &mut ct, &mut dt), 0);
+    }
+}
