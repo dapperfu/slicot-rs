@@ -208,160 +208,160 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | MB02WD | mb02 | mb02wd | done |
 | MB02XD | mb02 | mb02xd | done |
 | MB02YD | mb02 | mb02yd | done |
-| MB03AB | mb03 | mb03ab | not started |
-| MB03AD | mb03 | mb03ad | not started |
-| MB03AE | mb03 | mb03ae | not started |
-| MB03AF | mb03 | mb03af | not started |
-| MB03AG | mb03 | mb03ag | not started |
-| MB03AH | mb03 | mb03ah | not started |
-| MB03AI | mb03 | mb03ai | not started |
-| MB03BA | mb03 | mb03ba | not started |
-| MB03BB | mb03 | mb03bb | not started |
-| MB03BC | mb03 | mb03bc | not started |
-| MB03BD | mb03 | mb03bd | not started |
-| MB03BE | mb03 | mb03be | not started |
-| MB03BF | mb03 | mb03bf | not started |
-| MB03BG | mb03 | mb03bg | not started |
-| MB03BZ | mb03 | mb03bz | not started |
-| MB03CD | mb03 | mb03cd | not started |
-| MB03CZ | mb03 | mb03cz | not started |
-| MB03DD | mb03 | mb03dd | not started |
-| MB03DZ | mb03 | mb03dz | not started |
-| MB03ED | mb03 | mb03ed | not started |
-| MB03FD | mb03 | mb03fd | not started |
-| MB03FZ | mb03 | mb03fz | not started |
-| MB03GD | mb03 | mb03gd | not started |
-| MB03GZ | mb03 | mb03gz | not started |
-| MB03HD | mb03 | mb03hd | not started |
-| MB03HZ | mb03 | mb03hz | not started |
-| MB03ID | mb03 | mb03id | not started |
-| MB03IZ | mb03 | mb03iz | not started |
-| MB03JD | mb03 | mb03jd | not started |
-| MB03JP | mb03 | mb03jp | not started |
-| MB03JZ | mb03 | mb03jz | not started |
-| MB03KA | mb03 | mb03ka | not started |
-| MB03KB | mb03 | mb03kb | not started |
-| MB03KC | mb03 | mb03kc | not started |
-| MB03KD | mb03 | mb03kd | not started |
-| MB03KE | mb03 | mb03ke | not started |
-| MB03LD | mb03 | mb03ld | not started |
-| MB03LF | mb03 | mb03lf | not started |
-| MB03LP | mb03 | mb03lp | not started |
-| MB03LZ | mb03 | mb03lz | not started |
-| MB03MD | mb03 | mb03md | not started |
-| MB03MY | mb03 | mb03my | not started |
-| MB03ND | mb03 | mb03nd | not started |
-| MB03NY | mb03 | mb03ny | not started |
-| MB03OD | mb03 | mb03od | not started |
-| MB03OY | mb03 | mb03oy | not started |
-| MB03PD | mb03 | mb03pd | not started |
-| MB03PY | mb03 | mb03py | not started |
-| MB03QD | mb03 | mb03qd | not started |
-| MB03QG | mb03 | mb03qg | not started |
-| MB03QV | mb03 | mb03qv | not started |
-| MB03QW | mb03 | mb03qw | not started |
-| MB03QX | mb03 | mb03qx | not started |
-| MB03QY | mb03 | mb03qy | not started |
-| MB03RD | mb03 | mb03rd | not started |
-| MB03RW | mb03 | mb03rw | not started |
-| MB03RX | mb03 | mb03rx | not started |
-| MB03RY | mb03 | mb03ry | not started |
-| MB03RZ | mb03 | mb03rz | not started |
-| MB03SD | mb03 | mb03sd | not started |
-| MB03TD | mb03 | mb03td | not started |
-| MB03TS | mb03 | mb03ts | not started |
-| MB03UD | mb03 | mb03ud | not started |
-| MB03VD | mb03 | mb03vd | not started |
-| MB03VW | mb03 | mb03vw | not started |
-| MB03VY | mb03 | mb03vy | not started |
-| MB03WA | mb03 | mb03wa | not started |
-| MB03WD | mb03 | mb03wd | not started |
-| MB03WX | mb03 | mb03wx | not started |
-| MB03XD | mb03 | mb03xd | not started |
-| MB03XP | mb03 | mb03xp | not started |
-| MB03XS | mb03 | mb03xs | not started |
-| MB03XU | mb03 | mb03xu | not started |
-| MB03XZ | mb03 | mb03xz | not started |
-| MB03YA | mb03 | mb03ya | not started |
-| MB03YD | mb03 | mb03yd | not started |
-| MB03YT | mb03 | mb03yt | not started |
-| MB03ZA | mb03 | mb03za | not started |
-| MB03ZD | mb03 | mb03zd | not started |
-| MB04AD | mb04 | mb04ad | not started |
-| MB04AZ | mb04 | mb04az | not started |
-| MB04BD | mb04 | mb04bd | not started |
-| MB04BP | mb04 | mb04bp | not started |
-| MB04BZ | mb04 | mb04bz | not started |
-| MB04CD | mb04 | mb04cd | not started |
-| MB04DB | mb04 | mb04db | not started |
-| MB04DD | mb04 | mb04dd | not started |
-| MB04DI | mb04 | mb04di | not started |
-| MB04DL | mb04 | mb04dl | not started |
-| MB04DP | mb04 | mb04dp | not started |
-| MB04DS | mb04 | mb04ds | not started |
-| MB04DY | mb04 | mb04dy | not started |
-| MB04DZ | mb04 | mb04dz | not started |
-| MB04ED | mb04 | mb04ed | not started |
-| MB04FD | mb04 | mb04fd | not started |
-| MB04FP | mb04 | mb04fp | not started |
-| MB04GD | mb04 | mb04gd | not started |
-| MB04HD | mb04 | mb04hd | not started |
-| MB04ID | mb04 | mb04id | not started |
-| MB04IY | mb04 | mb04iy | not started |
-| MB04IZ | mb04 | mb04iz | not started |
-| MB04JD | mb04 | mb04jd | not started |
-| MB04KD | mb04 | mb04kd | not started |
-| MB04LD | mb04 | mb04ld | not started |
-| MB04MD | mb04 | mb04md | not started |
-| MB04ND | mb04 | mb04nd | not started |
-| MB04NY | mb04 | mb04ny | not started |
-| MB04OD | mb04 | mb04od | not started |
-| MB04OW | mb04 | mb04ow | not started |
-| MB04OX | mb04 | mb04ox | not started |
-| MB04OY | mb04 | mb04oy | not started |
-| MB04PA | mb04 | mb04pa | not started |
-| MB04PB | mb04 | mb04pb | not started |
-| MB04PU | mb04 | mb04pu | not started |
-| MB04PY | mb04 | mb04py | not started |
-| MB04QB | mb04 | mb04qb | not started |
-| MB04QC | mb04 | mb04qc | not started |
-| MB04QF | mb04 | mb04qf | not started |
-| MB04QS | mb04 | mb04qs | not started |
-| MB04QU | mb04 | mb04qu | not started |
-| MB04RB | mb04 | mb04rb | not started |
-| MB04RD | mb04 | mb04rd | not started |
-| MB04RS | mb04 | mb04rs | not started |
-| MB04RT | mb04 | mb04rt | not started |
-| MB04RU | mb04 | mb04ru | not started |
-| MB04RV | mb04 | mb04rv | not started |
-| MB04RW | mb04 | mb04rw | not started |
-| MB04RZ | mb04 | mb04rz | not started |
-| MB04SU | mb04 | mb04su | not started |
-| MB04TB | mb04 | mb04tb | not started |
-| MB04TS | mb04 | mb04ts | not started |
-| MB04TT | mb04 | mb04tt | not started |
-| MB04TU | mb04 | mb04tu | not started |
-| MB04TV | mb04 | mb04tv | not started |
-| MB04TW | mb04 | mb04tw | not started |
-| MB04TX | mb04 | mb04tx | not started |
-| MB04TY | mb04 | mb04ty | not started |
-| MB04UD | mb04 | mb04ud | not started |
-| MB04VD | mb04 | mb04vd | not started |
-| MB04VX | mb04 | mb04vx | not started |
-| MB04WD | mb04 | mb04wd | not started |
-| MB04WP | mb04 | mb04wp | not started |
-| MB04WR | mb04 | mb04wr | not started |
-| MB04WU | mb04 | mb04wu | not started |
-| MB04XD | mb04 | mb04xd | not started |
-| MB04XY | mb04 | mb04xy | not started |
-| MB04YD | mb04 | mb04yd | not started |
-| MB04YW | mb04 | mb04yw | not started |
-| MB04ZD | mb04 | mb04zd | not started |
-| MB05MD | mb05 | mb05md | not started |
-| MB05MY | mb05 | mb05my | not started |
-| MB05ND | mb05 | mb05nd | not started |
-| MB05OD | mb05 | mb05od | not started |
-| MB05OY | mb05 | mb05oy | not started |
+| MB03AB | mb03 | mb03ab | done |
+| MB03AD | mb03 | mb03ad | done |
+| MB03AE | mb03 | mb03ae | done |
+| MB03AF | mb03 | mb03af | done |
+| MB03AG | mb03 | mb03ag | done |
+| MB03AH | mb03 | mb03ah | done |
+| MB03AI | mb03 | mb03ai | done |
+| MB03BA | mb03 | mb03ba | done |
+| MB03BB | mb03 | mb03bb | done |
+| MB03BC | mb03 | mb03bc | done |
+| MB03BD | mb03 | mb03bd | done |
+| MB03BE | mb03 | mb03be | done |
+| MB03BF | mb03 | mb03bf | done |
+| MB03BG | mb03 | mb03bg | done |
+| MB03BZ | mb03 | mb03bz | done |
+| MB03CD | mb03 | mb03cd | done |
+| MB03CZ | mb03 | mb03cz | done |
+| MB03DD | mb03 | mb03dd | done |
+| MB03DZ | mb03 | mb03dz | done |
+| MB03ED | mb03 | mb03ed | done |
+| MB03FD | mb03 | mb03fd | done |
+| MB03FZ | mb03 | mb03fz | done |
+| MB03GD | mb03 | mb03gd | done |
+| MB03GZ | mb03 | mb03gz | done |
+| MB03HD | mb03 | mb03hd | done |
+| MB03HZ | mb03 | mb03hz | done |
+| MB03ID | mb03 | mb03id | done |
+| MB03IZ | mb03 | mb03iz | done |
+| MB03JD | mb03 | mb03jd | done |
+| MB03JP | mb03 | mb03jp | done |
+| MB03JZ | mb03 | mb03jz | done |
+| MB03KA | mb03 | mb03ka | done |
+| MB03KB | mb03 | mb03kb | done |
+| MB03KC | mb03 | mb03kc | done |
+| MB03KD | mb03 | mb03kd | done |
+| MB03KE | mb03 | mb03ke | done |
+| MB03LD | mb03 | mb03ld | done |
+| MB03LF | mb03 | mb03lf | done |
+| MB03LP | mb03 | mb03lp | done |
+| MB03LZ | mb03 | mb03lz | done |
+| MB03MD | mb03 | mb03md | done |
+| MB03MY | mb03 | mb03my | done |
+| MB03ND | mb03 | mb03nd | done |
+| MB03NY | mb03 | mb03ny | done |
+| MB03OD | mb03 | mb03od | done |
+| MB03OY | mb03 | mb03oy | done |
+| MB03PD | mb03 | mb03pd | done |
+| MB03PY | mb03 | mb03py | done |
+| MB03QD | mb03 | mb03qd | done |
+| MB03QG | mb03 | mb03qg | done |
+| MB03QV | mb03 | mb03qv | done |
+| MB03QW | mb03 | mb03qw | done |
+| MB03QX | mb03 | mb03qx | done |
+| MB03QY | mb03 | mb03qy | done |
+| MB03RD | mb03 | mb03rd | done |
+| MB03RW | mb03 | mb03rw | done |
+| MB03RX | mb03 | mb03rx | done |
+| MB03RY | mb03 | mb03ry | done |
+| MB03RZ | mb03 | mb03rz | done |
+| MB03SD | mb03 | mb03sd | done |
+| MB03TD | mb03 | mb03td | done |
+| MB03TS | mb03 | mb03ts | done |
+| MB03UD | mb03 | mb03ud | done |
+| MB03VD | mb03 | mb03vd | done |
+| MB03VW | mb03 | mb03vw | done |
+| MB03VY | mb03 | mb03vy | done |
+| MB03WA | mb03 | mb03wa | done |
+| MB03WD | mb03 | mb03wd | done |
+| MB03WX | mb03 | mb03wx | done |
+| MB03XD | mb03 | mb03xd | done |
+| MB03XP | mb03 | mb03xp | done |
+| MB03XS | mb03 | mb03xs | done |
+| MB03XU | mb03 | mb03xu | done |
+| MB03XZ | mb03 | mb03xz | done |
+| MB03YA | mb03 | mb03ya | done |
+| MB03YD | mb03 | mb03yd | done |
+| MB03YT | mb03 | mb03yt | done |
+| MB03ZA | mb03 | mb03za | done |
+| MB03ZD | mb03 | mb03zd | done |
+| MB04AD | mb04 | mb04ad | done |
+| MB04AZ | mb04 | mb04az | done |
+| MB04BD | mb04 | mb04bd | done |
+| MB04BP | mb04 | mb04bp | done |
+| MB04BZ | mb04 | mb04bz | done |
+| MB04CD | mb04 | mb04cd | done |
+| MB04DB | mb04 | mb04db | done |
+| MB04DD | mb04 | mb04dd | done |
+| MB04DI | mb04 | mb04di | done |
+| MB04DL | mb04 | mb04dl | done |
+| MB04DP | mb04 | mb04dp | done |
+| MB04DS | mb04 | mb04ds | done |
+| MB04DY | mb04 | mb04dy | done |
+| MB04DZ | mb04 | mb04dz | done |
+| MB04ED | mb04 | mb04ed | done |
+| MB04FD | mb04 | mb04fd | done |
+| MB04FP | mb04 | mb04fp | done |
+| MB04GD | mb04 | mb04gd | done |
+| MB04HD | mb04 | mb04hd | done |
+| MB04ID | mb04 | mb04id | done |
+| MB04IY | mb04 | mb04iy | done |
+| MB04IZ | mb04 | mb04iz | done |
+| MB04JD | mb04 | mb04jd | done |
+| MB04KD | mb04 | mb04kd | done |
+| MB04LD | mb04 | mb04ld | done |
+| MB04MD | mb04 | mb04md | done |
+| MB04ND | mb04 | mb04nd | done |
+| MB04NY | mb04 | mb04ny | done |
+| MB04OD | mb04 | mb04od | done |
+| MB04OW | mb04 | mb04ow | done |
+| MB04OX | mb04 | mb04ox | done |
+| MB04OY | mb04 | mb04oy | done |
+| MB04PA | mb04 | mb04pa | done |
+| MB04PB | mb04 | mb04pb | done |
+| MB04PU | mb04 | mb04pu | done |
+| MB04PY | mb04 | mb04py | done |
+| MB04QB | mb04 | mb04qb | done |
+| MB04QC | mb04 | mb04qc | done |
+| MB04QF | mb04 | mb04qf | done |
+| MB04QS | mb04 | mb04qs | done |
+| MB04QU | mb04 | mb04qu | done |
+| MB04RB | mb04 | mb04rb | done |
+| MB04RD | mb04 | mb04rd | done |
+| MB04RS | mb04 | mb04rs | done |
+| MB04RT | mb04 | mb04rt | done |
+| MB04RU | mb04 | mb04ru | done |
+| MB04RV | mb04 | mb04rv | done |
+| MB04RW | mb04 | mb04rw | done |
+| MB04RZ | mb04 | mb04rz | done |
+| MB04SU | mb04 | mb04su | done |
+| MB04TB | mb04 | mb04tb | done |
+| MB04TS | mb04 | mb04ts | done |
+| MB04TT | mb04 | mb04tt | done |
+| MB04TU | mb04 | mb04tu | done |
+| MB04TV | mb04 | mb04tv | done |
+| MB04TW | mb04 | mb04tw | done |
+| MB04TX | mb04 | mb04tx | done |
+| MB04TY | mb04 | mb04ty | done |
+| MB04UD | mb04 | mb04ud | done |
+| MB04VD | mb04 | mb04vd | done |
+| MB04VX | mb04 | mb04vx | done |
+| MB04WD | mb04 | mb04wd | done |
+| MB04WP | mb04 | mb04wp | done |
+| MB04WR | mb04 | mb04wr | done |
+| MB04WU | mb04 | mb04wu | done |
+| MB04XD | mb04 | mb04xd | done |
+| MB04XY | mb04 | mb04xy | done |
+| MB04YD | mb04 | mb04yd | done |
+| MB04YW | mb04 | mb04yw | done |
+| MB04ZD | mb04 | mb04zd | done |
+| MB05MD | mb05 | mb05md | done |
+| MB05MY | mb05 | mb05my | done |
+| MB05ND | mb05 | mb05nd | done |
+| MB05OD | mb05 | mb05od | done |
+| MB05OY | mb05 | mb05oy | done |
 | MB3JZP | mb3j | mb3jzp | not started |
 | MB3LZP | mb3l | mb3lzp | not started |
 | MB3OYZ | mb3o | mb3oyz | not started |
