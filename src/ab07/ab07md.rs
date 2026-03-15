@@ -1,8 +1,6 @@
-//! AB07MD — SLICOT stub (1:1 mapping, not yet implemented).
-//!
-//! Returns Info: 0 = success, < 0 = not implemented or invalid argument.
+//! AB07MD — Similarity transformation and state-space conversion (SLICOT AB07MD). Not yet implemented.
 
-/// Stub: not yet implemented. Returns -1.
+/// Validated stub: returns 1 (not yet implemented). 0 = success, < 0 = invalid argument.
 pub fn ab07md() -> i32 {
-    -1
+    1
 }
