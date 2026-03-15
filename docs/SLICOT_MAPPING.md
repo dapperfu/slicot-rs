@@ -4,56 +4,56 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 
 | SLICOT | Rust module | Rust function | Status |
 |--------|-------------|---------------|--------|
-| AB01MD | ab01 | ab01md | not started |
-| AB01ND | ab01 | ab01nd | not started |
-| AB01OD | ab01 | ab01od | not started |
-| AB04MD | ab04 | ab04md | not started |
-| AB05MD | ab05 | ab05md | not started |
-| AB05ND | ab05 | ab05nd | not started |
-| AB05OD | ab05 | ab05od | not started |
-| AB05PD | ab05 | ab05pd | not started |
-| AB05QD | ab05 | ab05qd | not started |
-| AB05RD | ab05 | ab05rd | not started |
-| AB05SD | ab05 | ab05sd | not started |
-| AB07MD | ab07 | ab07md | not started |
-| AB07ND | ab07 | ab07nd | not started |
-| AB08MD | ab08 | ab08md | not started |
-| AB08MZ | ab08 | ab08mz | not started |
-| AB08ND | ab08 | ab08nd | not started |
-| AB08NW | ab08 | ab08nw | not started |
-| AB08NX | ab08 | ab08nx | not started |
-| AB08NY | ab08 | ab08ny | not started |
-| AB08NZ | ab08 | ab08nz | not started |
-| AB09AD | ab09 | ab09ad | not started |
-| AB09AX | ab09 | ab09ax | not started |
-| AB09BD | ab09 | ab09bd | not started |
-| AB09BX | ab09 | ab09bx | not started |
-| AB09CD | ab09 | ab09cd | not started |
-| AB09CX | ab09 | ab09cx | not started |
-| AB09DD | ab09 | ab09dd | not started |
-| AB09ED | ab09 | ab09ed | not started |
-| AB09FD | ab09 | ab09fd | not started |
-| AB09GD | ab09 | ab09gd | not started |
-| AB09HD | ab09 | ab09hd | not started |
-| AB09HX | ab09 | ab09hx | not started |
-| AB09HY | ab09 | ab09hy | not started |
-| AB09ID | ab09 | ab09id | not started |
-| AB09IX | ab09 | ab09ix | not started |
-| AB09IY | ab09 | ab09iy | not started |
-| AB09JD | ab09 | ab09jd | not started |
-| AB09JV | ab09 | ab09jv | not started |
-| AB09JW | ab09 | ab09jw | not started |
-| AB09JX | ab09 | ab09jx | not started |
-| AB09KD | ab09 | ab09kd | not started |
-| AB09KX | ab09 | ab09kx | not started |
-| AB09MD | ab09 | ab09md | not started |
-| AB09ND | ab09 | ab09nd | not started |
-| AB13DD | ab13 | ab13dd | not started |
-| AB13ED | ab13 | ab13ed | not started |
-| AB13FD | ab13 | ab13fd | not started |
-| AB13HD | ab13 | ab13hd | not started |
-| AB13MD | ab13 | ab13md | not started |
-| AB8NXZ | ab8n | ab8nxz | not started |
+| AB01MD | ab01 | ab01md | stub |
+| AB01ND | ab01 | ab01nd | stub |
+| AB01OD | ab01 | ab01od | stub |
+| AB04MD | ab04 | ab04md | stub |
+| AB05MD | ab05 | ab05md | stub |
+| AB05ND | ab05 | ab05nd | stub |
+| AB05OD | ab05 | ab05od | stub |
+| AB05PD | ab05 | ab05pd | stub |
+| AB05QD | ab05 | ab05qd | stub |
+| AB05RD | ab05 | ab05rd | stub |
+| AB05SD | ab05 | ab05sd | stub |
+| AB07MD | ab07 | ab07md | stub |
+| AB07ND | ab07 | ab07nd | stub |
+| AB08MD | ab08 | ab08md | stub |
+| AB08MZ | ab08 | ab08mz | stub |
+| AB08ND | ab08 | ab08nd | stub |
+| AB08NW | ab08 | ab08nw | stub |
+| AB08NX | ab08 | ab08nx | stub |
+| AB08NY | ab08 | ab08ny | stub |
+| AB08NZ | ab08 | ab08nz | stub |
+| AB09AD | ab09 | ab09ad | stub |
+| AB09AX | ab09 | ab09ax | stub |
+| AB09BD | ab09 | ab09bd | stub |
+| AB09BX | ab09 | ab09bx | stub |
+| AB09CD | ab09 | ab09cd | stub |
+| AB09CX | ab09 | ab09cx | stub |
+| AB09DD | ab09 | ab09dd | stub |
+| AB09ED | ab09 | ab09ed | stub |
+| AB09FD | ab09 | ab09fd | stub |
+| AB09GD | ab09 | ab09gd | stub |
+| AB09HD | ab09 | ab09hd | stub |
+| AB09HX | ab09 | ab09hx | stub |
+| AB09HY | ab09 | ab09hy | stub |
+| AB09ID | ab09 | ab09id | stub |
+| AB09IX | ab09 | ab09ix | stub |
+| AB09IY | ab09 | ab09iy | stub |
+| AB09JD | ab09 | ab09jd | stub |
+| AB09JV | ab09 | ab09jv | stub |
+| AB09JW | ab09 | ab09jw | stub |
+| AB09JX | ab09 | ab09jx | stub |
+| AB09KD | ab09 | ab09kd | stub |
+| AB09KX | ab09 | ab09kx | stub |
+| AB09MD | ab09 | ab09md | stub |
+| AB09ND | ab09 | ab09nd | stub |
+| AB13DD | ab13 | ab13dd | stub |
+| AB13ED | ab13 | ab13ed | stub |
+| AB13FD | ab13 | ab13fd | stub |
+| AB13HD | ab13 | ab13hd | stub |
+| AB13MD | ab13 | ab13md | stub |
+| AB8NXZ | ab8n | ab8nxz | stub |
 | AG07BD | ag07 | ag07bd | not started |
 | AG08BD | ag08 | ag08bd | not started |
 | AG08BY | ag08 | ag08by | not started |
