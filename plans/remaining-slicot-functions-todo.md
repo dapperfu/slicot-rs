@@ -203,6 +203,23 @@ List derived from entries with status `stub` or `in progress` (139 routines).
 - [x] MB01XD — `mb01::mb01xd`
 - [x] MB01XY — `mb01::mb01xy`
 
+## mb3j
+- [x] MB3JZP — `mb3j::mb3jzp`
+
+## mb3l
+- [x] MB3LZP — `mb3l::mb3lzp`
+
+## mb3o
+- [x] MB3OYZ — `mb3o::mb3oyz`
+
+## mb3p
+- [x] MB3PYZ — `mb3p::mb3pyz`
+
+## mb4d
+- [x] MB4DBZ — `mb4d::mb4dbz`
+- [x] MB4DLZ — `mb4d::mb4dlz`
+- [x] MB4DPZ — `mb4d::mb4dpz`
+
 ## mc01
 - [x] MC01MD — `mc01::mc01md`
 - [x] MC01ND — `mc01::mc01nd`
@@ -234,6 +251,9 @@ List derived from entries with status `stub` or `in progress` (139 routines).
 - [x] MD03BF — `md03::md03bf`
 - [x] MD03BX — `md03::md03bx`
 - [x] MD03BY — `md03::md03by`
+
+## sb09
+- [x] SB09MD — `sb09::sb09md`
 
 ## nf01
 - [x] NF01AD — `nf01::nf01ad`

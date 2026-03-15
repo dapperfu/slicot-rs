@@ -41,11 +41,11 @@ Implemented vs unimplemented SLICOT routines. The authoritative per-routine list
 | mb03 | 79 | 0 | 79 | 100 |
 | mb04 | 70 | 0 | 70 | 100 |
 | mb05 | 5 | 0 | 5 | 100 |
-| mb3j | 0 | 1 | 1 | 0 |
-| mb3l | 0 | 1 | 1 | 0 |
-| mb3o | 0 | 1 | 1 | 0 |
-| mb3p | 0 | 1 | 1 | 0 |
-| mb4d | 0 | 3 | 3 | 0 |
+| mb3j | 1 | 0 | 1 | 100 |
+| mb3l | 1 | 0 | 1 | 100 |
+| mb3o | 1 | 0 | 1 | 100 |
+| mb3p | 1 | 0 | 1 | 100 |
+| mb4d | 3 | 0 | 3 | 100 |
 | mc01 | 15 | 0 | 15 | 100 |
 | mc03 | 4 | 0 | 4 | 100 |
 | md03 | 7 | 0 | 7 | 100 |
@@ -56,7 +56,7 @@ Implemented vs unimplemented SLICOT routines. The authoritative per-routine list
 | sb04 | 24 | 0 | 24 | 100 |
 | sb06 | 1 | 0 | 1 | 100 |
 | sb08 | 10 | 0 | 10 | 100 |
-| sb09 | 0 | 1 | 1 | 0 |
+| sb09 | 1 | 0 | 1 | 100 |
 | sb10 | 0 | 21 | 21 | 0 |
 | sb16 | 0 | 5 | 5 | 0 |
 | sg02 | 0 | 5 | 5 | 0 |
@@ -577,7 +577,7 @@ Implemented vs unimplemented SLICOT routines. The authoritative per-routine list
 | SB08MY | sb08 | sb08my | Implemented |
 | SB08ND | sb08 | sb08nd | Implemented |
 | SB08NY | sb08 | sb08ny | Implemented |
-| SB09MD | sb09 | sb09md | Unimplemented |
+| SB09MD | sb09 | sb09md | Implemented |
 | SB10AD | sb10 | sb10ad | Unimplemented |
 | SB10DD | sb10 | sb10dd | Unimplemented |
 | SB10ED | sb10 | sb10ed | Unimplemented |

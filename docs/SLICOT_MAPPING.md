@@ -362,13 +362,13 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | MB05ND | mb05 | mb05nd | done |
 | MB05OD | mb05 | mb05od | done |
 | MB05OY | mb05 | mb05oy | done |
-| MB3JZP | mb3j | mb3jzp | not started |
-| MB3LZP | mb3l | mb3lzp | not started |
-| MB3OYZ | mb3o | mb3oyz | not started |
-| MB3PYZ | mb3p | mb3pyz | not started |
-| MB4DBZ | mb4d | mb4dbz | not started |
-| MB4DLZ | mb4d | mb4dlz | not started |
-| MB4DPZ | mb4d | mb4dpz | not started |
+| MB3JZP | mb3j | mb3jzp | done |
+| MB3LZP | mb3l | mb3lzp | done |
+| MB3OYZ | mb3o | mb3oyz | done |
+| MB3PYZ | mb3p | mb3pyz | done |
+| MB4DBZ | mb4d | mb4dbz | done |
+| MB4DLZ | mb4d | mb4dlz | done |
+| MB4DPZ | mb4d | mb4dpz | done |
 | MC01MD | mc01 | mc01md | done |
 | MC01ND | mc01 | mc01nd | done |
 | MC01OD | mc01 | mc01od | done |
@@ -497,7 +497,7 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | SB08MY | sb08 | sb08my | done |
 | SB08ND | sb08 | sb08nd | done |
 | SB08NY | sb08 | sb08ny | done |
-| SB09MD | sb09 | sb09md | not started |
+| SB09MD | sb09 | sb09md | done |
 | SB10AD | sb10 | sb10ad | not started |
 | SB10DD | sb10 | sb10dd | not started |
 | SB10ED | sb10 | sb10ed | not started |
