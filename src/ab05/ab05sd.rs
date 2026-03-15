@@ -17,3 +17,18 @@ pub fn ab05sd(
     }
     1
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use nalgebra::DMatrix;
+
+    #[test]
+    fn test_ab05sd_trivial() {
+        let mut a = DMatrix::zeros(0, 0);
+        let mut b = DMatrix::zeros(0, 0);
+        let mut c = DMatrix::zeros(0, 0);
+        let mut d = DMatrix::zeros(0, 0);
+        assert_eq!(ab05sd(0, 0, 0, &mut a, &mut b, &mut c, &mut d), 0);
+    }
+}
