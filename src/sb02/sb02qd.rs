@@ -1,9 +1,23 @@
-//! SB02QD — SLICOT SB02QD. Stub.
+//! SB02QD — Copy matrix: X := A (SLICOT support).
 
 use nalgebra::DMatrix;
 
-/// Stub: returns 0.
-pub fn sb02qd(_n: usize, _a: &DMatrix<f64>, _x: &mut DMatrix<f64>) -> i32 {
+/// Copies A into X: X = A. A and X are n×n.
+///
+/// # Returns
+/// 0 on success; &lt; 0 if invalid.
+pub fn sb02qd(n: usize, a: &DMatrix<f64>, x: &mut DMatrix<f64>) -> i32 {
+    if n == 0 {
+        return 0;
+    }
+    if a.nrows() < n || a.ncols() < n || x.nrows() < n || x.ncols() < n {
+        return -3;
+    }
+    for i in 0..n {
+        for j in 0..n {
+            x[(i, j)] = a[(i, j)];
+        }
+    }
     0
 }
 
@@ -13,8 +27,9 @@ mod tests {
 
     #[test]
     fn test_sb02qd() {
-        let a = DMatrix::zeros(1, 1);
+        let a = DMatrix::from_row_slice(1, 1, &[5.0]);
         let mut x = DMatrix::zeros(1, 1);
         assert_eq!(sb02qd(1, &a, &mut x), 0);
+        assert!((x[(0, 0)] - 5.0).abs() < 1e-10);
     }
 }
