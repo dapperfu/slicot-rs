@@ -103,13 +103,13 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | MA01BZ | ma01 | ma01bz | stub |
 | MA01DD | ma01 | ma01dd | stub |
 | MA01DZ | ma01 | ma01dz | stub |
-| MA02AD | ma02 | ma02ad | stub |
+| MA02AD | ma02 | ma02ad | done |
 | MA02AZ | ma02 | ma02az | stub |
-| MA02BD | ma02 | ma02bd | stub |
+| MA02BD | ma02 | ma02bd | done |
 | MA02BZ | ma02 | ma02bz | stub |
 | MA02CD | ma02 | ma02cd | stub |
 | MA02CZ | ma02 | ma02cz | stub |
-| MA02DD | ma02 | ma02dd | stub |
+| MA02DD | ma02 | ma02dd | done |
 | MA02ED | ma02 | ma02ed | stub |
 | MA02ES | ma02 | ma02es | stub |
 | MA02EZ | ma02 | ma02ez | stub |
@@ -120,7 +120,7 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | MA02PD | ma02 | ma02pd | stub |
 | MA02PZ | ma02 | ma02pz | stub |
 | MA02RD | ma02 | ma02rd | stub |
-| MB01KD | mb01 | mb01kd | stub |
+| MB01KD | mb01 | mb01kd | done |
 | MB01LD | mb01 | mb01ld | stub |
 | MB01MD | mb01 | mb01md | stub |
 | MB01ND | mb01 | mb01nd | stub |
@@ -131,8 +131,8 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | MB01OO | mb01 | mb01oo | stub |
 | MB01OS | mb01 | mb01os | stub |
 | MB01OT | mb01 | mb01ot | stub |
-| MB01PD | mb01 | mb01pd | stub |
-| MB01QD | mb01 | mb01qd | stub |
+| MB01PD | mb01 | mb01pd | done |
+| MB01QD | mb01 | mb01qd | done |
 | MB01RB | mb01 | mb01rb | stub |
 | MB01RD | mb01 | mb01rd | stub |
 | MB01RH | mb01 | mb01rh | stub |
