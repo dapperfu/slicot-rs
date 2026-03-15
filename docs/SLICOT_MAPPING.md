@@ -411,12 +411,12 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | NF01BW | nf01 | nf01bw | not started |
 | NF01BX | nf01 | nf01bx | not started |
 | NF01BY | nf01 | nf01by | not started |
-| SB01BD | sb01 | sb01bd | not started |
-| SB01BX | sb01 | sb01bx | not started |
-| SB01BY | sb01 | sb01by | not started |
-| SB01DD | sb01 | sb01dd | not started |
-| SB01FY | sb01 | sb01fy | not started |
-| SB01MD | sb01 | sb01md | not started |
+| SB01BD | sb01 | sb01bd | done |
+| SB01BX | sb01 | sb01bx | done |
+| SB01BY | sb01 | sb01by | done |
+| SB01DD | sb01 | sb01dd | done |
+| SB01FY | sb01 | sb01fy | done |
+| SB01MD | sb01 | sb01md | done |
 | SB02CX | sb02 | sb02cx | not started |
 | SB02MD | sb02 | sb02md | not started |
 | SB02MR | sb02 | sb02mr | not started |

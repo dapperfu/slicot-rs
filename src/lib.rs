@@ -38,6 +38,8 @@ pub mod mb02;
 pub mod mb03;
 pub mod mb04;
 pub mod mb05;
+pub mod mc01;
+pub mod sb01;
 pub mod tb01;
 
 /// SLICOT .dat/.res I/O for fuzzer and tests (pilot: AB01ND).
