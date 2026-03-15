@@ -46,10 +46,10 @@ Check off each when the routine is implemented in pure Rust, has at least one te
 - [x] MA02JD
 - [x] MA02JZ
 - [x] MA02MD
-- [ ] MA02MZ
-- [ ] MA02OD
-- [ ] MA02OZ
-- [ ] MA02SD
+- [x] MA02MZ
+- [x] MA02OD
+- [x] MA02OZ
+- [x] MA02SD
 
 #### mb01 (2)
 - [x] MB01YD

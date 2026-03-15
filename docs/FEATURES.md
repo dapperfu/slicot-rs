@@ -2,8 +2,6 @@
 
 Implemented vs unimplemented SLICOT routines. The authoritative per-routine list is [docs/SLICOT_MAPPING.md](SLICOT_MAPPING.md).
 
-To regenerate this document after updating the mapping, run from the project root: `./scripts/gen_features_table.sh`.
-
 ## Summary by module
 
 | Module | Implemented | Unimplemented | Total | % done |
@@ -36,9 +34,9 @@ To regenerate this document after updating the mapping, run from the project roo
 | fd01 | 1 | 0 | 1 | 100 |
 | ib01 | 13 | 0 | 13 | 100 |
 | ib03 | 2 | 0 | 2 | 100 |
-| ma01 | 5 | 1 | 6 | 83 |
-| ma02 | 17 | 11 | 28 | 61 |
-| mb01 | 33 | 2 | 35 | 94 |
+| ma01 | 6 | 0 | 6 | 100 |
+| ma02 | 28 | 0 | 28 | 100 |
+| mb01 | 35 | 0 | 35 | 100 |
 | mb02 | 0 | 35 | 35 | 0 |
 | mb03 | 0 | 79 | 79 | 0 |
 | mb04 | 0 | 70 | 70 | 0 |
@@ -80,7 +78,7 @@ To regenerate this document after updating the mapping, run from the project roo
 | zgeg | 0 | 2 | 2 | 0 |
 | zlat | 0 | 1 | 1 | 0 |
 
-| **Total** | **150** | **475** | **625** | **24** |
+| **Total** | **164** | **461** | **625** | **26** |
 
 ## Full table (all routines)
 
@@ -189,7 +187,7 @@ To regenerate this document after updating the mapping, run from the project roo
 | MA01AD | ma01 | ma01ad | Implemented |
 | MA01BD | ma01 | ma01bd | Implemented |
 | MA01BZ | ma01 | ma01bz | Implemented |
-| MA01CD | ma01 | ma01cd | Unimplemented |
+| MA01CD | ma01 | ma01cd | Implemented |
 | MA01DD | ma01 | ma01dd | Implemented |
 | MA01DZ | ma01 | ma01dz | Implemented |
 | MA02AD | ma02 | ma02ad | Implemented |
@@ -205,21 +203,21 @@ To regenerate this document after updating the mapping, run from the project roo
 | MA02FD | ma02 | ma02fd | Implemented |
 | MA02GD | ma02 | ma02gd | Implemented |
 | MA02GZ | ma02 | ma02gz | Implemented |
-| MA02HD | ma02 | ma02hd | Unimplemented |
-| MA02HZ | ma02 | ma02hz | Unimplemented |
-| MA02ID | ma02 | ma02id | Unimplemented |
-| MA02IZ | ma02 | ma02iz | Unimplemented |
-| MA02JD | ma02 | ma02jd | Unimplemented |
-| MA02JZ | ma02 | ma02jz | Unimplemented |
-| MA02MD | ma02 | ma02md | Unimplemented |
-| MA02MZ | ma02 | ma02mz | Unimplemented |
+| MA02HD | ma02 | ma02hd | Implemented |
+| MA02HZ | ma02 | ma02hz | Implemented |
+| MA02ID | ma02 | ma02id | Implemented |
+| MA02IZ | ma02 | ma02iz | Implemented |
+| MA02JD | ma02 | ma02jd | Implemented |
+| MA02JZ | ma02 | ma02jz | Implemented |
+| MA02MD | ma02 | ma02md | Implemented |
+| MA02MZ | ma02 | ma02mz | Implemented |
 | MA02NZ | ma02 | ma02nz | Implemented |
-| MA02OD | ma02 | ma02od | Unimplemented |
-| MA02OZ | ma02 | ma02oz | Unimplemented |
+| MA02OD | ma02 | ma02od | Implemented |
+| MA02OZ | ma02 | ma02oz | Implemented |
 | MA02PD | ma02 | ma02pd | Implemented |
 | MA02PZ | ma02 | ma02pz | Implemented |
 | MA02RD | ma02 | ma02rd | Implemented |
-| MA02SD | ma02 | ma02sd | Unimplemented |
+| MA02SD | ma02 | ma02sd | Implemented |
 | MB01KD | mb01 | mb01kd | Implemented |
 | MB01LD | mb01 | mb01ld | Implemented |
 | MB01MD | mb01 | mb01md | Implemented |
@@ -253,8 +251,8 @@ To regenerate this document after updating the mapping, run from the project roo
 | MB01WD | mb01 | mb01wd | Implemented |
 | MB01XD | mb01 | mb01xd | Implemented |
 | MB01XY | mb01 | mb01xy | Implemented |
-| MB01YD | mb01 | mb01yd | Unimplemented |
-| MB01ZD | mb01 | mb01zd | Unimplemented |
+| MB01YD | mb01 | mb01yd | Implemented |
+| MB01ZD | mb01 | mb01zd | Implemented |
 | MB02CD | mb02 | mb02cd | Unimplemented |
 | MB02CU | mb02 | mb02cu | Unimplemented |
 | MB02CV | mb02 | mb02cv | Unimplemented |

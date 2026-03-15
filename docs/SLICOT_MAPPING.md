@@ -130,14 +130,14 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | MA02JD | ma02 | ma02jd | done |
 | MA02JZ | ma02 | ma02jz | done |
 | MA02MD | ma02 | ma02md | done |
-| MA02MZ | ma02 | ma02mz | not started |
+| MA02MZ | ma02 | ma02mz | done |
 | MA02NZ | ma02 | ma02nz | done |
-| MA02OD | ma02 | ma02od | not started |
-| MA02OZ | ma02 | ma02oz | not started |
+| MA02OD | ma02 | ma02od | done |
+| MA02OZ | ma02 | ma02oz | done |
 | MA02PD | ma02 | ma02pd | done |
 | MA02PZ | ma02 | ma02pz | done |
 | MA02RD | ma02 | ma02rd | done |
-| MA02SD | ma02 | ma02sd | not started |
+| MA02SD | ma02 | ma02sd | done |
 | MB01KD | mb01 | mb01kd | done |
 | MB01LD | mb01 | mb01ld | done |
 | MB01MD | mb01 | mb01md | done |
