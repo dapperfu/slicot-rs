@@ -48,10 +48,16 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | AB09KX | ab09 | ab09kx | done |
 | AB09MD | ab09 | ab09md | done |
 | AB09ND | ab09 | ab09nd | done |
+| AB13AD | ab13 | ab13ad | not started |
+| AB13AX | ab13 | ab13ax | not started |
+| AB13BD | ab13 | ab13bd | not started |
+| AB13CD | ab13 | ab13cd | not started |
 | AB13DD | ab13 | ab13dd | done |
+| AB13DX | ab13 | ab13dx | not started |
 | AB13ED | ab13 | ab13ed | done |
 | AB13FD | ab13 | ab13fd | done |
 | AB13HD | ab13 | ab13hd | done |
+| AB13ID | ab13 | ab13id | not started |
 | AB13MD | ab13 | ab13md | done |
 | AB8NXZ | ab8n | ab8nxz | done |
 | AG07BD | ag07 | ag07bd | done |
@@ -101,6 +107,7 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | MA01AD | ma01 | ma01ad | done |
 | MA01BD | ma01 | ma01bd | done |
 | MA01BZ | ma01 | ma01bz | done |
+| MA01CD | ma01 | ma01cd | not started |
 | MA01DD | ma01 | ma01dd | done |
 | MA01DZ | ma01 | ma01dz | done |
 | MA02AD | ma02 | ma02ad | done |
@@ -116,10 +123,21 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | MA02FD | ma02 | ma02fd | done |
 | MA02GD | ma02 | ma02gd | done |
 | MA02GZ | ma02 | ma02gz | done |
+| MA02HD | ma02 | ma02hd | not started |
+| MA02HZ | ma02 | ma02hz | not started |
+| MA02ID | ma02 | ma02id | not started |
+| MA02IZ | ma02 | ma02iz | not started |
+| MA02JD | ma02 | ma02jd | not started |
+| MA02JZ | ma02 | ma02jz | not started |
+| MA02MD | ma02 | ma02md | not started |
+| MA02MZ | ma02 | ma02mz | not started |
 | MA02NZ | ma02 | ma02nz | done |
+| MA02OD | ma02 | ma02od | not started |
+| MA02OZ | ma02 | ma02oz | not started |
 | MA02PD | ma02 | ma02pd | done |
 | MA02PZ | ma02 | ma02pz | done |
 | MA02RD | ma02 | ma02rd | done |
+| MA02SD | ma02 | ma02sd | not started |
 | MB01KD | mb01 | mb01kd | done |
 | MB01LD | mb01 | mb01ld | done |
 | MB01MD | mb01 | mb01md | done |
@@ -231,6 +249,9 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | MB03LP | mb03 | mb03lp | not started |
 | MB03LZ | mb03 | mb03lz | not started |
 | MB03MD | mb03 | mb03md | not started |
+| MB03MY | mb03 | mb03my | not started |
+| MB03ND | mb03 | mb03nd | not started |
+| MB03NY | mb03 | mb03ny | not started |
 | MB03OD | mb03 | mb03od | not started |
 | MB03OY | mb03 | mb03oy | not started |
 | MB03PD | mb03 | mb03pd | not started |
@@ -357,6 +378,7 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | MC01RD | mc01 | mc01rd | not started |
 | MC01SD | mc01 | mc01sd | not started |
 | MC01SW | mc01 | mc01sw | not started |
+| MC01SX | mc01 | mc01sx | not started |
 | MC01SY | mc01 | mc01sy | not started |
 | MC01TD | mc01 | mc01td | not started |
 | MC01VD | mc01 | mc01vd | not started |
@@ -395,12 +417,21 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | SB01DD | sb01 | sb01dd | not started |
 | SB01FY | sb01 | sb01fy | not started |
 | SB01MD | sb01 | sb01md | not started |
+| SB02CX | sb02 | sb02cx | not started |
 | SB02MD | sb02 | sb02md | not started |
+| SB02MR | sb02 | sb02mr | not started |
+| SB02MS | sb02 | sb02ms | not started |
 | SB02MT | sb02 | sb02mt | not started |
 | SB02MU | sb02 | sb02mu | not started |
+| SB02MV | sb02 | sb02mv | not started |
+| SB02MW | sb02 | sb02mw | not started |
 | SB02MX | sb02 | sb02mx | not started |
 | SB02ND | sb02 | sb02nd | not started |
 | SB02OD | sb02 | sb02od | not started |
+| SB02OU | sb02 | sb02ou | not started |
+| SB02OV | sb02 | sb02ov | not started |
+| SB02OW | sb02 | sb02ow | not started |
+| SB02OX | sb02 | sb02ox | not started |
 | SB02OY | sb02 | sb02oy | not started |
 | SB02PD | sb02 | sb02pd | not started |
 | SB02QD | sb02 | sb02qd | not started |
@@ -594,6 +625,7 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | UD01MD | ud01 | ud01md | not started |
 | UD01MZ | ud01 | ud01mz | not started |
 | UD01ND | ud01 | ud01nd | not started |
+| UE01MD | ue01 | ue01md | not started |
 | ZGEGS | zgeg | zgegs | not started |
 | ZGEGV | zgeg | zgegv | not started |
 | ZLATZM | zlat | zlatzm | not started |
