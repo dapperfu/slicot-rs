@@ -55,3 +55,34 @@ pub fn dg01ny(indi: Dg01NyIndi, n: usize, xr: &mut [f64], xi: &mut [f64]) {
         wi = wi + wi * wstpr + whelp_ * wstpi;
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_dg01ny_direct_n2() {
+        let mut xr = vec![1.0, 2.0, 1.0];
+        let mut xi = vec![0.0, 0.0, 0.0];
+        dg01ny(Dg01NyIndi::Direct, 2, &mut xr, &mut xi);
+        assert_eq!(xr.len(), 3);
+        assert_eq!(xi.len(), 3);
+    }
+
+    #[test]
+    fn test_dg01ny_inverse_n2() {
+        let mut xr = vec![1.0, 2.0, 1.0];
+        let mut xi = vec![0.0, 0.0, 0.0];
+        dg01ny(Dg01NyIndi::Inverse, 2, &mut xr, &mut xi);
+        assert_eq!(xr.len(), 3);
+        assert_eq!(xi.len(), 3);
+    }
+
+    #[test]
+    fn test_dg01ny_n_too_small() {
+        let mut xr = vec![1.0];
+        let mut xi = vec![0.0];
+        dg01ny(Dg01NyIndi::Direct, 1, &mut xr, &mut xi);
+        assert_eq!(xr[0], 1.0);
+    }
+}
