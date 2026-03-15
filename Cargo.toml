@@ -1,0 +1,23 @@
+[package]
+name = "slicot-rs"
+version = "0.1.0"
+edition = "2021"
+description = "Pure Rust 1:1 mapping of SLICOT (control and systems) routines"
+license = "BSD-3-Clause"
+repository = "https://github.com/control2/slicot-rs"
+documentation = "https://docs.rs/slicot-rs"
+readme = "README.md"
+
+[dependencies]
+nalgebra = { version = "0.33", features = ["serde-serialize"] }
+
+[dev-dependencies]
+criterion = "0.5"
+
+[[bench]]
+name = "tb01md"
+harness = false
+
+[profile.release]
+lto = true
+codegen-units = 1
