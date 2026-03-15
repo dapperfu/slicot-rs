@@ -36,24 +36,24 @@ Check off each when the routine is implemented in pure Rust, has at least one te
 - [ ] AB13ID
 
 #### ma01 (1)
-- [ ] MA01CD
+- [x] MA01CD
 
 #### ma02 (11)
-- [ ] MA02HD
-- [ ] MA02HZ
-- [ ] MA02ID
-- [ ] MA02IZ
-- [ ] MA02JD
-- [ ] MA02JZ
-- [ ] MA02MD
+- [x] MA02HD
+- [x] MA02HZ
+- [x] MA02ID
+- [x] MA02IZ
+- [x] MA02JD
+- [x] MA02JZ
+- [x] MA02MD
 - [ ] MA02MZ
 - [ ] MA02OD
 - [ ] MA02OZ
 - [ ] MA02SD
 
 #### mb01 (2)
-- [ ] MB01YD
-- [ ] MB01ZD
+- [x] MB01YD
+- [x] MB01ZD
 
 ### Phase 2: mb02 (35)
 

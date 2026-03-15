@@ -107,7 +107,7 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | MA01AD | ma01 | ma01ad | done |
 | MA01BD | ma01 | ma01bd | done |
 | MA01BZ | ma01 | ma01bz | done |
-| MA01CD | ma01 | ma01cd | not started |
+| MA01CD | ma01 | ma01cd | done |
 | MA01DD | ma01 | ma01dd | done |
 | MA01DZ | ma01 | ma01dz | done |
 | MA02AD | ma02 | ma02ad | done |
@@ -123,13 +123,13 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | MA02FD | ma02 | ma02fd | done |
 | MA02GD | ma02 | ma02gd | done |
 | MA02GZ | ma02 | ma02gz | done |
-| MA02HD | ma02 | ma02hd | not started |
-| MA02HZ | ma02 | ma02hz | not started |
-| MA02ID | ma02 | ma02id | not started |
-| MA02IZ | ma02 | ma02iz | not started |
-| MA02JD | ma02 | ma02jd | not started |
-| MA02JZ | ma02 | ma02jz | not started |
-| MA02MD | ma02 | ma02md | not started |
+| MA02HD | ma02 | ma02hd | done |
+| MA02HZ | ma02 | ma02hz | done |
+| MA02ID | ma02 | ma02id | done |
+| MA02IZ | ma02 | ma02iz | done |
+| MA02JD | ma02 | ma02jd | done |
+| MA02JZ | ma02 | ma02jz | done |
+| MA02MD | ma02 | ma02md | done |
 | MA02MZ | ma02 | ma02mz | not started |
 | MA02NZ | ma02 | ma02nz | done |
 | MA02OD | ma02 | ma02od | not started |
@@ -171,8 +171,8 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | MB01WD | mb01 | mb01wd | done |
 | MB01XD | mb01 | mb01xd | done |
 | MB01XY | mb01 | mb01xy | done |
-| MB01YD | mb01 | mb01yd | not started |
-| MB01ZD | mb01 | mb01zd | not started |
+| MB01YD | mb01 | mb01yd | done |
+| MB01ZD | mb01 | mb01zd | done |
 | MB02CD | mb02 | mb02cd | not started |
 | MB02CU | mb02 | mb02cu | not started |
 | MB02CV | mb02 | mb02cv | not started |
