@@ -1,0 +1,22 @@
+[package]
+name = "slicot-rs-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata.cargo-fuzz]
+run = true
+
+[dependencies]
+slicot-rs = { path = ".." }
+nalgebra = "0.33"
+libfuzzer-sys = "0.4"
+
+# Prevent the fuzz target from being built in normal `cargo build`
+[target.'cfg(fuzzing)'.dependencies]
+
+[[bin]]
+name = "ab01nd_compare"
+path = "fuzz_targets/ab01nd_compare.rs"
+test = true
+doc = false
