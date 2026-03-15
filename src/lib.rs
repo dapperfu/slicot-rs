@@ -38,6 +38,11 @@ pub mod mb02;
 pub mod mb03;
 pub mod mb04;
 pub mod mb05;
+pub mod mb3j;
+pub mod mb3l;
+pub mod mb3o;
+pub mod mb3p;
+pub mod mb4d;
 pub mod mc01;
 pub mod mc03;
 pub mod md03;
@@ -48,7 +53,12 @@ pub mod sb03;
 pub mod sb04;
 pub mod sb06;
 pub mod sb08;
+pub mod sb09;
+pub mod sb10;
+pub mod sb16;
 pub mod tb01;
+pub mod td05;
+pub mod tf01;
 
 /// SLICOT .dat/.res I/O for fuzzer and tests (pilot: AB01ND).
 pub mod slicot_io;
