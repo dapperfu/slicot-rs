@@ -107,7 +107,7 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | MA02AZ | ma02 | ma02az | stub |
 | MA02BD | ma02 | ma02bd | done |
 | MA02BZ | ma02 | ma02bz | done |
-| MA02CD | ma02 | ma02cd | stub |
+| MA02CD | ma02 | ma02cd | done |
 | MA02CZ | ma02 | ma02cz | stub |
 | MA02DD | ma02 | ma02dd | done |
 | MA02ED | ma02 | ma02ed | stub |

@@ -158,7 +158,7 @@ List derived from entries with status `stub` or `in progress` (139 routines).
 ## ma02
 - [ ] MA02AZ — `ma02::ma02az`
 - [x] MA02BZ — `ma02::ma02bz`
-- [ ] MA02CD — `ma02::ma02cd`
+- [x] MA02CD — `ma02::ma02cd`
 - [ ] MA02CZ — `ma02::ma02cz`
 - [ ] MA02ED — `ma02::ma02ed`
 - [ ] MA02ES — `ma02::ma02es`
