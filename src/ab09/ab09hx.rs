@@ -3,6 +3,7 @@
 //! Returns Info: 0 = success, < 0 = not implemented or invalid argument.
 
 /// Validated stub: returns 1 (not yet implemented). 0 = success, < 0 = invalid argument.
-pub fn ab09hx() -> i32 {
+pub fn ab09hx(n: usize, m: usize) -> i32 {
+    if n == 0 && m == 0 { return 0; }
     1
 }
