@@ -236,6 +236,32 @@ pub fn write_ab01nd_res<W: Write>(w: &mut W, res: &Ab01ndRes) -> std::io::Result
     Ok(())
 }
 
+/// Relative tolerance comparison: |a - b| <= rel_tol * max(|a|, |b|, 1.0).
+#[inline]
+pub fn rel_tol_eq(a: f64, b: f64, rel_tol: f64) -> bool {
+    let scale = a.abs().max(b.abs()).max(1.0);
+    (a - b).abs() <= rel_tol * scale
+}
+
+/// Compare two matrices element-wise with relative tolerance; returns first (row, col) where they differ, or None.
+pub fn rel_tol_eq_matrix(
+    a: &DMatrix<f64>,
+    b: &DMatrix<f64>,
+    rel_tol: f64,
+) -> Option<(usize, usize)> {
+    if a.nrows() != b.nrows() || a.ncols() != b.ncols() {
+        return Some((0, 0));
+    }
+    for i in 0..a.nrows() {
+        for j in 0..a.ncols() {
+            if !rel_tol_eq(a[(i, j)], b[(i, j)], rel_tol) {
+                return Some((i, j));
+            }
+        }
+    }
+    None
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
