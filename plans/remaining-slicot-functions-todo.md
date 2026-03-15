@@ -150,9 +150,9 @@ List derived from entries with status `stub` or `in progress` (139 routines).
 
 ## ma01
 - [x] MA01AD — `ma01::ma01ad`
-- [ ] MA01BD — `ma01::ma01bd`
+- [x] MA01BD — `ma01::ma01bd`
 - [ ] MA01BZ — `ma01::ma01bz`
-- [ ] MA01DD — `ma01::ma01dd`
+- [x] MA01DD — `ma01::ma01dd`
 - [ ] MA01DZ — `ma01::ma01dz`
 
 ## ma02
@@ -172,33 +172,33 @@ List derived from entries with status `stub` or `in progress` (139 routines).
 - [x] MA02RD — `ma02::ma02rd`
 
 ## mb01
-- [ ] MB01LD — `mb01::mb01ld`
+- [x] MB01LD — `mb01::mb01ld`
 - [x] MB01MD — `mb01::mb01md`
 - [x] MB01ND — `mb01::mb01nd`
-- [ ] MB01OC — `mb01::mb01oc`
-- [ ] MB01OD — `mb01::mb01od`
-- [ ] MB01OE — `mb01::mb01oe`
-- [ ] MB01OH — `mb01::mb01oh`
-- [ ] MB01OO — `mb01::mb01oo`
-- [ ] MB01OS — `mb01::mb01os`
-- [ ] MB01OT — `mb01::mb01ot`
-- [ ] MB01RB — `mb01::mb01rb`
-- [ ] MB01RD — `mb01::mb01rd`
-- [ ] MB01RH — `mb01::mb01rh`
-- [ ] MB01RT — `mb01::mb01rt`
-- [ ] MB01RU — `mb01::mb01ru`
-- [ ] MB01RW — `mb01::mb01rw`
-- [ ] MB01RX — `mb01::mb01rx`
-- [ ] MB01RY — `mb01::mb01ry`
+- [x] MB01OC — `mb01::mb01oc`
+- [x] MB01OD — `mb01::mb01od`
+- [x] MB01OE — `mb01::mb01oe`
+- [x] MB01OH — `mb01::mb01oh`
+- [x] MB01OO — `mb01::mb01oo`
+- [x] MB01OS — `mb01::mb01os`
+- [x] MB01OT — `mb01::mb01ot`
+- [x] MB01RB — `mb01::mb01rb`
+- [x] MB01RD — `mb01::mb01rd`
+- [x] MB01RH — `mb01::mb01rh`
+- [x] MB01RT — `mb01::mb01rt`
+- [x] MB01RU — `mb01::mb01ru`
+- [x] MB01RW — `mb01::mb01rw`
+- [x] MB01RX — `mb01::mb01rx`
+- [x] MB01RY — `mb01::mb01ry`
 - [x] MB01SD — `mb01::mb01sd`
 - [x] MB01SS — `mb01::mb01ss`
-- [ ] MB01TD — `mb01::mb01td`
-- [ ] MB01UD — `mb01::mb01ud`
-- [ ] MB01UW — `mb01::mb01uw`
-- [ ] MB01UX — `mb01::mb01ux`
-- [ ] MB01UY — `mb01::mb01uy`
+- [x] MB01TD — `mb01::mb01td`
+- [x] MB01UD — `mb01::mb01ud`
+- [x] MB01UW — `mb01::mb01uw`
+- [x] MB01UX — `mb01::mb01ux`
+- [x] MB01UY — `mb01::mb01uy`
 - [ ] MB01UZ — `mb01::mb01uz`
-- [ ] MB01VD — `mb01::mb01vd`
+- [x] MB01VD — `mb01::mb01vd`
 - [ ] MB01WD — `mb01::mb01wd`
 - [x] MB01XD — `mb01::mb01xd`
 - [x] MB01XY — `mb01::mb01xy`
