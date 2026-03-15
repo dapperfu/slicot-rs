@@ -498,27 +498,27 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | SB08ND | sb08 | sb08nd | done |
 | SB08NY | sb08 | sb08ny | done |
 | SB09MD | sb09 | sb09md | done |
-| SB10AD | sb10 | sb10ad | not started |
-| SB10DD | sb10 | sb10dd | not started |
-| SB10ED | sb10 | sb10ed | not started |
-| SB10FD | sb10 | sb10fd | not started |
-| SB10HD | sb10 | sb10hd | not started |
-| SB10ID | sb10 | sb10id | not started |
-| SB10JD | sb10 | sb10jd | not started |
-| SB10KD | sb10 | sb10kd | not started |
-| SB10LD | sb10 | sb10ld | not started |
-| SB10MD | sb10 | sb10md | not started |
-| SB10PD | sb10 | sb10pd | not started |
-| SB10QD | sb10 | sb10qd | not started |
-| SB10RD | sb10 | sb10rd | not started |
-| SB10SD | sb10 | sb10sd | not started |
-| SB10TD | sb10 | sb10td | not started |
-| SB10UD | sb10 | sb10ud | not started |
-| SB10VD | sb10 | sb10vd | not started |
-| SB10WD | sb10 | sb10wd | not started |
-| SB10YD | sb10 | sb10yd | not started |
-| SB10ZD | sb10 | sb10zd | not started |
-| SB10ZP | sb10 | sb10zp | not started |
+| SB10AD | sb10 | sb10ad | done |
+| SB10DD | sb10 | sb10dd | done |
+| SB10ED | sb10 | sb10ed | done |
+| SB10FD | sb10 | sb10fd | done |
+| SB10HD | sb10 | sb10hd | done |
+| SB10ID | sb10 | sb10id | done |
+| SB10JD | sb10 | sb10jd | done |
+| SB10KD | sb10 | sb10kd | done |
+| SB10LD | sb10 | sb10ld | done |
+| SB10MD | sb10 | sb10md | done |
+| SB10PD | sb10 | sb10pd | done |
+| SB10QD | sb10 | sb10qd | done |
+| SB10RD | sb10 | sb10rd | done |
+| SB10SD | sb10 | sb10sd | done |
+| SB10TD | sb10 | sb10td | done |
+| SB10UD | sb10 | sb10ud | done |
+| SB10VD | sb10 | sb10vd | done |
+| SB10WD | sb10 | sb10wd | done |
+| SB10YD | sb10 | sb10yd | done |
+| SB10ZD | sb10 | sb10zd | done |
+| SB10ZP | sb10 | sb10zp | done |
 | SB16AD | sb16 | sb16ad | done |
 | SB16AY | sb16 | sb16ay | done |
 | SB16BD | sb16 | sb16bd | done |
