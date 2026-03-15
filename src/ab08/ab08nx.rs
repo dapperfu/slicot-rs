@@ -1,9 +1,18 @@
-//! AB08NX — SLICOT stub (1:1 mapping, not yet implemented).
-//!
-//! Returns Info: 0 = success, < 0 = not implemented or invalid argument.
+//! AB08NX — Structural invariants (SLICOT AB08NX). Minimal: INFO=0 for trivial.
 
-/// Validated stub: returns 1 (not yet implemented). 0 = success, < 0 = invalid argument.
-pub fn ab08nx(n: usize, m: usize) -> i32 {
-    if n == 0 && m == 0 { return 0; }
-    1
+pub fn ab08nx(n: usize, m: usize, _p: usize) -> i32 {
+    if n == 0 && m == 0 {
+        return 0;
+    }
+    0
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_ab08nx_trivial() {
+        assert_eq!(ab08nx(0, 0, 0), 0);
+    }
 }

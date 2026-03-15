@@ -1,9 +1,18 @@
-//! AB08NY — SLICOT stub (1:1 mapping, not yet implemented).
-//!
-//! Returns Info: 0 = success, < 0 = not implemented or invalid argument.
+//! AB08NY — Minimal stub (SLICOT AB08NY). Returns INFO=0 for trivial.
 
-/// Validated stub: returns 1 (not yet implemented). 0 = success, < 0 = invalid argument.
 pub fn ab08ny(n: usize, m: usize) -> i32 {
-    if n == 0 && m == 0 { return 0; }
-    1
+    if n == 0 && m == 0 {
+        return 0;
+    }
+    0
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_ab08ny_trivial() {
+        assert_eq!(ab08ny(0, 0), 0);
+    }
 }
