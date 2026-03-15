@@ -604,11 +604,11 @@ Implemented vs unimplemented SLICOT routines. The authoritative per-routine list
 | SB16BD | sb16 | sb16bd | Implemented |
 | SB16CD | sb16 | sb16cd | Implemented |
 | SB16CY | sb16 | sb16cy | Implemented |
-| SG02AD | sg02 | sg02ad | Unimplemented |
-| SG02CV | sg02 | sg02cv | Unimplemented |
-| SG02CW | sg02 | sg02cw | Unimplemented |
-| SG02CX | sg02 | sg02cx | Unimplemented |
-| SG02ND | sg02 | sg02nd | Unimplemented |
+| SG02AD | sg02 | sg02ad | Implemented |
+| SG02CV | sg02 | sg02cv | Implemented |
+| SG02CW | sg02 | sg02cw | Implemented |
+| SG02CX | sg02 | sg02cx | Implemented |
+| SG02ND | sg02 | sg02nd | Implemented |
 | SG03AD | sg03 | sg03ad | Unimplemented |
 | SG03AX | sg03 | sg03ax | Unimplemented |
 | SG03AY | sg03 | sg03ay | Unimplemented |

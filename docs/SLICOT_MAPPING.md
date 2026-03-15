@@ -524,11 +524,11 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | SB16BD | sb16 | sb16bd | done |
 | SB16CD | sb16 | sb16cd | done |
 | SB16CY | sb16 | sb16cy | done |
-| SG02AD | sg02 | sg02ad | not started |
-| SG02CV | sg02 | sg02cv | not started |
-| SG02CW | sg02 | sg02cw | not started |
-| SG02CX | sg02 | sg02cx | not started |
-| SG02ND | sg02 | sg02nd | not started |
+| SG02AD | sg02 | sg02ad | done |
+| SG02CV | sg02 | sg02cv | done |
+| SG02CW | sg02 | sg02cw | done |
+| SG02CX | sg02 | sg02cx | done |
+| SG02ND | sg02 | sg02nd | done |
 | SG03AD | sg03 | sg03ad | not started |
 | SG03AX | sg03 | sg03ax | not started |
 | SG03AY | sg03 | sg03ay | not started |
@@ -542,28 +542,28 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | SG03BX | sg03 | sg03bx | not started |
 | SG03BY | sg03 | sg03by | not started |
 | SG03BZ | sg03 | sg03bz | not started |
-| TB01ID | tb01 | tb01id | not started |
-| TB01IZ | tb01 | tb01iz | not started |
-| TB01KD | tb01 | tb01kd | not started |
-| TB01KX | tb01 | tb01kx | not started |
-| TB01LD | tb01 | tb01ld | not started |
+| TB01ID | tb01 | tb01id | done |
+| TB01IZ | tb01 | tb01iz | done |
+| TB01KD | tb01 | tb01kd | done |
+| TB01KX | tb01 | tb01kx | done |
+| TB01LD | tb01 | tb01ld | done |
 | TB01MD | tb01 | tb01md | done |
-| TB01ND | tb01 | tb01nd | not started |
-| TB01PD | tb01 | tb01pd | not started |
-| TB01PX | tb01 | tb01px | not started |
-| TB01TD | tb01 | tb01td | not started |
-| TB01TY | tb01 | tb01ty | not started |
-| TB01UD | tb01 | tb01ud | not started |
-| TB01UX | tb01 | tb01ux | not started |
-| TB01UY | tb01 | tb01uy | not started |
-| TB01VD | tb01 | tb01vd | not started |
-| TB01VY | tb01 | tb01vy | not started |
-| TB01WD | tb01 | tb01wd | not started |
-| TB01WX | tb01 | tb01wx | not started |
-| TB01XD | tb01 | tb01xd | not started |
-| TB01XZ | tb01 | tb01xz | not started |
-| TB01YD | tb01 | tb01yd | not started |
-| TB01ZD | tb01 | tb01zd | not started |
+| TB01ND | tb01 | tb01nd | done |
+| TB01PD | tb01 | tb01pd | done |
+| TB01PX | tb01 | tb01px | done |
+| TB01TD | tb01 | tb01td | done |
+| TB01TY | tb01 | tb01ty | done |
+| TB01UD | tb01 | tb01ud | done |
+| TB01UX | tb01 | tb01ux | done |
+| TB01UY | tb01 | tb01uy | done |
+| TB01VD | tb01 | tb01vd | done |
+| TB01VY | tb01 | tb01vy | done |
+| TB01WD | tb01 | tb01wd | done |
+| TB01WX | tb01 | tb01wx | done |
+| TB01XD | tb01 | tb01xd | done |
+| TB01XZ | tb01 | tb01xz | done |
+| TB01YD | tb01 | tb01yd | done |
+| TB01ZD | tb01 | tb01zd | done |
 | TB03AD | tb03 | tb03ad | not started |
 | TB03AY | tb03 | tb03ay | not started |
 | TB04AD | tb04 | tb04ad | not started |
