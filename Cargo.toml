@@ -13,6 +13,7 @@ nalgebra = { version = "0.33", features = ["serde-serialize"] }
 
 [dev-dependencies]
 criterion = "0.5"
+nalgebra = "0.33"
 
 [[bench]]
 name = "tb01md"

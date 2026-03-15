@@ -151,24 +151,24 @@ List derived from entries with status `stub` or `in progress` (139 routines).
 ## ma01
 - [x] MA01AD — `ma01::ma01ad`
 - [x] MA01BD — `ma01::ma01bd`
-- [ ] MA01BZ — `ma01::ma01bz`
+- [x] MA01BZ — `ma01::ma01bz`
 - [x] MA01DD — `ma01::ma01dd`
-- [ ] MA01DZ — `ma01::ma01dz`
+- [x] MA01DZ — `ma01::ma01dz`
 
 ## ma02
 - [x] MA02AZ — `ma02::ma02az`
 - [x] MA02BZ — `ma02::ma02bz`
 - [x] MA02CD — `ma02::ma02cd`
-- [ ] MA02CZ — `ma02::ma02cz`
+- [x] MA02CZ — `ma02::ma02cz`
 - [x] MA02ED — `ma02::ma02ed`
 - [x] MA02ES — `ma02::ma02es`
-- [ ] MA02EZ — `ma02::ma02ez`
+- [x] MA02EZ — `ma02::ma02ez`
 - [x] MA02FD — `ma02::ma02fd`
 - [x] MA02GD — `ma02::ma02gd`
-- [ ] MA02GZ — `ma02::ma02gz`
-- [ ] MA02NZ — `ma02::ma02nz`
+- [x] MA02GZ — `ma02::ma02gz`
+- [x] MA02NZ — `ma02::ma02nz`
 - [x] MA02PD — `ma02::ma02pd`
-- [ ] MA02PZ — `ma02::ma02pz`
+- [x] MA02PZ — `ma02::ma02pz`
 - [x] MA02RD — `ma02::ma02rd`
 
 ## mb01
@@ -197,7 +197,7 @@ List derived from entries with status `stub` or `in progress` (139 routines).
 - [x] MB01UW — `mb01::mb01uw`
 - [x] MB01UX — `mb01::mb01ux`
 - [x] MB01UY — `mb01::mb01uy`
-- [ ] MB01UZ — `mb01::mb01uz`
+- [x] MB01UZ — `mb01::mb01uz`
 - [x] MB01VD — `mb01::mb01vd`
 - [x] MB01WD — `mb01::mb01wd`
 - [x] MB01XD — `mb01::mb01xd`
