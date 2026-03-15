@@ -599,11 +599,11 @@ Implemented vs unimplemented SLICOT routines. The authoritative per-routine list
 | SB10YD | sb10 | sb10yd | Unimplemented |
 | SB10ZD | sb10 | sb10zd | Unimplemented |
 | SB10ZP | sb10 | sb10zp | Unimplemented |
-| SB16AD | sb16 | sb16ad | Unimplemented |
-| SB16AY | sb16 | sb16ay | Unimplemented |
-| SB16BD | sb16 | sb16bd | Unimplemented |
-| SB16CD | sb16 | sb16cd | Unimplemented |
-| SB16CY | sb16 | sb16cy | Unimplemented |
+| SB16AD | sb16 | sb16ad | Implemented |
+| SB16AY | sb16 | sb16ay | Implemented |
+| SB16BD | sb16 | sb16bd | Implemented |
+| SB16CD | sb16 | sb16cd | Implemented |
+| SB16CY | sb16 | sb16cy | Implemented |
 | SG02AD | sg02 | sg02ad | Unimplemented |
 | SG02CV | sg02 | sg02cv | Unimplemented |
 | SG02CW | sg02 | sg02cw | Unimplemented |

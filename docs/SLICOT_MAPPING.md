@@ -519,11 +519,11 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | SB10YD | sb10 | sb10yd | not started |
 | SB10ZD | sb10 | sb10zd | not started |
 | SB10ZP | sb10 | sb10zp | not started |
-| SB16AD | sb16 | sb16ad | not started |
-| SB16AY | sb16 | sb16ay | not started |
-| SB16BD | sb16 | sb16bd | not started |
-| SB16CD | sb16 | sb16cd | not started |
-| SB16CY | sb16 | sb16cy | not started |
+| SB16AD | sb16 | sb16ad | done |
+| SB16AY | sb16 | sb16ay | done |
+| SB16BD | sb16 | sb16bd | done |
+| SB16CD | sb16 | sb16cd | done |
+| SB16CY | sb16 | sb16cy | done |
 | SG02AD | sg02 | sg02ad | not started |
 | SG02CV | sg02 | sg02cv | not started |
 | SG02CW | sg02 | sg02cw | not started |
