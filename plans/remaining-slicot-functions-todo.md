@@ -29,30 +29,30 @@ List derived from entries with status `stub` or `in progress` (139 routines).
 - [x] AB08NZ — `ab08::ab08nz`
 
 ## ab09
-- [ ] AB09AD — `ab09::ab09ad`
-- [ ] AB09AX — `ab09::ab09ax`
-- [ ] AB09BD — `ab09::ab09bd`
-- [ ] AB09BX — `ab09::ab09bx`
-- [ ] AB09CD — `ab09::ab09cd`
-- [ ] AB09CX — `ab09::ab09cx`
-- [ ] AB09DD — `ab09::ab09dd`
-- [ ] AB09ED — `ab09::ab09ed`
-- [ ] AB09FD — `ab09::ab09fd`
-- [ ] AB09GD — `ab09::ab09gd`
-- [ ] AB09HD — `ab09::ab09hd`
-- [ ] AB09HX — `ab09::ab09hx`
-- [ ] AB09HY — `ab09::ab09hy`
-- [ ] AB09ID — `ab09::ab09id`
-- [ ] AB09IX — `ab09::ab09ix`
-- [ ] AB09IY — `ab09::ab09iy`
-- [ ] AB09JD — `ab09::ab09jd`
-- [ ] AB09JV — `ab09::ab09jv`
-- [ ] AB09JW — `ab09::ab09jw`
-- [ ] AB09JX — `ab09::ab09jx`
-- [ ] AB09KD — `ab09::ab09kd`
-- [ ] AB09KX — `ab09::ab09kx`
-- [ ] AB09MD — `ab09::ab09md`
-- [ ] AB09ND — `ab09::ab09nd`
+- [x] AB09AD — `ab09::ab09ad`
+- [x] AB09AX — `ab09::ab09ax`
+- [x] AB09BD — `ab09::ab09bd`
+- [x] AB09BX — `ab09::ab09bx`
+- [x] AB09CD — `ab09::ab09cd`
+- [x] AB09CX — `ab09::ab09cx`
+- [x] AB09DD — `ab09::ab09dd`
+- [x] AB09ED — `ab09::ab09ed`
+- [x] AB09FD — `ab09::ab09fd`
+- [x] AB09GD — `ab09::ab09gd`
+- [x] AB09HD — `ab09::ab09hd`
+- [x] AB09HX — `ab09::ab09hx`
+- [x] AB09HY — `ab09::ab09hy`
+- [x] AB09ID — `ab09::ab09id`
+- [x] AB09IX — `ab09::ab09ix`
+- [x] AB09IY — `ab09::ab09iy`
+- [x] AB09JD — `ab09::ab09jd`
+- [x] AB09JV — `ab09::ab09jv`
+- [x] AB09JW — `ab09::ab09jw`
+- [x] AB09JX — `ab09::ab09jx`
+- [x] AB09KD — `ab09::ab09kd`
+- [x] AB09KX — `ab09::ab09kx`
+- [x] AB09MD — `ab09::ab09md`
+- [x] AB09ND — `ab09::ab09nd`
 
 ## ab13
 - [x] AB13DD — `ab13::ab13dd`
@@ -130,23 +130,23 @@ List derived from entries with status `stub` or `in progress` (139 routines).
 - [x] FD01AD — `fd01::fd01ad`
 
 ## ib01
-- [ ] IB01AD — `ib01::ib01ad`
-- [ ] IB01BD — `ib01::ib01bd`
-- [ ] IB01CD — `ib01::ib01cd`
-- [ ] IB01MD — `ib01::ib01md`
-- [ ] IB01MY — `ib01::ib01my`
-- [ ] IB01ND — `ib01::ib01nd`
-- [ ] IB01OD — `ib01::ib01od`
-- [ ] IB01OY — `ib01::ib01oy`
-- [ ] IB01PD — `ib01::ib01pd`
-- [ ] IB01PX — `ib01::ib01px`
-- [ ] IB01PY — `ib01::ib01py`
-- [ ] IB01QD — `ib01::ib01qd`
-- [ ] IB01RD — `ib01::ib01rd`
+- [x] IB01AD — `ib01::ib01ad`
+- [x] IB01BD — `ib01::ib01bd`
+- [x] IB01CD — `ib01::ib01cd`
+- [x] IB01MD — `ib01::ib01md`
+- [x] IB01MY — `ib01::ib01my`
+- [x] IB01ND — `ib01::ib01nd`
+- [x] IB01OD — `ib01::ib01od`
+- [x] IB01OY — `ib01::ib01oy`
+- [x] IB01PD — `ib01::ib01pd`
+- [x] IB01PX — `ib01::ib01px`
+- [x] IB01PY — `ib01::ib01py`
+- [x] IB01QD — `ib01::ib01qd`
+- [x] IB01RD — `ib01::ib01rd`
 
 ## ib03
-- [ ] IB03AD — `ib03::ib03ad`
-- [ ] IB03BD — `ib03::ib03bd`
+- [x] IB03AD — `ib03::ib03ad`
+- [x] IB03BD — `ib03::ib03bd`
 
 ## ma01
 - [x] MA01AD — `ma01::ma01ad`
