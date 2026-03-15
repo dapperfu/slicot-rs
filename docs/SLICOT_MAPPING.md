@@ -516,7 +516,7 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | TB01KD | tb01 | tb01kd | not started |
 | TB01KX | tb01 | tb01kx | not started |
 | TB01LD | tb01 | tb01ld | not started |
-| TB01MD | tb01 | tb01md | not started |
+| TB01MD | tb01 | tb01md | done |
 | TB01ND | tb01 | tb01nd | not started |
 | TB01PD | tb01 | tb01pd | not started |
 | TB01PX | tb01 | tb01px | not started |
