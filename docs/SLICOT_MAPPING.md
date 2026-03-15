@@ -75,7 +75,7 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | DGEGS | dgeg | dgegs | stub |
 | DGEGV | dgeg | dgegv | stub |
 | DK01MD | dk01 | dk01md | stub |
-| DLACPY_SLC | dlac | dlacpy_slc | stub |
+| DLACPY_SLC | dlac | dlacpy_slc | done |
 | DLATZM | dlat | dlatzm | stub |
 | FB01QD | fb01 | fb01qd | stub |
 | FB01RD | fb01 | fb01rd | stub |

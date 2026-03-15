@@ -114,7 +114,7 @@ List derived from entries with status `stub` or `in progress` (139 routines).
 - [ ] DK01MD — `dk01::dk01md`
 
 ## dlac
-- [ ] DLACPY_SLC — `dlac::dlacpy_slc`
+- [x] DLACPY_SLC — `dlac::dlacpy_slc`
 
 ## dlat
 - [ ] DLATZM — `dlat::dlatzm`
