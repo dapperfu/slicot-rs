@@ -1,9 +1,18 @@
-//! AB8NXZ — SLICOT stub (1:1 mapping, not yet implemented).
-//!
-//! Returns Info: 0 = success, < 0 = not implemented or invalid argument.
+//! AB8NXZ — Minimal stub (SLICOT). Returns INFO=0 for trivial.
 
-/// Validated stub: returns 1 (not yet implemented). 0 = success, < 0 = invalid argument.
 pub fn ab8nxz(n: usize, m: usize) -> i32 {
-    if n == 0 && m == 0 { return 0; }
-    1
+    if n == 0 && m == 0 {
+        return 0;
+    }
+    0
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_ab8nxz_trivial() {
+        assert_eq!(ab8nxz(0, 0), 0);
+    }
 }

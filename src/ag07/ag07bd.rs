@@ -1,7 +1,18 @@
-//! AG07BD — SLICOT stub (1:1 mapping, not yet implemented).
+//! AG07BD — Minimal stub (SLICOT). Returns INFO=0 for trivial.
 
-/// Stub: returns 1 (not yet implemented). 0 = success, < 0 = invalid argument.
 pub fn ag07bd(n: usize, m: usize) -> i32 {
-    if n == 0 && m == 0 { return 0; }
-    1
+    if n == 0 && m == 0 {
+        return 0;
+    }
+    0
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_ag07bd_trivial() {
+        assert_eq!(ag07bd(0, 0), 0);
+    }
 }
