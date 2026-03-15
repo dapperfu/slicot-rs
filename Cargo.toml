@@ -10,6 +10,7 @@ readme = "README.md"
 
 [dependencies]
 nalgebra = { version = "0.33", features = ["serde-serialize"] }
+num-complex = "0.4"
 
 [dev-dependencies]
 criterion = "0.5"
