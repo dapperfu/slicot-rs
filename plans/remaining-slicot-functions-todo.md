@@ -55,25 +55,25 @@ List derived from entries with status `stub` or `in progress` (139 routines).
 - [ ] AB09ND — `ab09::ab09nd`
 
 ## ab13
-- [ ] AB13DD — `ab13::ab13dd`
-- [ ] AB13ED — `ab13::ab13ed`
-- [ ] AB13FD — `ab13::ab13fd`
-- [ ] AB13HD — `ab13::ab13hd`
-- [ ] AB13MD — `ab13::ab13md`
+- [x] AB13DD — `ab13::ab13dd`
+- [x] AB13ED — `ab13::ab13ed`
+- [x] AB13FD — `ab13::ab13fd`
+- [x] AB13HD — `ab13::ab13hd`
+- [x] AB13MD — `ab13::ab13md`
 
 ## ab8n
-- [ ] AB8NXZ — `ab8n::ab8nxz`
+- [x] AB8NXZ — `ab8n::ab8nxz`
 
 ## ag07
-- [ ] AG07BD — `ag07::ag07bd`
+- [x] AG07BD — `ag07::ag07bd`
 
 ## ag08
-- [ ] AG08BD — `ag08::ag08bd`
-- [ ] AG08BY — `ag08::ag08by`
-- [ ] AG08BZ — `ag08::ag08bz`
+- [x] AG08BD — `ag08::ag08bd`
+- [x] AG08BY — `ag08::ag08by`
+- [x] AG08BZ — `ag08::ag08bz`
 
 ## ag8b
-- [ ] AG8BYZ — `ag8b::ag8byz`
+- [x] AG8BYZ — `ag8b::ag8byz`
 
 ## bb01
 - [x] BB01AD — `bb01::bb01ad`
@@ -107,8 +107,8 @@ List derived from entries with status `stub` or `in progress` (139 routines).
 - [x] DG01OD — `dg01::dg01od`
 
 ## dgeg
-- [ ] DGEGS — `dgeg::dgegs`
-- [ ] DGEGV — `dgeg::dgegv`
+- [x] DGEGS — `dgeg::dgegs`
+- [x] DGEGV — `dgeg::dgegv`
 
 ## dk01
 - [x] DK01MD — `dk01::dk01md`
