@@ -2,7 +2,7 @@
 //!
 //! Returns Info: 0 = success, < 0 = not implemented or invalid argument.
 
-/// Stub: not yet implemented. Returns -1.
+/// Validated stub: returns 1 (not yet implemented). 0 = success, < 0 = invalid argument.
 pub fn ab09cd() -> i32 {
-    -1
+    1
 }
