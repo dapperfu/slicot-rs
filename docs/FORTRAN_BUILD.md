@@ -52,6 +52,18 @@ For the fuzz pipeline, example drivers must accept optional input/output file pa
   `cp scripts/slicot-fortran/drivers/TAB01ND.f SLICOT-Reference/examples/TAB01ND.f`  
   then run the Fortran build again. See `scripts/slicot-fortran/drivers/README.md` for .dat/.res layout.
 
+## Benchmark driver (no OpenBLAS required for timing)
+
+To time Fortran SLICOT routines (MA02ED, MA02ES, DLACPY_SLC) at the same sizes as the Rust benchmarks, you only need `lpkaux.a` and `slicot.a`. The example drivers (step 3) require OpenBLAS; the benchmark driver can link with reference BLAS/LAPACK instead.
+
+From the project root:
+
+```bash
+./scripts/slicot-fortran/run_fortran_benchmarks.sh
+```
+
+This builds `lpkaux.a` and `slicot.a` if missing (run `./scripts/slicot-fortran/build_fortran.sh lpkaux.a slicot` if the full build fails at the examples step), then compiles and runs `scripts/slicot-fortran/bench/bench_slicot.f90`. If OpenBLAS is not installed, the script uses `-lblas -llapack`. See [BENCHMARKS.md](BENCHMARKS.md) for the results layout and Rust vs Fortran comparison.
+
 ## Configuration
 
 Build options (compiler, flags, BLAS) are set in `SLICOT-Reference/make_Unix.inc`. By default: `FORTRAN = gfortran`, `OPTS = -O2 -fPIC -g`, `BLASLIB = -lopenblas`, `LAPACKLIB = -lopenblas`. Adjust if your OpenBLAS or LAPACK is installed elsewhere.
