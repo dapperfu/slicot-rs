@@ -26,3 +26,26 @@ pub fn ab05pd(
     }
     1
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use nalgebra::DMatrix;
+
+    #[test]
+    fn test_ab05pd_trivial() {
+        let a1 = DMatrix::zeros(0, 0);
+        let b1 = DMatrix::zeros(0, 0);
+        let c1 = DMatrix::zeros(0, 0);
+        let d1 = DMatrix::zeros(0, 0);
+        let a2 = DMatrix::zeros(0, 0);
+        let b2 = DMatrix::zeros(0, 0);
+        let c2 = DMatrix::zeros(0, 0);
+        let d2 = DMatrix::zeros(0, 0);
+        let mut a = DMatrix::zeros(0, 0);
+        let mut b = DMatrix::zeros(0, 0);
+        let mut c = DMatrix::zeros(0, 0);
+        let mut d = DMatrix::zeros(0, 0);
+        assert_eq!(ab05pd(0, 0, 0, 0, &a1, &b1, &c1, &d1, &a2, &b2, &c2, &d2, &mut a, &mut b, &mut c, &mut d), 0);
+    }
+}
