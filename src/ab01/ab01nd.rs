@@ -40,3 +40,23 @@ pub fn ab01nd(
     }
     1
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use nalgebra::DMatrix;
+
+    #[test]
+    fn test_ab01nd_n0_m0() {
+        let mut a = DMatrix::zeros(0, 0);
+        let mut b = DMatrix::zeros(0, 0);
+        let mut ncont = 1;
+        let mut indcon = 0;
+        let mut nblk = [0i32; 1];
+        assert_eq!(
+            ab01nd(JobZ::No, 0, 0, &mut a, &mut b, &mut ncont, &mut indcon, &mut nblk, None, 0.0),
+            0
+        );
+        assert_eq!(ncont, 0);
+    }
+}
