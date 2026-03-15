@@ -37,7 +37,7 @@ Implemented vs unimplemented SLICOT routines. The authoritative per-routine list
 | ma01 | 6 | 0 | 6 | 100 |
 | ma02 | 28 | 0 | 28 | 100 |
 | mb01 | 35 | 0 | 35 | 100 |
-| mb02 | 2 | 33 | 35 | 6 |
+| mb02 | 5 | 30 | 35 | 14 |
 | mb03 | 0 | 79 | 79 | 0 |
 | mb04 | 0 | 70 | 70 | 0 |
 | mb05 | 0 | 5 | 5 | 0 |
@@ -78,7 +78,7 @@ Implemented vs unimplemented SLICOT routines. The authoritative per-routine list
 | zgeg | 0 | 2 | 2 | 0 |
 | zlat | 0 | 1 | 1 | 0 |
 
-| **Total** | **172** | **453** | **625** | **27** |
+| **Total** | **175** | **450** | **625** | **28** |
 
 ## Full table (all routines)
 
@@ -274,11 +274,11 @@ Implemented vs unimplemented SLICOT routines. The authoritative per-routine list
 | MB02PD | mb02 | mb02pd | Unimplemented |
 | MB02QD | mb02 | mb02qd | Unimplemented |
 | MB02QY | mb02 | mb02qy | Unimplemented |
-| MB02RD | mb02 | mb02rd | Unimplemented |
+| MB02RD | mb02 | mb02rd | Implemented |
 | MB02RZ | mb02 | mb02rz | Unimplemented |
-| MB02SD | mb02 | mb02sd | Unimplemented |
+| MB02SD | mb02 | mb02sd | Implemented |
 | MB02SZ | mb02 | mb02sz | Unimplemented |
-| MB02TD | mb02 | mb02td | Unimplemented |
+| MB02TD | mb02 | mb02td | Implemented |
 | MB02TZ | mb02 | mb02tz | Unimplemented |
 | MB02UD | mb02 | mb02ud | Unimplemented |
 | MB02UU | mb02 | mb02uu | Unimplemented |
