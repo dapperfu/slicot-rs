@@ -25,24 +25,26 @@ cargo bench --bench all_routines -- --noplot
 
 ### Fortran (SLICOT reference) — for comparison
 
-To compare with Fortran implementations:
+Build and run the Fortran benchmark driver (same size ladder as Rust):
 
-1. **Build SLICOT Fortran** as in [FORTRAN_BUILD.md](FORTRAN_BUILD.md) (gfortran, OpenBLAS, `./scripts/slicot-fortran/build_fortran.sh`).
-2. **Time a routine** by either:
-   - Running the corresponding example driver (e.g. `TMA02ED`) in a loop with the same problem size and averaging, or
-   - Adding a small Fortran program that calls the SLICOT routine in a loop with matrices of size n×n (or n×m) and reports elapsed time.
-3. **Record results** in the table below (same sizes as above) so Rust vs Fortran can be compared directly.
+```bash
+./scripts/slicot-fortran/run_fortran_benchmarks.sh
+```
 
-| Routine (Fortran) | n=32   | n=64   | n=128  | n=256  | n=512  | n=1024 |
-|------------------|--------|--------|--------|--------|--------|--------|
-| MA02ED           | —      | —      | —      | —      | —      | —      |
-| MA02ES           | —      | —      | —      | —      | —      | —      |
-| MB01MD           | —      | —      | —      | —      | —      | —      |
-| TB01MD           | —      | —      | —      | —      | —      | —      |
-| DLACPY           | —      | —      | —      | —      | —      | —      |
-| DE01OD           | —      | —      | —      | —      | —      | —      |
+This script builds `lpkaux.a` and `slicot.a` if needed (see [FORTRAN_BUILD.md](FORTRAN_BUILD.md); the full `examples` target may fail without OpenBLAS, but the benchmark driver only needs the two libraries), then compiles and runs `scripts/slicot-fortran/bench/bench_slicot.f90`. If OpenBLAS is not installed, the script retries with `-lblas -llapack`. Results are printed as µs/call per (routine, n).
 
-*Fill in with Fortran timings (e.g. µs or ms per call) from your build to compare implementations.*
+**Example Fortran results** (gfortran -O2, ref BLAS/LAPACK, one machine):
+
+| Routine (Fortran) | n=32   | n=64   | n=128  | n=256   | n=512   | n=1024   |
+|------------------|--------|--------|--------|---------|---------|----------|
+| MA02ED           | 1.41 µs| 2.09 µs| 14.9 µs| 90.1 µs | 780 µs  | 3030 µs  |
+| MA02ES           | 1.51 µs| 2.31 µs| 17.3 µs| 131 µs  | 1667 µs | 6823 µs  |
+| MB01MD           | —      | —      | —      | —       | —       | —        |
+| TB01MD           | —      | —      | —      | —       | —       | —        |
+| DLACPY           | 1.30 µs| 1.79 µs| 3.62 µs| 14.5 µs | 581 µs  | 2304 µs  |
+| DE01OD           | —      | —      | —      | —       | —       | —        |
+
+**Rust vs Fortran (same n):** At n=256, Rust MA02ED ~103 µs vs Fortran ~90 µs; at n=1024, Rust ~4.76 ms vs Fortran ~3.03 ms. Run both suites on your machine to compare; Rust uses pure nalgebra (no BLAS), Fortran uses BLAS (DCOPY) inside MA02ED.
 
 ---
 
@@ -86,5 +88,6 @@ So you can expect:
 
 - **`benches/common.rs`**: Shared size ladders (`SIZE_LADDER_N`, `SIZE_LADDER_POW2`) and helpers to build matrices/vectors (`matrix_nn`, `matrix_nm`, `state_space_matrices`, etc.).
 - **`benches/all_routines.rs`**: Criterion groups per module; each routine is benchmarked at each size in the appropriate ladder. Stubs that take only `(n, m)` are registered with the same ladder so that when implemented, the harness already measures them.
+- **Fortran**: `scripts/slicot-fortran/bench/bench_slicot.f90` times MA02ED, MA02ES, DLACPY_SLC at the same n ladder; `scripts/slicot-fortran/run_fortran_benchmarks.sh` builds (lpkaux.a, slicot.a) and runs it. Uses `-lblas -llapack` if OpenBLAS is not installed.
 
 The legacy **`benches/tb01md.rs`** benchmark is still available (`cargo bench --bench tb01md`) but uses smaller sizes (4–32); the full ladder for TB01MD is in `all_routines` (32–1024).
