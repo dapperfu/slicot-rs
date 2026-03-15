@@ -157,7 +157,7 @@ List derived from entries with status `stub` or `in progress` (139 routines).
 
 ## ma02
 - [ ] MA02AZ — `ma02::ma02az`
-- [ ] MA02BZ — `ma02::ma02bz`
+- [x] MA02BZ — `ma02::ma02bz`
 - [ ] MA02CD — `ma02::ma02cd`
 - [ ] MA02CZ — `ma02::ma02cz`
 - [ ] MA02ED — `ma02::ma02ed`
@@ -173,7 +173,7 @@ List derived from entries with status `stub` or `in progress` (139 routines).
 
 ## mb01
 - [ ] MB01LD — `mb01::mb01ld`
-- [ ] MB01MD — `mb01::mb01md`
+- [x] MB01MD — `mb01::mb01md`
 - [ ] MB01ND — `mb01::mb01nd`
 - [ ] MB01OC — `mb01::mb01oc`
 - [ ] MB01OD — `mb01::mb01od`
