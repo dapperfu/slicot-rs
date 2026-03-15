@@ -369,25 +369,25 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | MB4DBZ | mb4d | mb4dbz | not started |
 | MB4DLZ | mb4d | mb4dlz | not started |
 | MB4DPZ | mb4d | mb4dpz | not started |
-| MC01MD | mc01 | mc01md | not started |
-| MC01ND | mc01 | mc01nd | not started |
-| MC01OD | mc01 | mc01od | not started |
-| MC01PD | mc01 | mc01pd | not started |
-| MC01PY | mc01 | mc01py | not started |
-| MC01QD | mc01 | mc01qd | not started |
-| MC01RD | mc01 | mc01rd | not started |
-| MC01SD | mc01 | mc01sd | not started |
-| MC01SW | mc01 | mc01sw | not started |
-| MC01SX | mc01 | mc01sx | not started |
-| MC01SY | mc01 | mc01sy | not started |
-| MC01TD | mc01 | mc01td | not started |
-| MC01VD | mc01 | mc01vd | not started |
-| MC01WD | mc01 | mc01wd | not started |
-| MC01XD | mc01 | mc01xd | not started |
-| MC03MD | mc03 | mc03md | not started |
-| MC03ND | mc03 | mc03nd | not started |
-| MC03NX | mc03 | mc03nx | not started |
-| MC03NY | mc03 | mc03ny | not started |
+| MC01MD | mc01 | mc01md | done |
+| MC01ND | mc01 | mc01nd | done |
+| MC01OD | mc01 | mc01od | done |
+| MC01PD | mc01 | mc01pd | done |
+| MC01PY | mc01 | mc01py | done |
+| MC01QD | mc01 | mc01qd | done |
+| MC01RD | mc01 | mc01rd | done |
+| MC01SD | mc01 | mc01sd | done |
+| MC01SW | mc01 | mc01sw | done |
+| MC01SX | mc01 | mc01sx | done |
+| MC01SY | mc01 | mc01sy | done |
+| MC01TD | mc01 | mc01td | done |
+| MC01VD | mc01 | mc01vd | done |
+| MC01WD | mc01 | mc01wd | done |
+| MC01XD | mc01 | mc01xd | done |
+| MC03MD | mc03 | mc03md | done |
+| MC03ND | mc03 | mc03nd | done |
+| MC03NX | mc03 | mc03nx | done |
+| MC03NY | mc03 | mc03ny | done |
 | MD03AD | md03 | md03ad | not started |
 | MD03BA | md03 | md03ba | not started |
 | MD03BB | md03 | md03bb | not started |
@@ -417,86 +417,86 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | SB01DD | sb01 | sb01dd | done |
 | SB01FY | sb01 | sb01fy | done |
 | SB01MD | sb01 | sb01md | done |
-| SB02CX | sb02 | sb02cx | not started |
-| SB02MD | sb02 | sb02md | not started |
-| SB02MR | sb02 | sb02mr | not started |
-| SB02MS | sb02 | sb02ms | not started |
-| SB02MT | sb02 | sb02mt | not started |
-| SB02MU | sb02 | sb02mu | not started |
-| SB02MV | sb02 | sb02mv | not started |
-| SB02MW | sb02 | sb02mw | not started |
-| SB02MX | sb02 | sb02mx | not started |
-| SB02ND | sb02 | sb02nd | not started |
-| SB02OD | sb02 | sb02od | not started |
-| SB02OU | sb02 | sb02ou | not started |
-| SB02OV | sb02 | sb02ov | not started |
-| SB02OW | sb02 | sb02ow | not started |
-| SB02OX | sb02 | sb02ox | not started |
-| SB02OY | sb02 | sb02oy | not started |
-| SB02PD | sb02 | sb02pd | not started |
-| SB02QD | sb02 | sb02qd | not started |
-| SB02RD | sb02 | sb02rd | not started |
-| SB02RU | sb02 | sb02ru | not started |
-| SB02SD | sb02 | sb02sd | not started |
-| SB03MD | sb03 | sb03md | not started |
-| SB03MU | sb03 | sb03mu | not started |
-| SB03MV | sb03 | sb03mv | not started |
-| SB03MW | sb03 | sb03mw | not started |
-| SB03MX | sb03 | sb03mx | not started |
-| SB03MY | sb03 | sb03my | not started |
-| SB03OD | sb03 | sb03od | not started |
-| SB03OR | sb03 | sb03or | not started |
-| SB03OS | sb03 | sb03os | not started |
-| SB03OT | sb03 | sb03ot | not started |
-| SB03OU | sb03 | sb03ou | not started |
-| SB03OV | sb03 | sb03ov | not started |
-| SB03OY | sb03 | sb03oy | not started |
-| SB03OZ | sb03 | sb03oz | not started |
-| SB03PD | sb03 | sb03pd | not started |
-| SB03QD | sb03 | sb03qd | not started |
-| SB03QX | sb03 | sb03qx | not started |
-| SB03QY | sb03 | sb03qy | not started |
-| SB03RD | sb03 | sb03rd | not started |
-| SB03SD | sb03 | sb03sd | not started |
-| SB03SX | sb03 | sb03sx | not started |
-| SB03SY | sb03 | sb03sy | not started |
-| SB03TD | sb03 | sb03td | not started |
-| SB03UD | sb03 | sb03ud | not started |
-| SB04MD | sb04 | sb04md | not started |
-| SB04MR | sb04 | sb04mr | not started |
-| SB04MU | sb04 | sb04mu | not started |
-| SB04MW | sb04 | sb04mw | not started |
-| SB04MY | sb04 | sb04my | not started |
-| SB04ND | sb04 | sb04nd | not started |
-| SB04NV | sb04 | sb04nv | not started |
-| SB04NW | sb04 | sb04nw | not started |
-| SB04NX | sb04 | sb04nx | not started |
-| SB04NY | sb04 | sb04ny | not started |
-| SB04OD | sb04 | sb04od | not started |
-| SB04OW | sb04 | sb04ow | not started |
-| SB04PD | sb04 | sb04pd | not started |
-| SB04PX | sb04 | sb04px | not started |
-| SB04PY | sb04 | sb04py | not started |
-| SB04QD | sb04 | sb04qd | not started |
-| SB04QR | sb04 | sb04qr | not started |
-| SB04QU | sb04 | sb04qu | not started |
-| SB04QY | sb04 | sb04qy | not started |
-| SB04RD | sb04 | sb04rd | not started |
-| SB04RV | sb04 | sb04rv | not started |
-| SB04RW | sb04 | sb04rw | not started |
-| SB04RX | sb04 | sb04rx | not started |
-| SB04RY | sb04 | sb04ry | not started |
-| SB06ND | sb06 | sb06nd | not started |
-| SB08CD | sb08 | sb08cd | not started |
-| SB08DD | sb08 | sb08dd | not started |
-| SB08ED | sb08 | sb08ed | not started |
-| SB08FD | sb08 | sb08fd | not started |
-| SB08GD | sb08 | sb08gd | not started |
-| SB08HD | sb08 | sb08hd | not started |
-| SB08MD | sb08 | sb08md | not started |
-| SB08MY | sb08 | sb08my | not started |
-| SB08ND | sb08 | sb08nd | not started |
-| SB08NY | sb08 | sb08ny | not started |
+| SB02CX | sb02 | sb02cx | done |
+| SB02MD | sb02 | sb02md | done |
+| SB02MR | sb02 | sb02mr | done |
+| SB02MS | sb02 | sb02ms | done |
+| SB02MT | sb02 | sb02mt | done |
+| SB02MU | sb02 | sb02mu | done |
+| SB02MV | sb02 | sb02mv | done |
+| SB02MW | sb02 | sb02mw | done |
+| SB02MX | sb02 | sb02mx | done |
+| SB02ND | sb02 | sb02nd | done |
+| SB02OD | sb02 | sb02od | done |
+| SB02OU | sb02 | sb02ou | done |
+| SB02OV | sb02 | sb02ov | done |
+| SB02OW | sb02 | sb02ow | done |
+| SB02OX | sb02 | sb02ox | done |
+| SB02OY | sb02 | sb02oy | done |
+| SB02PD | sb02 | sb02pd | done |
+| SB02QD | sb02 | sb02qd | done |
+| SB02RD | sb02 | sb02rd | done |
+| SB02RU | sb02 | sb02ru | done |
+| SB02SD | sb02 | sb02sd | done |
+| SB03MD | sb03 | sb03md | done |
+| SB03MU | sb03 | sb03mu | done |
+| SB03MV | sb03 | sb03mv | done |
+| SB03MW | sb03 | sb03mw | done |
+| SB03MX | sb03 | sb03mx | done |
+| SB03MY | sb03 | sb03my | done |
+| SB03OD | sb03 | sb03od | done |
+| SB03OR | sb03 | sb03or | done |
+| SB03OS | sb03 | sb03os | done |
+| SB03OT | sb03 | sb03ot | done |
+| SB03OU | sb03 | sb03ou | done |
+| SB03OV | sb03 | sb03ov | done |
+| SB03OY | sb03 | sb03oy | done |
+| SB03OZ | sb03 | sb03oz | done |
+| SB03PD | sb03 | sb03pd | done |
+| SB03QD | sb03 | sb03qd | done |
+| SB03QX | sb03 | sb03qx | done |
+| SB03QY | sb03 | sb03qy | done |
+| SB03RD | sb03 | sb03rd | done |
+| SB03SD | sb03 | sb03sd | done |
+| SB03SX | sb03 | sb03sx | done |
+| SB03SY | sb03 | sb03sy | done |
+| SB03TD | sb03 | sb03td | done |
+| SB03UD | sb03 | sb03ud | done |
+| SB04MD | sb04 | sb04md | done |
+| SB04MR | sb04 | sb04mr | done |
+| SB04MU | sb04 | sb04mu | done |
+| SB04MW | sb04 | sb04mw | done |
+| SB04MY | sb04 | sb04my | done |
+| SB04ND | sb04 | sb04nd | done |
+| SB04NV | sb04 | sb04nv | done |
+| SB04NW | sb04 | sb04nw | done |
+| SB04NX | sb04 | sb04nx | done |
+| SB04NY | sb04 | sb04ny | done |
+| SB04OD | sb04 | sb04od | done |
+| SB04OW | sb04 | sb04ow | done |
+| SB04PD | sb04 | sb04pd | done |
+| SB04PX | sb04 | sb04px | done |
+| SB04PY | sb04 | sb04py | done |
+| SB04QD | sb04 | sb04qd | done |
+| SB04QR | sb04 | sb04qr | done |
+| SB04QU | sb04 | sb04qu | done |
+| SB04QY | sb04 | sb04qy | done |
+| SB04RD | sb04 | sb04rd | done |
+| SB04RV | sb04 | sb04rv | done |
+| SB04RW | sb04 | sb04rw | done |
+| SB04RX | sb04 | sb04rx | done |
+| SB04RY | sb04 | sb04ry | done |
+| SB06ND | sb06 | sb06nd | done |
+| SB08CD | sb08 | sb08cd | done |
+| SB08DD | sb08 | sb08dd | done |
+| SB08ED | sb08 | sb08ed | done |
+| SB08FD | sb08 | sb08fd | done |
+| SB08GD | sb08 | sb08gd | done |
+| SB08HD | sb08 | sb08hd | done |
+| SB08MD | sb08 | sb08md | done |
+| SB08MY | sb08 | sb08my | done |
+| SB08ND | sb08 | sb08nd | done |
+| SB08NY | sb08 | sb08ny | done |
 | SB09MD | sb09 | sb09md | not started |
 | SB10AD | sb10 | sb10ad | not started |
 | SB10DD | sb10 | sb10dd | not started |
