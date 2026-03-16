@@ -1,6 +1,7 @@
 # Remaining SLICOT functions (TODO)
 
 Check off each when the routine is fully implemented and status in `docs/SLICOT_MAPPING.md` is set to `done`.
+When FORTRAN validation passes for a routine, set **Validated** to `yes` in `docs/SLICOT_MAPPING.md` for that row.
 List derived from entries with status `stub` or `in progress` (139 routines).
 
 ## ab01
