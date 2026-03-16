@@ -84,10 +84,23 @@ So you can expect:
 - Compare the same routine across sizes to confirm scaling (e.g. MA02ED should scale roughly with `n²`).
 - To **compare Rust vs Fortran**: run the Rust benchmarks above, then time the same routine and problem sizes in the Fortran SLICOT build, and fill in the [Fortran results table](#fortran-slicot-reference--for-comparison) so both implementations can be compared side by side.
 
+## Benchmark script with plotting (30s cap per size)
+
+A separate pipeline runs **common control routines** (MA02ED, MA02ES, TB01MD, DLACPY_SLC, MB01MD, DE01OD) at sizes from 8 up to 512, with **at most 30 seconds** of compute per (routine, size), and plots the results with **seaborn**. Run from the repo root:
+
+```bash
+python3 tools/benchmark_control/run_benchmarks.py
+```
+
+Requirements: `pandas`, `seaborn`, `matplotlib`. The script runs `cargo run --release --bin bench_csv` to produce CSV, then generates `tools/benchmark_control/benchmark_control.png`. See `tools/benchmark_control/README.md` for details.
+
+---
+
 ## Layout
 
 - **`benches/common.rs`**: Shared size ladders (`SIZE_LADDER_N`, `SIZE_LADDER_POW2`) and helpers to build matrices/vectors (`matrix_nn`, `matrix_nm`, `state_space_matrices`, etc.).
 - **`benches/all_routines.rs`**: Criterion groups per module; each routine is benchmarked at each size in the appropriate ladder. Stubs that take only `(n, m)` are registered with the same ladder so that when implemented, the harness already measures them.
 - **Fortran**: `tools/slicot-fortran/bench/bench_slicot.f90` times MA02ED, MA02ES, DLACPY_SLC at the same n ladder; `tools/slicot-fortran/run_fortran_benchmarks.sh` builds (lpkaux.a, slicot.a) and runs it. Uses `-lblas -llapack` if OpenBLAS is not installed.
+- **Benchmark script**: `src/bin/bench_csv.rs` prints CSV (routine, n, time_us) with a 30s cap per size; `tools/benchmark_control/run_benchmarks.py` runs it and plots with seaborn.
 
 The legacy **`benches/tb01md.rs`** benchmark is still available (`cargo bench --bench tb01md`) but uses smaller sizes (4–32); the full ladder for TB01MD is in `all_routines` (32–1024).
