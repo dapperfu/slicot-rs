@@ -529,19 +529,19 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | SG02CW | sg02 | sg02cw | done |
 | SG02CX | sg02 | sg02cx | done |
 | SG02ND | sg02 | sg02nd | done |
-| SG03AD | sg03 | sg03ad | not started |
-| SG03AX | sg03 | sg03ax | not started |
-| SG03AY | sg03 | sg03ay | not started |
-| SG03BD | sg03 | sg03bd | not started |
-| SG03BR | sg03 | sg03br | not started |
-| SG03BS | sg03 | sg03bs | not started |
-| SG03BT | sg03 | sg03bt | not started |
-| SG03BU | sg03 | sg03bu | not started |
-| SG03BV | sg03 | sg03bv | not started |
-| SG03BW | sg03 | sg03bw | not started |
-| SG03BX | sg03 | sg03bx | not started |
-| SG03BY | sg03 | sg03by | not started |
-| SG03BZ | sg03 | sg03bz | not started |
+| SG03AD | sg03 | sg03ad | done |
+| SG03AX | sg03 | sg03ax | done |
+| SG03AY | sg03 | sg03ay | done |
+| SG03BD | sg03 | sg03bd | done |
+| SG03BR | sg03 | sg03br | done |
+| SG03BS | sg03 | sg03bs | done |
+| SG03BT | sg03 | sg03bt | done |
+| SG03BU | sg03 | sg03bu | done |
+| SG03BV | sg03 | sg03bv | done |
+| SG03BW | sg03 | sg03bw | done |
+| SG03BX | sg03 | sg03bx | done |
+| SG03BY | sg03 | sg03by | done |
+| SG03BZ | sg03 | sg03bz | done |
 | TB01ID | tb01 | tb01id | done |
 | TB01IZ | tb01 | tb01iz | done |
 | TB01KD | tb01 | tb01kd | done |
@@ -564,8 +564,8 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | TB01XZ | tb01 | tb01xz | done |
 | TB01YD | tb01 | tb01yd | done |
 | TB01ZD | tb01 | tb01zd | done |
-| TB03AD | tb03 | tb03ad | not started |
-| TB03AY | tb03 | tb03ay | not started |
+| TB03AD | tb03 | tb03ad | done |
+| TB03AY | tb03 | tb03ay | done |
 | TB04AD | tb04 | tb04ad | done |
 | TB04AY | tb04 | tb04ay | done |
 | TB04BD | tb04 | tb04bd | done |
@@ -632,22 +632,4 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 
 ## Unimplemented list
 
-The table below lists every routine with status *not started* from the mapping above, with links to the SLICOT documentation ([slicot.org/.../doc/](https://www.slicot.org/objects/software/shared/doc/)) and Fortran source paths (`SLICOT-Reference/src/*.f` or `SLICOT-Reference/src/lapack_aux/*.f`).
-
-| SLICOT | Rust module | Rust function | Doc | Fortran source |
-|--------|-------------|---------------|-----|----------------|
-| SG03AD | sg03 | sg03ad | [SG03AD](https://www.slicot.org/objects/software/shared/doc/SG03AD.html) | SLICOT-Reference/src/SG03AD.f |
-| SG03AX | sg03 | sg03ax | [SG03AX](https://www.slicot.org/objects/software/shared/doc/SG03AX.html) | SLICOT-Reference/src/SG03AX.f |
-| SG03AY | sg03 | sg03ay | [SG03AY](https://www.slicot.org/objects/software/shared/doc/SG03AY.html) | SLICOT-Reference/src/SG03AY.f |
-| SG03BD | sg03 | sg03bd | [SG03BD](https://www.slicot.org/objects/software/shared/doc/SG03BD.html) | SLICOT-Reference/src/SG03BD.f |
-| SG03BR | sg03 | sg03br | [SG03BR](https://www.slicot.org/objects/software/shared/doc/SG03BR.html) | SLICOT-Reference/src/SG03BR.f |
-| SG03BS | sg03 | sg03bs | [SG03BS](https://www.slicot.org/objects/software/shared/doc/SG03BS.html) | SLICOT-Reference/src/SG03BS.f |
-| SG03BT | sg03 | sg03bt | [SG03BT](https://www.slicot.org/objects/software/shared/doc/SG03BT.html) | SLICOT-Reference/src/SG03BT.f |
-| SG03BU | sg03 | sg03bu | [SG03BU](https://www.slicot.org/objects/software/shared/doc/SG03BU.html) | SLICOT-Reference/src/SG03BU.f |
-| SG03BV | sg03 | sg03bv | [SG03BV](https://www.slicot.org/objects/software/shared/doc/SG03BV.html) | SLICOT-Reference/src/SG03BV.f |
-| SG03BW | sg03 | sg03bw | [SG03BW](https://www.slicot.org/objects/software/shared/doc/SG03BW.html) | SLICOT-Reference/src/SG03BW.f |
-| SG03BX | sg03 | sg03bx | [SG03BX](https://www.slicot.org/objects/software/shared/doc/SG03BX.html) | SLICOT-Reference/src/SG03BX.f |
-| SG03BY | sg03 | sg03by | [SG03BY](https://www.slicot.org/objects/software/shared/doc/SG03BY.html) | SLICOT-Reference/src/SG03BY.f |
-| SG03BZ | sg03 | sg03bz | [SG03BZ](https://www.slicot.org/objects/software/shared/doc/SG03BZ.html) | SLICOT-Reference/src/SG03BZ.f |
-| TB03AD | tb03 | tb03ad | [TB03AD](https://www.slicot.org/objects/software/shared/doc/TB03AD.html) | SLICOT-Reference/src/TB03AD.f |
-| TB03AY | tb03 | tb03ay | [TB03AY](https://www.slicot.org/objects/software/shared/doc/TB03AY.html) | SLICOT-Reference/src/TB03AY.f |
+There are no routines with status *not started*. All SG03 and TB03 routines listed above are implemented (status *done*).
