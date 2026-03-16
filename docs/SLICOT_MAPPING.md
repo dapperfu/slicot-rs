@@ -629,3 +629,80 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | ZGEGS | zgeg | zgegs | not started |
 | ZGEGV | zgeg | zgegv | not started |
 | ZLATZM | zlat | zlatzm | not started |
+
+## Unimplemented list
+
+The table below lists every routine with status *not started* from the mapping above, with links to the SLICOT documentation ([slicot.org/.../doc/](https://www.slicot.org/objects/software/shared/doc/)) and Fortran source paths (`SLICOT-Reference/src/*.f` or `SLICOT-Reference/src/lapack_aux/*.f`).
+
+| SLICOT | Rust module | Rust function | Doc | Fortran source |
+|--------|-------------|---------------|-----|----------------|
+| SG03AD | sg03 | sg03ad | [SG03AD](https://www.slicot.org/objects/software/shared/doc/SG03AD.html) | SLICOT-Reference/src/SG03AD.f |
+| SG03AX | sg03 | sg03ax | [SG03AX](https://www.slicot.org/objects/software/shared/doc/SG03AX.html) | SLICOT-Reference/src/SG03AX.f |
+| SG03AY | sg03 | sg03ay | [SG03AY](https://www.slicot.org/objects/software/shared/doc/SG03AY.html) | SLICOT-Reference/src/SG03AY.f |
+| SG03BD | sg03 | sg03bd | [SG03BD](https://www.slicot.org/objects/software/shared/doc/SG03BD.html) | SLICOT-Reference/src/SG03BD.f |
+| SG03BR | sg03 | sg03br | [SG03BR](https://www.slicot.org/objects/software/shared/doc/SG03BR.html) | SLICOT-Reference/src/SG03BR.f |
+| SG03BS | sg03 | sg03bs | [SG03BS](https://www.slicot.org/objects/software/shared/doc/SG03BS.html) | SLICOT-Reference/src/SG03BS.f |
+| SG03BT | sg03 | sg03bt | [SG03BT](https://www.slicot.org/objects/software/shared/doc/SG03BT.html) | SLICOT-Reference/src/SG03BT.f |
+| SG03BU | sg03 | sg03bu | [SG03BU](https://www.slicot.org/objects/software/shared/doc/SG03BU.html) | SLICOT-Reference/src/SG03BU.f |
+| SG03BV | sg03 | sg03bv | [SG03BV](https://www.slicot.org/objects/software/shared/doc/SG03BV.html) | SLICOT-Reference/src/SG03BV.f |
+| SG03BW | sg03 | sg03bw | [SG03BW](https://www.slicot.org/objects/software/shared/doc/SG03BW.html) | SLICOT-Reference/src/SG03BW.f |
+| SG03BX | sg03 | sg03bx | [SG03BX](https://www.slicot.org/objects/software/shared/doc/SG03BX.html) | SLICOT-Reference/src/SG03BX.f |
+| SG03BY | sg03 | sg03by | [SG03BY](https://www.slicot.org/objects/software/shared/doc/SG03BY.html) | SLICOT-Reference/src/SG03BY.f |
+| SG03BZ | sg03 | sg03bz | [SG03BZ](https://www.slicot.org/objects/software/shared/doc/SG03BZ.html) | SLICOT-Reference/src/SG03BZ.f |
+| TB03AD | tb03 | tb03ad | [TB03AD](https://www.slicot.org/objects/software/shared/doc/TB03AD.html) | SLICOT-Reference/src/TB03AD.f |
+| TB03AY | tb03 | tb03ay | [TB03AY](https://www.slicot.org/objects/software/shared/doc/TB03AY.html) | SLICOT-Reference/src/TB03AY.f |
+| TB04AD | tb04 | tb04ad | [TB04AD](https://www.slicot.org/objects/software/shared/doc/TB04AD.html) | SLICOT-Reference/src/TB04AD.f |
+| TB04AY | tb04 | tb04ay | [TB04AY](https://www.slicot.org/objects/software/shared/doc/TB04AY.html) | SLICOT-Reference/src/TB04AY.f |
+| TB04BD | tb04 | tb04bd | [TB04BD](https://www.slicot.org/objects/software/shared/doc/TB04BD.html) | SLICOT-Reference/src/TB04BD.f |
+| TB04BV | tb04 | tb04bv | [TB04BV](https://www.slicot.org/objects/software/shared/doc/TB04BV.html) | SLICOT-Reference/src/TB04BV.f |
+| TB04BW | tb04 | tb04bw | [TB04BW](https://www.slicot.org/objects/software/shared/doc/TB04BW.html) | SLICOT-Reference/src/TB04BW.f |
+| TB04BX | tb04 | tb04bx | [TB04BX](https://www.slicot.org/objects/software/shared/doc/TB04BX.html) | SLICOT-Reference/src/TB04BX.f |
+| TB04CD | tb04 | tb04cd | [TB04CD](https://www.slicot.org/objects/software/shared/doc/TB04CD.html) | SLICOT-Reference/src/TB04CD.f |
+| TD03AY | td03 | td03ay | [TD03AY](https://www.slicot.org/objects/software/shared/doc/TD03AY.html) | SLICOT-Reference/src/TD03AY.f |
+| TF01MX | tf01 | tf01mx | [TF01MX](https://www.slicot.org/objects/software/shared/doc/TF01MX.html) | SLICOT-Reference/src/TF01MX.f |
+| TF01MY | tf01 | tf01my | [TF01MY](https://www.slicot.org/objects/software/shared/doc/TF01MY.html) | SLICOT-Reference/src/TF01MY.f |
+| TF01ND | tf01 | tf01nd | [TF01ND](https://www.slicot.org/objects/software/shared/doc/TF01ND.html) | SLICOT-Reference/src/TF01ND.f |
+| TF01OD | tf01 | tf01od | [TF01OD](https://www.slicot.org/objects/software/shared/doc/TF01OD.html) | SLICOT-Reference/src/TF01OD.f |
+| TF01PD | tf01 | tf01pd | [TF01PD](https://www.slicot.org/objects/software/shared/doc/TF01PD.html) | SLICOT-Reference/src/TF01PD.f |
+| TF01QD | tf01 | tf01qd | [TF01QD](https://www.slicot.org/objects/software/shared/doc/TF01QD.html) | SLICOT-Reference/src/TF01QD.f |
+| TF01RD | tf01 | tf01rd | [TF01RD](https://www.slicot.org/objects/software/shared/doc/TF01RD.html) | SLICOT-Reference/src/TF01RD.f |
+| TG01AD | tg01 | tg01ad | [TG01AD](https://www.slicot.org/objects/software/shared/doc/TG01AD.html) | SLICOT-Reference/src/TG01AD.f |
+| TG01AZ | tg01 | tg01az | [TG01AZ](https://www.slicot.org/objects/software/shared/doc/TG01AZ.html) | SLICOT-Reference/src/TG01AZ.f |
+| TG01BD | tg01 | tg01bd | [TG01BD](https://www.slicot.org/objects/software/shared/doc/TG01BD.html) | SLICOT-Reference/src/TG01BD.f |
+| TG01CD | tg01 | tg01cd | [TG01CD](https://www.slicot.org/objects/software/shared/doc/TG01CD.html) | SLICOT-Reference/src/TG01CD.f |
+| TG01DD | tg01 | tg01dd | [TG01DD](https://www.slicot.org/objects/software/shared/doc/TG01DD.html) | SLICOT-Reference/src/TG01DD.f |
+| TG01ED | tg01 | tg01ed | [TG01ED](https://www.slicot.org/objects/software/shared/doc/TG01ED.html) | SLICOT-Reference/src/TG01ED.f |
+| TG01FD | tg01 | tg01fd | [TG01FD](https://www.slicot.org/objects/software/shared/doc/TG01FD.html) | SLICOT-Reference/src/TG01FD.f |
+| TG01FZ | tg01 | tg01fz | [TG01FZ](https://www.slicot.org/objects/software/shared/doc/TG01FZ.html) | SLICOT-Reference/src/TG01FZ.f |
+| TG01GD | tg01 | tg01gd | [TG01GD](https://www.slicot.org/objects/software/shared/doc/TG01GD.html) | SLICOT-Reference/src/TG01GD.f |
+| TG01HD | tg01 | tg01hd | [TG01HD](https://www.slicot.org/objects/software/shared/doc/TG01HD.html) | SLICOT-Reference/src/TG01HD.f |
+| TG01HU | tg01 | tg01hu | [TG01HU](https://www.slicot.org/objects/software/shared/doc/TG01HU.html) | SLICOT-Reference/src/TG01HU.f |
+| TG01HX | tg01 | tg01hx | [TG01HX](https://www.slicot.org/objects/software/shared/doc/TG01HX.html) | SLICOT-Reference/src/TG01HX.f |
+| TG01HY | tg01 | tg01hy | [TG01HY](https://www.slicot.org/objects/software/shared/doc/TG01HY.html) | SLICOT-Reference/src/TG01HY.f |
+| TG01ID | tg01 | tg01id | [TG01ID](https://www.slicot.org/objects/software/shared/doc/TG01ID.html) | SLICOT-Reference/src/TG01ID.f |
+| TG01JD | tg01 | tg01jd | [TG01JD](https://www.slicot.org/objects/software/shared/doc/TG01JD.html) | SLICOT-Reference/src/TG01JD.f |
+| TG01JY | tg01 | tg01jy | [TG01JY](https://www.slicot.org/objects/software/shared/doc/TG01JY.html) | SLICOT-Reference/src/TG01JY.f |
+| TG01KD | tg01 | tg01kd | [TG01KD](https://www.slicot.org/objects/software/shared/doc/TG01KD.html) | SLICOT-Reference/src/TG01KD.f |
+| TG01KZ | tg01 | tg01kz | [TG01KZ](https://www.slicot.org/objects/software/shared/doc/TG01KZ.html) | SLICOT-Reference/src/TG01KZ.f |
+| TG01LD | tg01 | tg01ld | [TG01LD](https://www.slicot.org/objects/software/shared/doc/TG01LD.html) | SLICOT-Reference/src/TG01LD.f |
+| TG01LY | tg01 | tg01ly | [TG01LY](https://www.slicot.org/objects/software/shared/doc/TG01LY.html) | SLICOT-Reference/src/TG01LY.f |
+| TG01MD | tg01 | tg01md | [TG01MD](https://www.slicot.org/objects/software/shared/doc/TG01MD.html) | SLICOT-Reference/src/TG01MD.f |
+| TG01ND | tg01 | tg01nd | [TG01ND](https://www.slicot.org/objects/software/shared/doc/TG01ND.html) | SLICOT-Reference/src/TG01ND.f |
+| TG01NX | tg01 | tg01nx | [TG01NX](https://www.slicot.org/objects/software/shared/doc/TG01NX.html) | SLICOT-Reference/src/TG01NX.f |
+| TG01OA | tg01 | tg01oa | [TG01OA](https://www.slicot.org/objects/software/shared/doc/TG01OA.html) | SLICOT-Reference/src/TG01OA.f |
+| TG01OB | tg01 | tg01ob | [TG01OB](https://www.slicot.org/objects/software/shared/doc/TG01OB.html) | SLICOT-Reference/src/TG01OB.f |
+| TG01OD | tg01 | tg01od | [TG01OD](https://www.slicot.org/objects/software/shared/doc/TG01OD.html) | SLICOT-Reference/src/TG01OD.f |
+| TG01OZ | tg01 | tg01oz | [TG01OZ](https://www.slicot.org/objects/software/shared/doc/TG01OZ.html) | SLICOT-Reference/src/TG01OZ.f |
+| TG01PD | tg01 | tg01pd | [TG01PD](https://www.slicot.org/objects/software/shared/doc/TG01PD.html) | SLICOT-Reference/src/TG01PD.f |
+| TG01QD | tg01 | tg01qd | [TG01QD](https://www.slicot.org/objects/software/shared/doc/TG01QD.html) | SLICOT-Reference/src/TG01QD.f |
+| TG01WD | tg01 | tg01wd | [TG01WD](https://www.slicot.org/objects/software/shared/doc/TG01WD.html) | SLICOT-Reference/src/TG01WD.f |
+| UD01BD | ud01 | ud01bd | [UD01BD](https://www.slicot.org/objects/software/shared/doc/UD01BD.html) | SLICOT-Reference/src/UD01BD.f |
+| UD01CD | ud01 | ud01cd | [UD01CD](https://www.slicot.org/objects/software/shared/doc/UD01CD.html) | SLICOT-Reference/src/UD01CD.f |
+| UD01DD | ud01 | ud01dd | [UD01DD](https://www.slicot.org/objects/software/shared/doc/UD01DD.html) | SLICOT-Reference/src/UD01DD.f |
+| UD01MD | ud01 | ud01md | [UD01MD](https://www.slicot.org/objects/software/shared/doc/UD01MD.html) | SLICOT-Reference/src/UD01MD.f |
+| UD01MZ | ud01 | ud01mz | [UD01MZ](https://www.slicot.org/objects/software/shared/doc/UD01MZ.html) | SLICOT-Reference/src/UD01MZ.f |
+| UD01ND | ud01 | ud01nd | [UD01ND](https://www.slicot.org/objects/software/shared/doc/UD01ND.html) | SLICOT-Reference/src/UD01ND.f |
+| UE01MD | ue01 | ue01md | [UE01MD](https://www.slicot.org/objects/software/shared/doc/UE01MD.html) | SLICOT-Reference/src/UE01MD.f |
+| ZGEGS | zgeg | zgegs | [ZGEGS](https://www.slicot.org/objects/software/shared/doc/ZGEGS.html) | SLICOT-Reference/src/lapack_aux/ZGEGS.f |
+| ZGEGV | zgeg | zgegv | [ZGEGV](https://www.slicot.org/objects/software/shared/doc/ZGEGV.html) | SLICOT-Reference/src/lapack_aux/ZGEGV.f |
+| ZLATZM | zlat | zlatzm | [ZLATZM](https://www.slicot.org/objects/software/shared/doc/ZLATZM.html) | SLICOT-Reference/src/lapack_aux/ZLATZM.f |
