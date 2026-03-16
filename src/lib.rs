@@ -1,7 +1,12 @@
+#![doc(html_root_url = "https://docs.rs/slicot-rs/0.4.20")]
+
 //! # slicot-rs
 //!
 //! Pure Rust 1:1 mapping of SLICOT (Subroutine Library in Control Theory) routines.
 //! Uses [nalgebra](https://crates.io/crates/nalgebra) for linear algebra; no FFI to LAPACK/BLAS.
+//!
+//! This crate is intended as a **drop-in replacement for SLICOT** in the Rust ecosystem:
+//! same routine names and semantics where implemented; pure Rust, nalgebra-based, no FFI.
 
 pub mod ab01;
 pub mod ab04;
