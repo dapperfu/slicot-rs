@@ -19,7 +19,7 @@ pub fn tg01cd(
     a: &mut DMatrix<f64>,
     e: &mut DMatrix<f64>,
     b: &mut DMatrix<f64>,
-    q: Option<&mut DMatrix<f64>>,
+    mut q: Option<&mut DMatrix<f64>>,
 ) -> i32 {
     if a.nrows() != l || a.ncols() != n {
         return -5;
@@ -57,9 +57,10 @@ pub fn tg01cd(
     }
     if let Some(ref mut qout) = q {
         if compq == Tg01CdCompq::I {
-            *qout = q_from_qr;
+            **qout = q_from_qr;
         } else if compq == Tg01CdCompq::U {
-            *qout = qout.clone() * &q_from_qr;
+            let new_q = (*qout).clone() * &q_from_qr;
+            **qout = new_q;
         }
     }
     0

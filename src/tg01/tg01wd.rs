@@ -37,7 +37,7 @@ pub fn tg01wd(
     }
     q.fill_with_identity();
     z.fill_with_identity();
-    if let Some(e_inv) = e.try_inverse() {
+    if let Some(e_inv) = e.clone().try_inverse() {
         let ae = e_inv * a.clone();
         let schur = ae.schur();
         let eigs = schur.complex_eigenvalues();

@@ -28,8 +28,8 @@ pub fn tg01bd(
     e: &mut DMatrix<f64>,
     b: &mut DMatrix<f64>,
     c: &mut DMatrix<f64>,
-    q: Option<&mut DMatrix<f64>>,
-    z: Option<&mut DMatrix<f64>>,
+    mut q: Option<&mut DMatrix<f64>>,
+    mut z: Option<&mut DMatrix<f64>>,
 ) -> i32 {
     if a.nrows() != n || a.ncols() != n {
         return -9;
@@ -67,18 +67,18 @@ pub fn tg01bd(
         *c = c.clone() * &qe;
     }
     let qe_clone = qe.clone();
-    if let Some(qout) = q {
+    if let Some(ref mut qout) = q {
         if compq == Tg01BdComp::I {
-            *qout = qe_clone.clone();
+            **qout = qe_clone.clone();
         } else if compq == Tg01BdComp::V {
-            *qout = qout.clone() * &qe_clone;
+            **qout = (*qout).clone() * &qe_clone;
         }
     }
-    if let Some(zout) = z {
+    if let Some(ref mut zout) = z {
         if compz == Tg01BdComp::I {
-            *zout = qe_clone;
+            **zout = qe_clone;
         } else if compz == Tg01BdComp::V {
-            *zout = zout.clone() * &qe_clone;
+            **zout = (*zout).clone() * &qe_clone;
         }
     }
     let hess = a.clone().hessenberg();
@@ -89,12 +89,14 @@ pub fn tg01bd(
     *c = c.clone() * &q_h;
     if let Some(ref mut qout) = q {
         if compq != Tg01BdComp::N {
-            *qout = qout.clone() * &q_h;
+            let new_q = (*qout).clone() * &q_h;
+            **qout = new_q;
         }
     }
     if let Some(ref mut zout) = z {
         if compz != Tg01BdComp::N {
-            *zout = zout.clone() * &q_h;
+            let new_z = (*zout).clone() * &q_h;
+            **zout = new_z;
         }
     }
     0
