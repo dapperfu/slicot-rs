@@ -637,7 +637,7 @@ All SLICOT (Fortran) routines and their 1:1 pure Rust implementations. Source: [
 1:1 pure Rust is ensured as follows:
 
 - **No FFI**: No `extern`, `ffi`, `libslicot`, or Fortran linkage is used in `src/**/*.rs`. See [SLICOT_VALIDATION.md](SLICOT_VALIDATION.md).
-- **Validation script**: Run `./scripts/validate_slicot_done.sh` from the project root to re-validate that every routine marked done remains pure Rust and has at least one test.
+- **Validation script**: Run `./tools/validate_slicot_done.sh` from the project root to re-validate that every routine marked done remains pure Rust and has at least one test.
 - **Semantics**: Implementations aim for the same semantics and INFO codes as the SLICOT Fortran routines; see plan docs and [SLICOT_MAPPING.md](SLICOT_MAPPING.md).
 
 ### sb10 and sb16

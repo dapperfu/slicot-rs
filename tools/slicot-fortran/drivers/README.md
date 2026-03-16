@@ -13,7 +13,7 @@ These drivers are copies of the SLICOT example programs adapted to accept **opti
 Copy into your SLICOT-Reference tree to enable file-based I/O for AB01ND:
 
 ```bash
-cp scripts/slicot-fortran/drivers/TAB01ND.f SLICOT-Reference/examples/TAB01ND.f
+cp tools/slicot-fortran/drivers/TAB01ND.f SLICOT-Reference/examples/TAB01ND.f
 ```
 
 Then rebuild the examples. After that you can run e.g.:

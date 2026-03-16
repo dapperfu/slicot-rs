@@ -6,7 +6,7 @@ This directory contains cargo-fuzz targets that compare Rust SLICOT implementati
 
 - **Rust** with LLVM (for libFuzzer): `rustup default nightly` or install the appropriate toolchain.
 - **cargo-fuzz**: `cargo install cargo-fuzz`
-- **Fortran executables** (optional): Build SLICOT and the file-I/O drivers (see [../docs/FORTRAN_BUILD.md](../docs/FORTRAN_BUILD.md) and [../scripts/slicot-fortran/drivers/README.md](../scripts/slicot-fortran/drivers/README.md)). Copy the built `TAB01ND` (and others) into a directory and set `SLICOT_EXAMPLES_DIR` to that directory. If unset, the fuzzer only runs the Rust implementation (no comparison).
+- **Fortran executables** (optional): Build SLICOT and the file-I/O drivers (see [../docs/FORTRAN_BUILD.md](../docs/FORTRAN_BUILD.md) and [../tools/slicot-fortran/drivers/README.md](../tools/slicot-fortran/drivers/README.md)). Copy the built `TAB01ND` (and others) into a directory and set `SLICOT_EXAMPLES_DIR` to that directory. If unset, the fuzzer only runs the Rust implementation (no comparison).
 
 ## Targets
 

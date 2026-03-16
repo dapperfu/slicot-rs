@@ -5,7 +5,7 @@ Rust SLICOT implementations are validated against the Fortran reference by fuzzi
 ## Quick start
 
 1. **Build Fortran** (optional, for comparison):  
-   [FORTRAN_BUILD.md](FORTRAN_BUILD.md) and copy the file-I/O driver per [scripts/slicot-fortran/drivers/README.md](../scripts/slicot-fortran/drivers/README.md). Set `SLICOT_EXAMPLES_DIR` to the directory containing `TAB01ND`, etc.
+   [FORTRAN_BUILD.md](FORTRAN_BUILD.md) and copy the file-I/O driver per [tools/slicot-fortran/drivers/README.md](../tools/slicot-fortran/drivers/README.md). Set `SLICOT_EXAMPLES_DIR` to the directory containing `TAB01ND`, etc.
 
 2. **Install cargo-fuzz** (if needed):  
    `cargo install cargo-fuzz`

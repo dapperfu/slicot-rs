@@ -2,7 +2,7 @@
 
 This plan lists all **475** unimplemented SLICOT routines by phase and module. When all are implemented in pure Rust and marked `done` in [docs/SLICOT_MAPPING.md](../docs/SLICOT_MAPPING.md), the crate will have 100% feature coverage of the mapping.
 
-Feature status summary: [docs/FEATURES.md](../docs/FEATURES.md). Regenerate with `./scripts/gen_features_table.sh` after mapping changes.
+Feature status summary: [docs/FEATURES.md](../docs/FEATURES.md). Regenerate with `./tools/gen_features_table.sh` after mapping changes.
 
 ## Phases (by dependency and usage)
 
@@ -23,7 +23,7 @@ Feature status summary: [docs/FEATURES.md](../docs/FEATURES.md). Regenerate with
 
 ## Per-routine checklist (by module)
 
-Check off each when the routine is implemented in pure Rust, has at least one test, and status in `docs/SLICOT_MAPPING.md` is set to `done`. Run `./scripts/validate_slicot_done.sh` after each batch.
+Check off each when the routine is implemented in pure Rust, has at least one test, and status in `docs/SLICOT_MAPPING.md` is set to `done`. Run `./tools/validate_slicot_done.sh` after each batch.
 
 ### Phase 1: Complete partial modules (20)
 
@@ -217,8 +217,8 @@ Check off each when the routine is implemented in pure Rust, has at least one te
 2. Implement in pure Rust (no FFI).
 3. Add at least one `#[cfg(test)]` with `#[test]` in the implementation file.
 4. Set status to `done` in docs/SLICOT_MAPPING.md.
-5. Run `./scripts/validate_slicot_done.sh` and fix any failures.
-6. Regenerate features table: `./scripts/gen_features_table.sh` (optional; update [docs/FEATURES.md](../docs/FEATURES.md)).
+5. Run `./tools/validate_slicot_done.sh` and fix any failures.
+6. Regenerate features table: `./tools/gen_features_table.sh` (optional; update [docs/FEATURES.md](../docs/FEATURES.md)).
 7. Check off the routine in this roadmap.
 
 ## Completion

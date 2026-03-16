@@ -28,10 +28,10 @@ cargo bench --bench all_routines -- --noplot
 Build and run the Fortran benchmark driver (same size ladder as Rust):
 
 ```bash
-./scripts/slicot-fortran/run_fortran_benchmarks.sh
+./tools/slicot-fortran/run_fortran_benchmarks.sh
 ```
 
-This script builds `lpkaux.a` and `slicot.a` if needed (see [FORTRAN_BUILD.md](FORTRAN_BUILD.md); the full `examples` target may fail without OpenBLAS, but the benchmark driver only needs the two libraries), then compiles and runs `scripts/slicot-fortran/bench/bench_slicot.f90`. If OpenBLAS is not installed, the script retries with `-lblas -llapack`. Results are printed as µs/call per (routine, n).
+This script builds `lpkaux.a` and `slicot.a` if needed (see [FORTRAN_BUILD.md](FORTRAN_BUILD.md); the full `examples` target may fail without OpenBLAS, but the benchmark driver only needs the two libraries), then compiles and runs `tools/slicot-fortran/bench/bench_slicot.f90`. If OpenBLAS is not installed, the script retries with `-lblas -llapack`. Results are printed as µs/call per (routine, n).
 
 **Example Fortran results** (gfortran -O2, ref BLAS/LAPACK, one machine):
 
@@ -88,6 +88,6 @@ So you can expect:
 
 - **`benches/common.rs`**: Shared size ladders (`SIZE_LADDER_N`, `SIZE_LADDER_POW2`) and helpers to build matrices/vectors (`matrix_nn`, `matrix_nm`, `state_space_matrices`, etc.).
 - **`benches/all_routines.rs`**: Criterion groups per module; each routine is benchmarked at each size in the appropriate ladder. Stubs that take only `(n, m)` are registered with the same ladder so that when implemented, the harness already measures them.
-- **Fortran**: `scripts/slicot-fortran/bench/bench_slicot.f90` times MA02ED, MA02ES, DLACPY_SLC at the same n ladder; `scripts/slicot-fortran/run_fortran_benchmarks.sh` builds (lpkaux.a, slicot.a) and runs it. Uses `-lblas -llapack` if OpenBLAS is not installed.
+- **Fortran**: `tools/slicot-fortran/bench/bench_slicot.f90` times MA02ED, MA02ES, DLACPY_SLC at the same n ladder; `tools/slicot-fortran/run_fortran_benchmarks.sh` builds (lpkaux.a, slicot.a) and runs it. Uses `-lblas -llapack` if OpenBLAS is not installed.
 
 The legacy **`benches/tb01md.rs`** benchmark is still available (`cargo bench --bench tb01md`) but uses smaller sizes (4–32); the full ladder for TB01MD is in `all_routines` (32–1024).

@@ -23,6 +23,6 @@
 - All 625 routines have status `done` in docs/SLICOT_MAPPING.md.
 - Every routine has a full, spec-compliant implementation (no stubs).
 - Every routine has at least one test that checks meaningful behavior.
-- ./scripts/validate_slicot_done.sh passes.
+- ./tools/validate_slicot_done.sh passes.
 
 Until then, the task is not complete.

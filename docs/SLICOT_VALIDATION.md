@@ -36,7 +36,7 @@ Routine list (SLICOT name | module | rust function): see [SLICOT_MAPPING.md](SLI
 
 ## Automation
 
-The script [../scripts/validate_slicot_done.sh](../scripts/validate_slicot_done.sh) can be run to re-validate that every done routine remains pure Rust and has tests. Run from project root: `./scripts/validate_slicot_done.sh`.
+The script [../tools/validate_slicot_done.sh](../tools/validate_slicot_done.sh) can be run to re-validate that every done routine remains pure Rust and has tests. Run from project root: `./tools/validate_slicot_done.sh`.
 
 ## Completion
 

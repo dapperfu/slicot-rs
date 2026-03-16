@@ -16,7 +16,7 @@ Reference: [docs/SLICOT_MAPPING.md](docs/SLICOT_MAPPING.md) (lines 372–413), [
 - Register in [src/lib.rs](src/lib.rs): `pub mod mc01;` (and mc03, md03, nf01).
 - Pure Rust only: no FFI; use [nalgebra](https://crates.io/crates/nalgebra) where needed (see e.g. [src/mb01/mb01ld.rs](src/mb01/mb01ld.rs)).
 - Each routine file: doc comment with SLICOT name, public function matching SLICOT interface (arguments/return), and `#[cfg(test)] mod tests` with at least one `#[test]`.
-- After implementation: set status to `done` in [docs/SLICOT_MAPPING.md](docs/SLICOT_MAPPING.md); add/check off in [plans/remaining-slicot-functions-todo.md](plans/remaining-slicot-functions-todo.md); run `./scripts/validate_slicot_done.sh` and `./scripts/gen_features_table.sh`.
+- After implementation: set status to `done` in [docs/SLICOT_MAPPING.md](docs/SLICOT_MAPPING.md); add/check off in [plans/remaining-slicot-functions-todo.md](plans/remaining-slicot-functions-todo.md); run `./tools/validate_slicot_done.sh` and `./tools/gen_features_table.sh`.
 
 ## Dependency and order
 
@@ -77,4 +77,4 @@ The **overall plan is complete** only when **all four sections** (MC01, MC03, MD
 ## Notes
 
 - No Fortran sources for MC01/MC03/MD03/NF01 were found under the repo; implementations will rely on SLICOT documentation or external references (e.g. SLICOT release docs or NAG/SLICOT user guides).
-- [docs/FEATURES.md](docs/FEATURES.md) is regenerated via `./scripts/gen_features_table.sh`; run after mapping updates.
+- [docs/FEATURES.md](docs/FEATURES.md) is regenerated via `./tools/gen_features_table.sh`; run after mapping updates.
