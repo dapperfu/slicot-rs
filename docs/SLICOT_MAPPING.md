@@ -15,8 +15,8 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | AB05QD | ab05 | ab05qd | done | no |
 | AB05RD | ab05 | ab05rd | done | no |
 | AB05SD | ab05 | ab05sd | done | no |
-| AB07MD | ab07 | ab07md | done | no |
-| AB07ND | ab07 | ab07nd | done | no |
+| AB07MD | ab07 | ab07md | done | yes |
+| AB07ND | ab07 | ab07nd | done | yes |
 | AB08MD | ab08 | ab08md | done | no |
 | AB08MZ | ab08 | ab08mz | done | no |
 | AB08ND | ab08 | ab08nd | done | no |
