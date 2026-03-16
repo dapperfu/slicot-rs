@@ -27,12 +27,12 @@ def main():
     except FileNotFoundError:
         print("error: cargo not found", file=sys.stderr)
         sys.exit(1)
-    except subprocess.TimeoutError:
+    except subprocess.TimeoutExpired:
         print("error: bench_csv timed out (max 600s total)", file=sys.stderr)
         sys.exit(1)
 
     if result.returncode != 0:
-        print(result.stderr, file=sys.stderr)
+        print(result.stderr or result.stdout, file=sys.stderr)
         sys.exit(result.returncode)
 
     lines = result.stdout.strip().splitlines()
@@ -57,13 +57,14 @@ def main():
     df = pd.DataFrame(rows)
     df["n"] = df["n"].astype(int)
     df["time_us"] = df["time_us"].astype(float)
+    df = df[df["n"] <= 1024]
 
     sns.set_theme(style="darkgrid")
     fig, ax = plt.subplots(figsize=(10, 6))
     sns.lineplot(data=df, x="n", y="time_us", hue="routine", marker="o", ax=ax)
     ax.set_xlabel("Matrix size n")
     ax.set_ylabel("Time per call (µs)")
-    ax.set_title("Control routines benchmark (up to 30s per size)")
+    ax.set_title("Control routines benchmark (sizes up through 1024)")
     out = Path(__file__).parent / "benchmark_control.png"
     fig.savefig(out, dpi=150)
     print(f"Plot saved to {out}")

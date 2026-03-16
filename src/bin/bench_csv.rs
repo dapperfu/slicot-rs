@@ -15,9 +15,9 @@ use slicot_rs::tb01::tb01md::{tb01md, JobU, Uplo};
 /// Max wall-clock time per (routine, size).
 const BUDGET_PER_SIZE: Duration = Duration::from_secs(30);
 
-/// Size ladder: small to large (stay under 30s per size for typical routines).
+/// Size ladder: up through 1024 (stay under 30s per size for typical routines).
 fn size_ladder() -> Vec<usize> {
-    vec![8, 16, 32, 64, 128, 256, 512]
+    vec![32, 64, 128, 256, 512, 1024]
 }
 
 fn matrix_nn(n: usize) -> DMatrix<f64> {
