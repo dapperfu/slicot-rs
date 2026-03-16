@@ -1,0 +1,32 @@
+//! TG01 — Descriptor system transformations (SLICOT TG01*)
+
+pub mod tg01ad;
+pub mod tg01az;
+pub mod tg01bd;
+pub mod tg01cd;
+pub mod tg01dd;
+pub mod tg01ed;
+pub mod tg01fd;
+pub mod tg01fz;
+pub mod tg01gd;
+pub mod tg01hd;
+pub mod tg01hu;
+pub mod tg01hx;
+pub mod tg01hy;
+pub mod tg01id;
+pub mod tg01jd;
+pub mod tg01jy;
+pub mod tg01kd;
+pub mod tg01kz;
+pub mod tg01ld;
+pub mod tg01ly;
+pub mod tg01md;
+pub mod tg01nd;
+pub mod tg01nx;
+pub mod tg01oa;
+pub mod tg01ob;
+pub mod tg01od;
+pub mod tg01oz;
+pub mod tg01pd;
+pub mod tg01qd;
+pub mod tg01wd;
