@@ -7,3 +7,4 @@ pub mod sg03br;
 pub mod sg03bw;
 pub mod sg03bx;
 pub mod sg03by;
+pub mod sg03bu;
