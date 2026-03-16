@@ -1,634 +1,634 @@
 # SLICOT → slicot-rs mapping index
 
-One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` crate. Includes all routines from `slicot_module.f90` and `lapack_aux`. Status: `not started` | `in progress` | `done`. Rust function names are lowercase per plan.
+One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` crate. Includes all routines from `slicot_module.f90` and `lapack_aux`. Status: `not started` | `in progress` | `done`. Validated: FORTRAN validation passed (yes) or not (no). Rust function names are lowercase per plan.
 
-| SLICOT | Rust module | Rust function | Status |
-|--------|-------------|---------------|--------|
-| AB01MD | ab01 | ab01md | done |
-| AB01ND | ab01 | ab01nd | done |
-| AB01OD | ab01 | ab01od | done |
-| AB04MD | ab04 | ab04md | done |
-| AB05MD | ab05 | ab05md | done |
-| AB05ND | ab05 | ab05nd | done |
-| AB05OD | ab05 | ab05od | done |
-| AB05PD | ab05 | ab05pd | done |
-| AB05QD | ab05 | ab05qd | done |
-| AB05RD | ab05 | ab05rd | done |
-| AB05SD | ab05 | ab05sd | done |
-| AB07MD | ab07 | ab07md | done |
-| AB07ND | ab07 | ab07nd | done |
-| AB08MD | ab08 | ab08md | done |
-| AB08MZ | ab08 | ab08mz | done |
-| AB08ND | ab08 | ab08nd | done |
-| AB08NW | ab08 | ab08nw | done |
-| AB08NX | ab08 | ab08nx | done |
-| AB08NY | ab08 | ab08ny | done |
-| AB08NZ | ab08 | ab08nz | done |
-| AB09AD | ab09 | ab09ad | done |
-| AB09AX | ab09 | ab09ax | done |
-| AB09BD | ab09 | ab09bd | done |
-| AB09BX | ab09 | ab09bx | done |
-| AB09CD | ab09 | ab09cd | done |
-| AB09CX | ab09 | ab09cx | done |
-| AB09DD | ab09 | ab09dd | done |
-| AB09ED | ab09 | ab09ed | done |
-| AB09FD | ab09 | ab09fd | done |
-| AB09GD | ab09 | ab09gd | done |
-| AB09HD | ab09 | ab09hd | done |
-| AB09HX | ab09 | ab09hx | done |
-| AB09HY | ab09 | ab09hy | done |
-| AB09ID | ab09 | ab09id | done |
-| AB09IX | ab09 | ab09ix | done |
-| AB09IY | ab09 | ab09iy | done |
-| AB09JD | ab09 | ab09jd | done |
-| AB09JV | ab09 | ab09jv | done |
-| AB09JW | ab09 | ab09jw | done |
-| AB09JX | ab09 | ab09jx | done |
-| AB09KD | ab09 | ab09kd | done |
-| AB09KX | ab09 | ab09kx | done |
-| AB09MD | ab09 | ab09md | done |
-| AB09ND | ab09 | ab09nd | done |
-| AB13AD | ab13 | ab13ad | done |
-| AB13AX | ab13 | ab13ax | done |
-| AB13BD | ab13 | ab13bd | done |
-| AB13CD | ab13 | ab13cd | done |
-| AB13DD | ab13 | ab13dd | done |
-| AB13DX | ab13 | ab13dx | done |
-| AB13ED | ab13 | ab13ed | done |
-| AB13FD | ab13 | ab13fd | done |
-| AB13HD | ab13 | ab13hd | done |
-| AB13ID | ab13 | ab13id | done |
-| AB13MD | ab13 | ab13md | done |
-| AB8NXZ | ab8n | ab8nxz | done |
-| AG07BD | ag07 | ag07bd | done |
-| AG08BD | ag08 | ag08bd | done |
-| AG08BY | ag08 | ag08by | done |
-| AG08BZ | ag08 | ag08bz | done |
-| AG8BYZ | ag8b | ag8byz | done |
-| BB01AD | bb01 | bb01ad | done |
-| BB02AD | bb02 | bb02ad | done |
-| BB03AD | bb03 | bb03ad | done |
-| BB04AD | bb04 | bb04ad | done |
-| BD01AD | bd01 | bd01ad | done |
-| BD02AD | bd02 | bd02ad | done |
-| DE01OD | de01 | de01od | done |
-| DE01PD | de01 | de01pd | done |
-| DF01MD | df01 | df01md | done |
-| DG01MD | dg01 | dg01md | done |
-| DG01ND | dg01 | dg01nd | done |
-| DG01NY | dg01 | dg01ny | done |
-| DG01OD | dg01 | dg01od | done |
-| DGEGS | dgeg | dgegs | done |
-| DGEGV | dgeg | dgegv | done |
-| DK01MD | dk01 | dk01md | done |
-| DLACPY_SLC | dlac | dlacpy_slc | done |
-| DLATZM | dlat | dlatzm | done |
-| FB01QD | fb01 | fb01qd | done |
-| FB01RD | fb01 | fb01rd | done |
-| FB01SD | fb01 | fb01sd | done |
-| FB01TD | fb01 | fb01td | done |
-| FB01VD | fb01 | fb01vd | done |
-| FD01AD | fd01 | fd01ad | done |
-| IB01AD | ib01 | ib01ad | done |
-| IB01BD | ib01 | ib01bd | done |
-| IB01CD | ib01 | ib01cd | done |
-| IB01MD | ib01 | ib01md | done |
-| IB01MY | ib01 | ib01my | done |
-| IB01ND | ib01 | ib01nd | done |
-| IB01OD | ib01 | ib01od | done |
-| IB01OY | ib01 | ib01oy | done |
-| IB01PD | ib01 | ib01pd | done |
-| IB01PX | ib01 | ib01px | done |
-| IB01PY | ib01 | ib01py | done |
-| IB01QD | ib01 | ib01qd | done |
-| IB01RD | ib01 | ib01rd | done |
-| IB03AD | ib03 | ib03ad | done |
-| IB03BD | ib03 | ib03bd | done |
-| MA01AD | ma01 | ma01ad | done |
-| MA01BD | ma01 | ma01bd | done |
-| MA01BZ | ma01 | ma01bz | done |
-| MA01CD | ma01 | ma01cd | done |
-| MA01DD | ma01 | ma01dd | done |
-| MA01DZ | ma01 | ma01dz | done |
-| MA02AD | ma02 | ma02ad | done |
-| MA02AZ | ma02 | ma02az | done |
-| MA02BD | ma02 | ma02bd | done |
-| MA02BZ | ma02 | ma02bz | done |
-| MA02CD | ma02 | ma02cd | done |
-| MA02CZ | ma02 | ma02cz | done |
-| MA02DD | ma02 | ma02dd | done |
-| MA02ED | ma02 | ma02ed | done |
-| MA02ES | ma02 | ma02es | done |
-| MA02EZ | ma02 | ma02ez | done |
-| MA02FD | ma02 | ma02fd | done |
-| MA02GD | ma02 | ma02gd | done |
-| MA02GZ | ma02 | ma02gz | done |
-| MA02HD | ma02 | ma02hd | done |
-| MA02HZ | ma02 | ma02hz | done |
-| MA02ID | ma02 | ma02id | done |
-| MA02IZ | ma02 | ma02iz | done |
-| MA02JD | ma02 | ma02jd | done |
-| MA02JZ | ma02 | ma02jz | done |
-| MA02MD | ma02 | ma02md | done |
-| MA02MZ | ma02 | ma02mz | done |
-| MA02NZ | ma02 | ma02nz | done |
-| MA02OD | ma02 | ma02od | done |
-| MA02OZ | ma02 | ma02oz | done |
-| MA02PD | ma02 | ma02pd | done |
-| MA02PZ | ma02 | ma02pz | done |
-| MA02RD | ma02 | ma02rd | done |
-| MA02SD | ma02 | ma02sd | done |
-| MB01KD | mb01 | mb01kd | done |
-| MB01LD | mb01 | mb01ld | done |
-| MB01MD | mb01 | mb01md | done |
-| MB01ND | mb01 | mb01nd | done |
-| MB01OC | mb01 | mb01oc | done |
-| MB01OD | mb01 | mb01od | done |
-| MB01OE | mb01 | mb01oe | done |
-| MB01OH | mb01 | mb01oh | done |
-| MB01OO | mb01 | mb01oo | done |
-| MB01OS | mb01 | mb01os | done |
-| MB01OT | mb01 | mb01ot | done |
-| MB01PD | mb01 | mb01pd | done |
-| MB01QD | mb01 | mb01qd | done |
-| MB01RB | mb01 | mb01rb | done |
-| MB01RD | mb01 | mb01rd | done |
-| MB01RH | mb01 | mb01rh | done |
-| MB01RT | mb01 | mb01rt | done |
-| MB01RU | mb01 | mb01ru | done |
-| MB01RW | mb01 | mb01rw | done |
-| MB01RX | mb01 | mb01rx | done |
-| MB01RY | mb01 | mb01ry | done |
-| MB01SD | mb01 | mb01sd | done |
-| MB01SS | mb01 | mb01ss | done |
-| MB01TD | mb01 | mb01td | done |
-| MB01UD | mb01 | mb01ud | done |
-| MB01UW | mb01 | mb01uw | done |
-| MB01UX | mb01 | mb01ux | done |
-| MB01UY | mb01 | mb01uy | done |
-| MB01UZ | mb01 | mb01uz | done |
-| MB01VD | mb01 | mb01vd | done |
-| MB01WD | mb01 | mb01wd | done |
-| MB01XD | mb01 | mb01xd | done |
-| MB01XY | mb01 | mb01xy | done |
-| MB01YD | mb01 | mb01yd | done |
-| MB01ZD | mb01 | mb01zd | done |
-| MB02CD | mb02 | mb02cd | done |
-| MB02CU | mb02 | mb02cu | done |
-| MB02CV | mb02 | mb02cv | done |
-| MB02CX | mb02 | mb02cx | done |
-| MB02CY | mb02 | mb02cy | done |
-| MB02DD | mb02 | mb02dd | done |
-| MB02ED | mb02 | mb02ed | done |
-| MB02FD | mb02 | mb02fd | done |
-| MB02GD | mb02 | mb02gd | done |
-| MB02HD | mb02 | mb02hd | done |
-| MB02ID | mb02 | mb02id | done |
-| MB02JD | mb02 | mb02jd | done |
-| MB02JX | mb02 | mb02jx | done |
-| MB02KD | mb02 | mb02kd | done |
-| MB02MD | mb02 | mb02md | done |
-| MB02ND | mb02 | mb02nd | done |
-| MB02NY | mb02 | mb02ny | done |
-| MB02OD | mb02 | mb02od | done |
-| MB02PD | mb02 | mb02pd | done |
-| MB02QD | mb02 | mb02qd | done |
-| MB02QY | mb02 | mb02qy | done |
-| MB02RD | mb02 | mb02rd | done |
-| MB02RZ | mb02 | mb02rz | done |
-| MB02SD | mb02 | mb02sd | done |
-| MB02SZ | mb02 | mb02sz | done |
-| MB02TD | mb02 | mb02td | done |
-| MB02TZ | mb02 | mb02tz | done |
-| MB02UD | mb02 | mb02ud | done |
-| MB02UU | mb02 | mb02uu | done |
-| MB02UV | mb02 | mb02uv | done |
-| MB02UW | mb02 | mb02uw | done |
-| MB02VD | mb02 | mb02vd | done |
-| MB02WD | mb02 | mb02wd | done |
-| MB02XD | mb02 | mb02xd | done |
-| MB02YD | mb02 | mb02yd | done |
-| MB03AB | mb03 | mb03ab | done |
-| MB03AD | mb03 | mb03ad | done |
-| MB03AE | mb03 | mb03ae | done |
-| MB03AF | mb03 | mb03af | done |
-| MB03AG | mb03 | mb03ag | done |
-| MB03AH | mb03 | mb03ah | done |
-| MB03AI | mb03 | mb03ai | done |
-| MB03BA | mb03 | mb03ba | done |
-| MB03BB | mb03 | mb03bb | done |
-| MB03BC | mb03 | mb03bc | done |
-| MB03BD | mb03 | mb03bd | done |
-| MB03BE | mb03 | mb03be | done |
-| MB03BF | mb03 | mb03bf | done |
-| MB03BG | mb03 | mb03bg | done |
-| MB03BZ | mb03 | mb03bz | done |
-| MB03CD | mb03 | mb03cd | done |
-| MB03CZ | mb03 | mb03cz | done |
-| MB03DD | mb03 | mb03dd | done |
-| MB03DZ | mb03 | mb03dz | done |
-| MB03ED | mb03 | mb03ed | done |
-| MB03FD | mb03 | mb03fd | done |
-| MB03FZ | mb03 | mb03fz | done |
-| MB03GD | mb03 | mb03gd | done |
-| MB03GZ | mb03 | mb03gz | done |
-| MB03HD | mb03 | mb03hd | done |
-| MB03HZ | mb03 | mb03hz | done |
-| MB03ID | mb03 | mb03id | done |
-| MB03IZ | mb03 | mb03iz | done |
-| MB03JD | mb03 | mb03jd | done |
-| MB03JP | mb03 | mb03jp | done |
-| MB03JZ | mb03 | mb03jz | done |
-| MB03KA | mb03 | mb03ka | done |
-| MB03KB | mb03 | mb03kb | done |
-| MB03KC | mb03 | mb03kc | done |
-| MB03KD | mb03 | mb03kd | done |
-| MB03KE | mb03 | mb03ke | done |
-| MB03LD | mb03 | mb03ld | done |
-| MB03LF | mb03 | mb03lf | done |
-| MB03LP | mb03 | mb03lp | done |
-| MB03LZ | mb03 | mb03lz | done |
-| MB03MD | mb03 | mb03md | done |
-| MB03MY | mb03 | mb03my | done |
-| MB03ND | mb03 | mb03nd | done |
-| MB03NY | mb03 | mb03ny | done |
-| MB03OD | mb03 | mb03od | done |
-| MB03OY | mb03 | mb03oy | done |
-| MB03PD | mb03 | mb03pd | done |
-| MB03PY | mb03 | mb03py | done |
-| MB03QD | mb03 | mb03qd | done |
-| MB03QG | mb03 | mb03qg | done |
-| MB03QV | mb03 | mb03qv | done |
-| MB03QW | mb03 | mb03qw | done |
-| MB03QX | mb03 | mb03qx | done |
-| MB03QY | mb03 | mb03qy | done |
-| MB03RD | mb03 | mb03rd | done |
-| MB03RW | mb03 | mb03rw | done |
-| MB03RX | mb03 | mb03rx | done |
-| MB03RY | mb03 | mb03ry | done |
-| MB03RZ | mb03 | mb03rz | done |
-| MB03SD | mb03 | mb03sd | done |
-| MB03TD | mb03 | mb03td | done |
-| MB03TS | mb03 | mb03ts | done |
-| MB03UD | mb03 | mb03ud | done |
-| MB03VD | mb03 | mb03vd | done |
-| MB03VW | mb03 | mb03vw | done |
-| MB03VY | mb03 | mb03vy | done |
-| MB03WA | mb03 | mb03wa | done |
-| MB03WD | mb03 | mb03wd | done |
-| MB03WX | mb03 | mb03wx | done |
-| MB03XD | mb03 | mb03xd | done |
-| MB03XP | mb03 | mb03xp | done |
-| MB03XS | mb03 | mb03xs | done |
-| MB03XU | mb03 | mb03xu | done |
-| MB03XZ | mb03 | mb03xz | done |
-| MB03YA | mb03 | mb03ya | done |
-| MB03YD | mb03 | mb03yd | done |
-| MB03YT | mb03 | mb03yt | done |
-| MB03ZA | mb03 | mb03za | done |
-| MB03ZD | mb03 | mb03zd | done |
-| MB04AD | mb04 | mb04ad | done |
-| MB04AZ | mb04 | mb04az | done |
-| MB04BD | mb04 | mb04bd | done |
-| MB04BP | mb04 | mb04bp | done |
-| MB04BZ | mb04 | mb04bz | done |
-| MB04CD | mb04 | mb04cd | done |
-| MB04DB | mb04 | mb04db | done |
-| MB04DD | mb04 | mb04dd | done |
-| MB04DI | mb04 | mb04di | done |
-| MB04DL | mb04 | mb04dl | done |
-| MB04DP | mb04 | mb04dp | done |
-| MB04DS | mb04 | mb04ds | done |
-| MB04DY | mb04 | mb04dy | done |
-| MB04DZ | mb04 | mb04dz | done |
-| MB04ED | mb04 | mb04ed | done |
-| MB04FD | mb04 | mb04fd | done |
-| MB04FP | mb04 | mb04fp | done |
-| MB04GD | mb04 | mb04gd | done |
-| MB04HD | mb04 | mb04hd | done |
-| MB04ID | mb04 | mb04id | done |
-| MB04IY | mb04 | mb04iy | done |
-| MB04IZ | mb04 | mb04iz | done |
-| MB04JD | mb04 | mb04jd | done |
-| MB04KD | mb04 | mb04kd | done |
-| MB04LD | mb04 | mb04ld | done |
-| MB04MD | mb04 | mb04md | done |
-| MB04ND | mb04 | mb04nd | done |
-| MB04NY | mb04 | mb04ny | done |
-| MB04OD | mb04 | mb04od | done |
-| MB04OW | mb04 | mb04ow | done |
-| MB04OX | mb04 | mb04ox | done |
-| MB04OY | mb04 | mb04oy | done |
-| MB04PA | mb04 | mb04pa | done |
-| MB04PB | mb04 | mb04pb | done |
-| MB04PU | mb04 | mb04pu | done |
-| MB04PY | mb04 | mb04py | done |
-| MB04QB | mb04 | mb04qb | done |
-| MB04QC | mb04 | mb04qc | done |
-| MB04QF | mb04 | mb04qf | done |
-| MB04QS | mb04 | mb04qs | done |
-| MB04QU | mb04 | mb04qu | done |
-| MB04RB | mb04 | mb04rb | done |
-| MB04RD | mb04 | mb04rd | done |
-| MB04RS | mb04 | mb04rs | done |
-| MB04RT | mb04 | mb04rt | done |
-| MB04RU | mb04 | mb04ru | done |
-| MB04RV | mb04 | mb04rv | done |
-| MB04RW | mb04 | mb04rw | done |
-| MB04RZ | mb04 | mb04rz | done |
-| MB04SU | mb04 | mb04su | done |
-| MB04TB | mb04 | mb04tb | done |
-| MB04TS | mb04 | mb04ts | done |
-| MB04TT | mb04 | mb04tt | done |
-| MB04TU | mb04 | mb04tu | done |
-| MB04TV | mb04 | mb04tv | done |
-| MB04TW | mb04 | mb04tw | done |
-| MB04TX | mb04 | mb04tx | done |
-| MB04TY | mb04 | mb04ty | done |
-| MB04UD | mb04 | mb04ud | done |
-| MB04VD | mb04 | mb04vd | done |
-| MB04VX | mb04 | mb04vx | done |
-| MB04WD | mb04 | mb04wd | done |
-| MB04WP | mb04 | mb04wp | done |
-| MB04WR | mb04 | mb04wr | done |
-| MB04WU | mb04 | mb04wu | done |
-| MB04XD | mb04 | mb04xd | done |
-| MB04XY | mb04 | mb04xy | done |
-| MB04YD | mb04 | mb04yd | done |
-| MB04YW | mb04 | mb04yw | done |
-| MB04ZD | mb04 | mb04zd | done |
-| MB05MD | mb05 | mb05md | done |
-| MB05MY | mb05 | mb05my | done |
-| MB05ND | mb05 | mb05nd | done |
-| MB05OD | mb05 | mb05od | done |
-| MB05OY | mb05 | mb05oy | done |
-| MB3JZP | mb3j | mb3jzp | done |
-| MB3LZP | mb3l | mb3lzp | done |
-| MB3OYZ | mb3o | mb3oyz | done |
-| MB3PYZ | mb3p | mb3pyz | done |
-| MB4DBZ | mb4d | mb4dbz | done |
-| MB4DLZ | mb4d | mb4dlz | done |
-| MB4DPZ | mb4d | mb4dpz | done |
-| MC01MD | mc01 | mc01md | done |
-| MC01ND | mc01 | mc01nd | done |
-| MC01OD | mc01 | mc01od | done |
-| MC01PD | mc01 | mc01pd | done |
-| MC01PY | mc01 | mc01py | done |
-| MC01QD | mc01 | mc01qd | done |
-| MC01RD | mc01 | mc01rd | done |
-| MC01SD | mc01 | mc01sd | done |
-| MC01SW | mc01 | mc01sw | done |
-| MC01SX | mc01 | mc01sx | done |
-| MC01SY | mc01 | mc01sy | done |
-| MC01TD | mc01 | mc01td | done |
-| MC01VD | mc01 | mc01vd | done |
-| MC01WD | mc01 | mc01wd | done |
-| MC01XD | mc01 | mc01xd | done |
-| MC03MD | mc03 | mc03md | done |
-| MC03ND | mc03 | mc03nd | done |
-| MC03NX | mc03 | mc03nx | done |
-| MC03NY | mc03 | mc03ny | done |
-| MD03AD | md03 | md03ad | done |
-| MD03BA | md03 | md03ba | done |
-| MD03BB | md03 | md03bb | done |
-| MD03BD | md03 | md03bd | done |
-| MD03BF | md03 | md03bf | done |
-| MD03BX | md03 | md03bx | done |
-| MD03BY | md03 | md03by | done |
-| NF01AD | nf01 | nf01ad | done |
-| NF01AY | nf01 | nf01ay | done |
-| NF01BA | nf01 | nf01ba | done |
-| NF01BB | nf01 | nf01bb | done |
-| NF01BD | nf01 | nf01bd | done |
-| NF01BE | nf01 | nf01be | done |
-| NF01BF | nf01 | nf01bf | done |
-| NF01BP | nf01 | nf01bp | done |
-| NF01BQ | nf01 | nf01bq | done |
-| NF01BR | nf01 | nf01br | done |
-| NF01BS | nf01 | nf01bs | done |
-| NF01BU | nf01 | nf01bu | done |
-| NF01BV | nf01 | nf01bv | done |
-| NF01BW | nf01 | nf01bw | done |
-| NF01BX | nf01 | nf01bx | done |
-| NF01BY | nf01 | nf01by | done |
-| SB01BD | sb01 | sb01bd | done |
-| SB01BX | sb01 | sb01bx | done |
-| SB01BY | sb01 | sb01by | done |
-| SB01DD | sb01 | sb01dd | done |
-| SB01FY | sb01 | sb01fy | done |
-| SB01MD | sb01 | sb01md | done |
-| SB02CX | sb02 | sb02cx | done |
-| SB02MD | sb02 | sb02md | done |
-| SB02MR | sb02 | sb02mr | done |
-| SB02MS | sb02 | sb02ms | done |
-| SB02MT | sb02 | sb02mt | done |
-| SB02MU | sb02 | sb02mu | done |
-| SB02MV | sb02 | sb02mv | done |
-| SB02MW | sb02 | sb02mw | done |
-| SB02MX | sb02 | sb02mx | done |
-| SB02ND | sb02 | sb02nd | done |
-| SB02OD | sb02 | sb02od | done |
-| SB02OU | sb02 | sb02ou | done |
-| SB02OV | sb02 | sb02ov | done |
-| SB02OW | sb02 | sb02ow | done |
-| SB02OX | sb02 | sb02ox | done |
-| SB02OY | sb02 | sb02oy | done |
-| SB02PD | sb02 | sb02pd | done |
-| SB02QD | sb02 | sb02qd | done |
-| SB02RD | sb02 | sb02rd | done |
-| SB02RU | sb02 | sb02ru | done |
-| SB02SD | sb02 | sb02sd | done |
-| SB03MD | sb03 | sb03md | done |
-| SB03MU | sb03 | sb03mu | done |
-| SB03MV | sb03 | sb03mv | done |
-| SB03MW | sb03 | sb03mw | done |
-| SB03MX | sb03 | sb03mx | done |
-| SB03MY | sb03 | sb03my | done |
-| SB03OD | sb03 | sb03od | done |
-| SB03OR | sb03 | sb03or | done |
-| SB03OS | sb03 | sb03os | done |
-| SB03OT | sb03 | sb03ot | done |
-| SB03OU | sb03 | sb03ou | done |
-| SB03OV | sb03 | sb03ov | done |
-| SB03OY | sb03 | sb03oy | done |
-| SB03OZ | sb03 | sb03oz | done |
-| SB03PD | sb03 | sb03pd | done |
-| SB03QD | sb03 | sb03qd | done |
-| SB03QX | sb03 | sb03qx | done |
-| SB03QY | sb03 | sb03qy | done |
-| SB03RD | sb03 | sb03rd | done |
-| SB03SD | sb03 | sb03sd | done |
-| SB03SX | sb03 | sb03sx | done |
-| SB03SY | sb03 | sb03sy | done |
-| SB03TD | sb03 | sb03td | done |
-| SB03UD | sb03 | sb03ud | done |
-| SB04MD | sb04 | sb04md | done |
-| SB04MR | sb04 | sb04mr | done |
-| SB04MU | sb04 | sb04mu | done |
-| SB04MW | sb04 | sb04mw | done |
-| SB04MY | sb04 | sb04my | done |
-| SB04ND | sb04 | sb04nd | done |
-| SB04NV | sb04 | sb04nv | done |
-| SB04NW | sb04 | sb04nw | done |
-| SB04NX | sb04 | sb04nx | done |
-| SB04NY | sb04 | sb04ny | done |
-| SB04OD | sb04 | sb04od | done |
-| SB04OW | sb04 | sb04ow | done |
-| SB04PD | sb04 | sb04pd | done |
-| SB04PX | sb04 | sb04px | done |
-| SB04PY | sb04 | sb04py | done |
-| SB04QD | sb04 | sb04qd | done |
-| SB04QR | sb04 | sb04qr | done |
-| SB04QU | sb04 | sb04qu | done |
-| SB04QY | sb04 | sb04qy | done |
-| SB04RD | sb04 | sb04rd | done |
-| SB04RV | sb04 | sb04rv | done |
-| SB04RW | sb04 | sb04rw | done |
-| SB04RX | sb04 | sb04rx | done |
-| SB04RY | sb04 | sb04ry | done |
-| SB06ND | sb06 | sb06nd | done |
-| SB08CD | sb08 | sb08cd | done |
-| SB08DD | sb08 | sb08dd | done |
-| SB08ED | sb08 | sb08ed | done |
-| SB08FD | sb08 | sb08fd | done |
-| SB08GD | sb08 | sb08gd | done |
-| SB08HD | sb08 | sb08hd | done |
-| SB08MD | sb08 | sb08md | done |
-| SB08MY | sb08 | sb08my | done |
-| SB08ND | sb08 | sb08nd | done |
-| SB08NY | sb08 | sb08ny | done |
-| SB09MD | sb09 | sb09md | done |
-| SB10AD | sb10 | sb10ad | done |
-| SB10DD | sb10 | sb10dd | done |
-| SB10ED | sb10 | sb10ed | done |
-| SB10FD | sb10 | sb10fd | done |
-| SB10HD | sb10 | sb10hd | done |
-| SB10ID | sb10 | sb10id | done |
-| SB10JD | sb10 | sb10jd | done |
-| SB10KD | sb10 | sb10kd | done |
-| SB10LD | sb10 | sb10ld | done |
-| SB10MD | sb10 | sb10md | done |
-| SB10PD | sb10 | sb10pd | done |
-| SB10QD | sb10 | sb10qd | done |
-| SB10RD | sb10 | sb10rd | done |
-| SB10SD | sb10 | sb10sd | done |
-| SB10TD | sb10 | sb10td | done |
-| SB10UD | sb10 | sb10ud | done |
-| SB10VD | sb10 | sb10vd | done |
-| SB10WD | sb10 | sb10wd | done |
-| SB10YD | sb10 | sb10yd | done |
-| SB10ZD | sb10 | sb10zd | done |
-| SB10ZP | sb10 | sb10zp | done |
-| SB16AD | sb16 | sb16ad | done |
-| SB16AY | sb16 | sb16ay | done |
-| SB16BD | sb16 | sb16bd | done |
-| SB16CD | sb16 | sb16cd | done |
-| SB16CY | sb16 | sb16cy | done |
-| SG02AD | sg02 | sg02ad | done |
-| SG02CV | sg02 | sg02cv | done |
-| SG02CW | sg02 | sg02cw | done |
-| SG02CX | sg02 | sg02cx | done |
-| SG02ND | sg02 | sg02nd | done |
-| SG03AD | sg03 | sg03ad | done |
-| SG03AX | sg03 | sg03ax | done |
-| SG03AY | sg03 | sg03ay | done |
-| SG03BD | sg03 | sg03bd | done |
-| SG03BR | sg03 | sg03br | done |
-| SG03BS | sg03 | sg03bs | done |
-| SG03BT | sg03 | sg03bt | done |
-| SG03BU | sg03 | sg03bu | done |
-| SG03BV | sg03 | sg03bv | done |
-| SG03BW | sg03 | sg03bw | done |
-| SG03BX | sg03 | sg03bx | done |
-| SG03BY | sg03 | sg03by | done |
-| SG03BZ | sg03 | sg03bz | done |
-| TB01ID | tb01 | tb01id | done |
-| TB01IZ | tb01 | tb01iz | done |
-| TB01KD | tb01 | tb01kd | done |
-| TB01KX | tb01 | tb01kx | done |
-| TB01LD | tb01 | tb01ld | done |
-| TB01MD | tb01 | tb01md | done |
-| TB01ND | tb01 | tb01nd | done |
-| TB01PD | tb01 | tb01pd | done |
-| TB01PX | tb01 | tb01px | done |
-| TB01TD | tb01 | tb01td | done |
-| TB01TY | tb01 | tb01ty | done |
-| TB01UD | tb01 | tb01ud | done |
-| TB01UX | tb01 | tb01ux | done |
-| TB01UY | tb01 | tb01uy | done |
-| TB01VD | tb01 | tb01vd | done |
-| TB01VY | tb01 | tb01vy | done |
-| TB01WD | tb01 | tb01wd | done |
-| TB01WX | tb01 | tb01wx | done |
-| TB01XD | tb01 | tb01xd | done |
-| TB01XZ | tb01 | tb01xz | done |
-| TB01YD | tb01 | tb01yd | done |
-| TB01ZD | tb01 | tb01zd | done |
-| TB03AD | tb03 | tb03ad | done |
-| TB03AY | tb03 | tb03ay | done |
-| TB04AD | tb04 | tb04ad | done |
-| TB04AY | tb04 | tb04ay | done |
-| TB04BD | tb04 | tb04bd | done |
-| TB04BV | tb04 | tb04bv | done |
-| TB04BW | tb04 | tb04bw | done |
-| TB04BX | tb04 | tb04bx | done |
-| TB04CD | tb04 | tb04cd | done |
-| TB05AD | tb05 | tb05ad | done |
-| TC01OD | tc01 | tc01od | done |
-| TC04AD | tc04 | tc04ad | done |
-| TC05AD | tc05 | tc05ad | done |
-| TD03AD | td03 | td03ad | done |
-| TD03AY | td03 | td03ay | done |
-| TD04AD | td04 | td04ad | done |
-| TD05AD | td05 | td05ad | done |
-| TF01MD | tf01 | tf01md | done |
-| TF01MX | tf01 | tf01mx | done |
-| TF01MY | tf01 | tf01my | done |
-| TF01ND | tf01 | tf01nd | done |
-| TF01OD | tf01 | tf01od | done |
-| TF01PD | tf01 | tf01pd | done |
-| TF01QD | tf01 | tf01qd | done |
-| TF01RD | tf01 | tf01rd | done |
-| TG01AD | tg01 | tg01ad | done |
-| TG01AZ | tg01 | tg01az | done |
-| TG01BD | tg01 | tg01bd | done |
-| TG01CD | tg01 | tg01cd | done |
-| TG01DD | tg01 | tg01dd | done |
-| TG01ED | tg01 | tg01ed | done |
-| TG01FD | tg01 | tg01fd | done |
-| TG01FZ | tg01 | tg01fz | done |
-| TG01GD | tg01 | tg01gd | done |
-| TG01HD | tg01 | tg01hd | done |
-| TG01HU | tg01 | tg01hu | done |
-| TG01HX | tg01 | tg01hx | done |
-| TG01HY | tg01 | tg01hy | done |
-| TG01ID | tg01 | tg01id | done |
-| TG01JD | tg01 | tg01jd | done |
-| TG01JY | tg01 | tg01jy | done |
-| TG01KD | tg01 | tg01kd | done |
-| TG01KZ | tg01 | tg01kz | done |
-| TG01LD | tg01 | tg01ld | done |
-| TG01LY | tg01 | tg01ly | done |
-| TG01MD | tg01 | tg01md | done |
-| TG01ND | tg01 | tg01nd | done |
-| TG01NX | tg01 | tg01nx | done |
-| TG01OA | tg01 | tg01oa | done |
-| TG01OB | tg01 | tg01ob | done |
-| TG01OD | tg01 | tg01od | done |
-| TG01OZ | tg01 | tg01oz | done |
-| TG01PD | tg01 | tg01pd | done |
-| TG01QD | tg01 | tg01qd | done |
-| TG01WD | tg01 | tg01wd | done |
-| UD01BD | ud01 | ud01bd | done |
-| UD01CD | ud01 | ud01cd | done |
-| UD01DD | ud01 | ud01dd | done |
-| UD01MD | ud01 | ud01md | done |
-| UD01MZ | ud01 | ud01mz | done |
-| UD01ND | ud01 | ud01nd | done |
-| UE01MD | ue01 | ue01md | done |
-| ZGEGS | zgeg | zgegs | done |
-| ZGEGV | zgeg | zgegv | done |
-| ZLATZM | zlat | zlatzm | done |
+| SLICOT | Rust module | Rust function | Status | Validated |
+|--------|-------------|---------------|--------|-----------|
+| AB01MD | ab01 | ab01md | done | no |
+| AB01ND | ab01 | ab01nd | done | no |
+| AB01OD | ab01 | ab01od | done | no |
+| AB04MD | ab04 | ab04md | done | no |
+| AB05MD | ab05 | ab05md | done | no |
+| AB05ND | ab05 | ab05nd | done | no |
+| AB05OD | ab05 | ab05od | done | no |
+| AB05PD | ab05 | ab05pd | done | no |
+| AB05QD | ab05 | ab05qd | done | no |
+| AB05RD | ab05 | ab05rd | done | no |
+| AB05SD | ab05 | ab05sd | done | no |
+| AB07MD | ab07 | ab07md | done | no |
+| AB07ND | ab07 | ab07nd | done | no |
+| AB08MD | ab08 | ab08md | done | no |
+| AB08MZ | ab08 | ab08mz | done | no |
+| AB08ND | ab08 | ab08nd | done | no |
+| AB08NW | ab08 | ab08nw | done | no |
+| AB08NX | ab08 | ab08nx | done | no |
+| AB08NY | ab08 | ab08ny | done | no |
+| AB08NZ | ab08 | ab08nz | done | no |
+| AB09AD | ab09 | ab09ad | done | no |
+| AB09AX | ab09 | ab09ax | done | no |
+| AB09BD | ab09 | ab09bd | done | no |
+| AB09BX | ab09 | ab09bx | done | no |
+| AB09CD | ab09 | ab09cd | done | no |
+| AB09CX | ab09 | ab09cx | done | no |
+| AB09DD | ab09 | ab09dd | done | no |
+| AB09ED | ab09 | ab09ed | done | no |
+| AB09FD | ab09 | ab09fd | done | no |
+| AB09GD | ab09 | ab09gd | done | no |
+| AB09HD | ab09 | ab09hd | done | no |
+| AB09HX | ab09 | ab09hx | done | no |
+| AB09HY | ab09 | ab09hy | done | no |
+| AB09ID | ab09 | ab09id | done | no |
+| AB09IX | ab09 | ab09ix | done | no |
+| AB09IY | ab09 | ab09iy | done | no |
+| AB09JD | ab09 | ab09jd | done | no |
+| AB09JV | ab09 | ab09jv | done | no |
+| AB09JW | ab09 | ab09jw | done | no |
+| AB09JX | ab09 | ab09jx | done | no |
+| AB09KD | ab09 | ab09kd | done | no |
+| AB09KX | ab09 | ab09kx | done | no |
+| AB09MD | ab09 | ab09md | done | no |
+| AB09ND | ab09 | ab09nd | done | no |
+| AB13AD | ab13 | ab13ad | done | no |
+| AB13AX | ab13 | ab13ax | done | no |
+| AB13BD | ab13 | ab13bd | done | no |
+| AB13CD | ab13 | ab13cd | done | no |
+| AB13DD | ab13 | ab13dd | done | no |
+| AB13DX | ab13 | ab13dx | done | no |
+| AB13ED | ab13 | ab13ed | done | no |
+| AB13FD | ab13 | ab13fd | done | no |
+| AB13HD | ab13 | ab13hd | done | no |
+| AB13ID | ab13 | ab13id | done | no |
+| AB13MD | ab13 | ab13md | done | no |
+| AB8NXZ | ab8n | ab8nxz | done | no |
+| AG07BD | ag07 | ag07bd | done | no |
+| AG08BD | ag08 | ag08bd | done | no |
+| AG08BY | ag08 | ag08by | done | no |
+| AG08BZ | ag08 | ag08bz | done | no |
+| AG8BYZ | ag8b | ag8byz | done | no |
+| BB01AD | bb01 | bb01ad | done | no |
+| BB02AD | bb02 | bb02ad | done | no |
+| BB03AD | bb03 | bb03ad | done | no |
+| BB04AD | bb04 | bb04ad | done | no |
+| BD01AD | bd01 | bd01ad | done | no |
+| BD02AD | bd02 | bd02ad | done | no |
+| DE01OD | de01 | de01od | done | no |
+| DE01PD | de01 | de01pd | done | no |
+| DF01MD | df01 | df01md | done | no |
+| DG01MD | dg01 | dg01md | done | no |
+| DG01ND | dg01 | dg01nd | done | no |
+| DG01NY | dg01 | dg01ny | done | no |
+| DG01OD | dg01 | dg01od | done | no |
+| DGEGS | dgeg | dgegs | done | no |
+| DGEGV | dgeg | dgegv | done | no |
+| DK01MD | dk01 | dk01md | done | no |
+| DLACPY_SLC | dlac | dlacpy_slc | done | no |
+| DLATZM | dlat | dlatzm | done | no |
+| FB01QD | fb01 | fb01qd | done | no |
+| FB01RD | fb01 | fb01rd | done | no |
+| FB01SD | fb01 | fb01sd | done | no |
+| FB01TD | fb01 | fb01td | done | no |
+| FB01VD | fb01 | fb01vd | done | no |
+| FD01AD | fd01 | fd01ad | done | no |
+| IB01AD | ib01 | ib01ad | done | no |
+| IB01BD | ib01 | ib01bd | done | no |
+| IB01CD | ib01 | ib01cd | done | no |
+| IB01MD | ib01 | ib01md | done | no |
+| IB01MY | ib01 | ib01my | done | no |
+| IB01ND | ib01 | ib01nd | done | no |
+| IB01OD | ib01 | ib01od | done | no |
+| IB01OY | ib01 | ib01oy | done | no |
+| IB01PD | ib01 | ib01pd | done | no |
+| IB01PX | ib01 | ib01px | done | no |
+| IB01PY | ib01 | ib01py | done | no |
+| IB01QD | ib01 | ib01qd | done | no |
+| IB01RD | ib01 | ib01rd | done | no |
+| IB03AD | ib03 | ib03ad | done | no |
+| IB03BD | ib03 | ib03bd | done | no |
+| MA01AD | ma01 | ma01ad | done | no |
+| MA01BD | ma01 | ma01bd | done | no |
+| MA01BZ | ma01 | ma01bz | done | no |
+| MA01CD | ma01 | ma01cd | done | no |
+| MA01DD | ma01 | ma01dd | done | no |
+| MA01DZ | ma01 | ma01dz | done | no |
+| MA02AD | ma02 | ma02ad | done | no |
+| MA02AZ | ma02 | ma02az | done | no |
+| MA02BD | ma02 | ma02bd | done | no |
+| MA02BZ | ma02 | ma02bz | done | no |
+| MA02CD | ma02 | ma02cd | done | no |
+| MA02CZ | ma02 | ma02cz | done | no |
+| MA02DD | ma02 | ma02dd | done | no |
+| MA02ED | ma02 | ma02ed | done | no |
+| MA02ES | ma02 | ma02es | done | no |
+| MA02EZ | ma02 | ma02ez | done | no |
+| MA02FD | ma02 | ma02fd | done | no |
+| MA02GD | ma02 | ma02gd | done | no |
+| MA02GZ | ma02 | ma02gz | done | no |
+| MA02HD | ma02 | ma02hd | done | no |
+| MA02HZ | ma02 | ma02hz | done | no |
+| MA02ID | ma02 | ma02id | done | no |
+| MA02IZ | ma02 | ma02iz | done | no |
+| MA02JD | ma02 | ma02jd | done | no |
+| MA02JZ | ma02 | ma02jz | done | no |
+| MA02MD | ma02 | ma02md | done | no |
+| MA02MZ | ma02 | ma02mz | done | no |
+| MA02NZ | ma02 | ma02nz | done | no |
+| MA02OD | ma02 | ma02od | done | no |
+| MA02OZ | ma02 | ma02oz | done | no |
+| MA02PD | ma02 | ma02pd | done | no |
+| MA02PZ | ma02 | ma02pz | done | no |
+| MA02RD | ma02 | ma02rd | done | no |
+| MA02SD | ma02 | ma02sd | done | no |
+| MB01KD | mb01 | mb01kd | done | no |
+| MB01LD | mb01 | mb01ld | done | no |
+| MB01MD | mb01 | mb01md | done | no |
+| MB01ND | mb01 | mb01nd | done | no |
+| MB01OC | mb01 | mb01oc | done | no |
+| MB01OD | mb01 | mb01od | done | no |
+| MB01OE | mb01 | mb01oe | done | no |
+| MB01OH | mb01 | mb01oh | done | no |
+| MB01OO | mb01 | mb01oo | done | no |
+| MB01OS | mb01 | mb01os | done | no |
+| MB01OT | mb01 | mb01ot | done | no |
+| MB01PD | mb01 | mb01pd | done | no |
+| MB01QD | mb01 | mb01qd | done | no |
+| MB01RB | mb01 | mb01rb | done | no |
+| MB01RD | mb01 | mb01rd | done | no |
+| MB01RH | mb01 | mb01rh | done | no |
+| MB01RT | mb01 | mb01rt | done | no |
+| MB01RU | mb01 | mb01ru | done | no |
+| MB01RW | mb01 | mb01rw | done | no |
+| MB01RX | mb01 | mb01rx | done | no |
+| MB01RY | mb01 | mb01ry | done | no |
+| MB01SD | mb01 | mb01sd | done | no |
+| MB01SS | mb01 | mb01ss | done | no |
+| MB01TD | mb01 | mb01td | done | no |
+| MB01UD | mb01 | mb01ud | done | no |
+| MB01UW | mb01 | mb01uw | done | no |
+| MB01UX | mb01 | mb01ux | done | no |
+| MB01UY | mb01 | mb01uy | done | no |
+| MB01UZ | mb01 | mb01uz | done | no |
+| MB01VD | mb01 | mb01vd | done | no |
+| MB01WD | mb01 | mb01wd | done | no |
+| MB01XD | mb01 | mb01xd | done | no |
+| MB01XY | mb01 | mb01xy | done | no |
+| MB01YD | mb01 | mb01yd | done | no |
+| MB01ZD | mb01 | mb01zd | done | no |
+| MB02CD | mb02 | mb02cd | done | no |
+| MB02CU | mb02 | mb02cu | done | no |
+| MB02CV | mb02 | mb02cv | done | no |
+| MB02CX | mb02 | mb02cx | done | no |
+| MB02CY | mb02 | mb02cy | done | no |
+| MB02DD | mb02 | mb02dd | done | no |
+| MB02ED | mb02 | mb02ed | done | no |
+| MB02FD | mb02 | mb02fd | done | no |
+| MB02GD | mb02 | mb02gd | done | no |
+| MB02HD | mb02 | mb02hd | done | no |
+| MB02ID | mb02 | mb02id | done | no |
+| MB02JD | mb02 | mb02jd | done | no |
+| MB02JX | mb02 | mb02jx | done | no |
+| MB02KD | mb02 | mb02kd | done | no |
+| MB02MD | mb02 | mb02md | done | no |
+| MB02ND | mb02 | mb02nd | done | no |
+| MB02NY | mb02 | mb02ny | done | no |
+| MB02OD | mb02 | mb02od | done | no |
+| MB02PD | mb02 | mb02pd | done | no |
+| MB02QD | mb02 | mb02qd | done | no |
+| MB02QY | mb02 | mb02qy | done | no |
+| MB02RD | mb02 | mb02rd | done | no |
+| MB02RZ | mb02 | mb02rz | done | no |
+| MB02SD | mb02 | mb02sd | done | no |
+| MB02SZ | mb02 | mb02sz | done | no |
+| MB02TD | mb02 | mb02td | done | no |
+| MB02TZ | mb02 | mb02tz | done | no |
+| MB02UD | mb02 | mb02ud | done | no |
+| MB02UU | mb02 | mb02uu | done | no |
+| MB02UV | mb02 | mb02uv | done | no |
+| MB02UW | mb02 | mb02uw | done | no |
+| MB02VD | mb02 | mb02vd | done | no |
+| MB02WD | mb02 | mb02wd | done | no |
+| MB02XD | mb02 | mb02xd | done | no |
+| MB02YD | mb02 | mb02yd | done | no |
+| MB03AB | mb03 | mb03ab | done | no |
+| MB03AD | mb03 | mb03ad | done | no |
+| MB03AE | mb03 | mb03ae | done | no |
+| MB03AF | mb03 | mb03af | done | no |
+| MB03AG | mb03 | mb03ag | done | no |
+| MB03AH | mb03 | mb03ah | done | no |
+| MB03AI | mb03 | mb03ai | done | no |
+| MB03BA | mb03 | mb03ba | done | no |
+| MB03BB | mb03 | mb03bb | done | no |
+| MB03BC | mb03 | mb03bc | done | no |
+| MB03BD | mb03 | mb03bd | done | no |
+| MB03BE | mb03 | mb03be | done | no |
+| MB03BF | mb03 | mb03bf | done | no |
+| MB03BG | mb03 | mb03bg | done | no |
+| MB03BZ | mb03 | mb03bz | done | no |
+| MB03CD | mb03 | mb03cd | done | no |
+| MB03CZ | mb03 | mb03cz | done | no |
+| MB03DD | mb03 | mb03dd | done | no |
+| MB03DZ | mb03 | mb03dz | done | no |
+| MB03ED | mb03 | mb03ed | done | no |
+| MB03FD | mb03 | mb03fd | done | no |
+| MB03FZ | mb03 | mb03fz | done | no |
+| MB03GD | mb03 | mb03gd | done | no |
+| MB03GZ | mb03 | mb03gz | done | no |
+| MB03HD | mb03 | mb03hd | done | no |
+| MB03HZ | mb03 | mb03hz | done | no |
+| MB03ID | mb03 | mb03id | done | no |
+| MB03IZ | mb03 | mb03iz | done | no |
+| MB03JD | mb03 | mb03jd | done | no |
+| MB03JP | mb03 | mb03jp | done | no |
+| MB03JZ | mb03 | mb03jz | done | no |
+| MB03KA | mb03 | mb03ka | done | no |
+| MB03KB | mb03 | mb03kb | done | no |
+| MB03KC | mb03 | mb03kc | done | no |
+| MB03KD | mb03 | mb03kd | done | no |
+| MB03KE | mb03 | mb03ke | done | no |
+| MB03LD | mb03 | mb03ld | done | no |
+| MB03LF | mb03 | mb03lf | done | no |
+| MB03LP | mb03 | mb03lp | done | no |
+| MB03LZ | mb03 | mb03lz | done | no |
+| MB03MD | mb03 | mb03md | done | no |
+| MB03MY | mb03 | mb03my | done | no |
+| MB03ND | mb03 | mb03nd | done | no |
+| MB03NY | mb03 | mb03ny | done | no |
+| MB03OD | mb03 | mb03od | done | no |
+| MB03OY | mb03 | mb03oy | done | no |
+| MB03PD | mb03 | mb03pd | done | no |
+| MB03PY | mb03 | mb03py | done | no |
+| MB03QD | mb03 | mb03qd | done | no |
+| MB03QG | mb03 | mb03qg | done | no |
+| MB03QV | mb03 | mb03qv | done | no |
+| MB03QW | mb03 | mb03qw | done | no |
+| MB03QX | mb03 | mb03qx | done | no |
+| MB03QY | mb03 | mb03qy | done | no |
+| MB03RD | mb03 | mb03rd | done | no |
+| MB03RW | mb03 | mb03rw | done | no |
+| MB03RX | mb03 | mb03rx | done | no |
+| MB03RY | mb03 | mb03ry | done | no |
+| MB03RZ | mb03 | mb03rz | done | no |
+| MB03SD | mb03 | mb03sd | done | no |
+| MB03TD | mb03 | mb03td | done | no |
+| MB03TS | mb03 | mb03ts | done | no |
+| MB03UD | mb03 | mb03ud | done | no |
+| MB03VD | mb03 | mb03vd | done | no |
+| MB03VW | mb03 | mb03vw | done | no |
+| MB03VY | mb03 | mb03vy | done | no |
+| MB03WA | mb03 | mb03wa | done | no |
+| MB03WD | mb03 | mb03wd | done | no |
+| MB03WX | mb03 | mb03wx | done | no |
+| MB03XD | mb03 | mb03xd | done | no |
+| MB03XP | mb03 | mb03xp | done | no |
+| MB03XS | mb03 | mb03xs | done | no |
+| MB03XU | mb03 | mb03xu | done | no |
+| MB03XZ | mb03 | mb03xz | done | no |
+| MB03YA | mb03 | mb03ya | done | no |
+| MB03YD | mb03 | mb03yd | done | no |
+| MB03YT | mb03 | mb03yt | done | no |
+| MB03ZA | mb03 | mb03za | done | no |
+| MB03ZD | mb03 | mb03zd | done | no |
+| MB04AD | mb04 | mb04ad | done | no |
+| MB04AZ | mb04 | mb04az | done | no |
+| MB04BD | mb04 | mb04bd | done | no |
+| MB04BP | mb04 | mb04bp | done | no |
+| MB04BZ | mb04 | mb04bz | done | no |
+| MB04CD | mb04 | mb04cd | done | no |
+| MB04DB | mb04 | mb04db | done | no |
+| MB04DD | mb04 | mb04dd | done | no |
+| MB04DI | mb04 | mb04di | done | no |
+| MB04DL | mb04 | mb04dl | done | no |
+| MB04DP | mb04 | mb04dp | done | no |
+| MB04DS | mb04 | mb04ds | done | no |
+| MB04DY | mb04 | mb04dy | done | no |
+| MB04DZ | mb04 | mb04dz | done | no |
+| MB04ED | mb04 | mb04ed | done | no |
+| MB04FD | mb04 | mb04fd | done | no |
+| MB04FP | mb04 | mb04fp | done | no |
+| MB04GD | mb04 | mb04gd | done | no |
+| MB04HD | mb04 | mb04hd | done | no |
+| MB04ID | mb04 | mb04id | done | no |
+| MB04IY | mb04 | mb04iy | done | no |
+| MB04IZ | mb04 | mb04iz | done | no |
+| MB04JD | mb04 | mb04jd | done | no |
+| MB04KD | mb04 | mb04kd | done | no |
+| MB04LD | mb04 | mb04ld | done | no |
+| MB04MD | mb04 | mb04md | done | no |
+| MB04ND | mb04 | mb04nd | done | no |
+| MB04NY | mb04 | mb04ny | done | no |
+| MB04OD | mb04 | mb04od | done | no |
+| MB04OW | mb04 | mb04ow | done | no |
+| MB04OX | mb04 | mb04ox | done | no |
+| MB04OY | mb04 | mb04oy | done | no |
+| MB04PA | mb04 | mb04pa | done | no |
+| MB04PB | mb04 | mb04pb | done | no |
+| MB04PU | mb04 | mb04pu | done | no |
+| MB04PY | mb04 | mb04py | done | no |
+| MB04QB | mb04 | mb04qb | done | no |
+| MB04QC | mb04 | mb04qc | done | no |
+| MB04QF | mb04 | mb04qf | done | no |
+| MB04QS | mb04 | mb04qs | done | no |
+| MB04QU | mb04 | mb04qu | done | no |
+| MB04RB | mb04 | mb04rb | done | no |
+| MB04RD | mb04 | mb04rd | done | no |
+| MB04RS | mb04 | mb04rs | done | no |
+| MB04RT | mb04 | mb04rt | done | no |
+| MB04RU | mb04 | mb04ru | done | no |
+| MB04RV | mb04 | mb04rv | done | no |
+| MB04RW | mb04 | mb04rw | done | no |
+| MB04RZ | mb04 | mb04rz | done | no |
+| MB04SU | mb04 | mb04su | done | no |
+| MB04TB | mb04 | mb04tb | done | no |
+| MB04TS | mb04 | mb04ts | done | no |
+| MB04TT | mb04 | mb04tt | done | no |
+| MB04TU | mb04 | mb04tu | done | no |
+| MB04TV | mb04 | mb04tv | done | no |
+| MB04TW | mb04 | mb04tw | done | no |
+| MB04TX | mb04 | mb04tx | done | no |
+| MB04TY | mb04 | mb04ty | done | no |
+| MB04UD | mb04 | mb04ud | done | no |
+| MB04VD | mb04 | mb04vd | done | no |
+| MB04VX | mb04 | mb04vx | done | no |
+| MB04WD | mb04 | mb04wd | done | no |
+| MB04WP | mb04 | mb04wp | done | no |
+| MB04WR | mb04 | mb04wr | done | no |
+| MB04WU | mb04 | mb04wu | done | no |
+| MB04XD | mb04 | mb04xd | done | no |
+| MB04XY | mb04 | mb04xy | done | no |
+| MB04YD | mb04 | mb04yd | done | no |
+| MB04YW | mb04 | mb04yw | done | no |
+| MB04ZD | mb04 | mb04zd | done | no |
+| MB05MD | mb05 | mb05md | done | no |
+| MB05MY | mb05 | mb05my | done | no |
+| MB05ND | mb05 | mb05nd | done | no |
+| MB05OD | mb05 | mb05od | done | no |
+| MB05OY | mb05 | mb05oy | done | no |
+| MB3JZP | mb3j | mb3jzp | done | no |
+| MB3LZP | mb3l | mb3lzp | done | no |
+| MB3OYZ | mb3o | mb3oyz | done | no |
+| MB3PYZ | mb3p | mb3pyz | done | no |
+| MB4DBZ | mb4d | mb4dbz | done | no |
+| MB4DLZ | mb4d | mb4dlz | done | no |
+| MB4DPZ | mb4d | mb4dpz | done | no |
+| MC01MD | mc01 | mc01md | done | no |
+| MC01ND | mc01 | mc01nd | done | no |
+| MC01OD | mc01 | mc01od | done | no |
+| MC01PD | mc01 | mc01pd | done | no |
+| MC01PY | mc01 | mc01py | done | no |
+| MC01QD | mc01 | mc01qd | done | no |
+| MC01RD | mc01 | mc01rd | done | no |
+| MC01SD | mc01 | mc01sd | done | no |
+| MC01SW | mc01 | mc01sw | done | no |
+| MC01SX | mc01 | mc01sx | done | no |
+| MC01SY | mc01 | mc01sy | done | no |
+| MC01TD | mc01 | mc01td | done | no |
+| MC01VD | mc01 | mc01vd | done | no |
+| MC01WD | mc01 | mc01wd | done | no |
+| MC01XD | mc01 | mc01xd | done | no |
+| MC03MD | mc03 | mc03md | done | no |
+| MC03ND | mc03 | mc03nd | done | no |
+| MC03NX | mc03 | mc03nx | done | no |
+| MC03NY | mc03 | mc03ny | done | no |
+| MD03AD | md03 | md03ad | done | no |
+| MD03BA | md03 | md03ba | done | no |
+| MD03BB | md03 | md03bb | done | no |
+| MD03BD | md03 | md03bd | done | no |
+| MD03BF | md03 | md03bf | done | no |
+| MD03BX | md03 | md03bx | done | no |
+| MD03BY | md03 | md03by | done | no |
+| NF01AD | nf01 | nf01ad | done | no |
+| NF01AY | nf01 | nf01ay | done | no |
+| NF01BA | nf01 | nf01ba | done | no |
+| NF01BB | nf01 | nf01bb | done | no |
+| NF01BD | nf01 | nf01bd | done | no |
+| NF01BE | nf01 | nf01be | done | no |
+| NF01BF | nf01 | nf01bf | done | no |
+| NF01BP | nf01 | nf01bp | done | no |
+| NF01BQ | nf01 | nf01bq | done | no |
+| NF01BR | nf01 | nf01br | done | no |
+| NF01BS | nf01 | nf01bs | done | no |
+| NF01BU | nf01 | nf01bu | done | no |
+| NF01BV | nf01 | nf01bv | done | no |
+| NF01BW | nf01 | nf01bw | done | no |
+| NF01BX | nf01 | nf01bx | done | no |
+| NF01BY | nf01 | nf01by | done | no |
+| SB01BD | sb01 | sb01bd | done | no |
+| SB01BX | sb01 | sb01bx | done | no |
+| SB01BY | sb01 | sb01by | done | no |
+| SB01DD | sb01 | sb01dd | done | no |
+| SB01FY | sb01 | sb01fy | done | no |
+| SB01MD | sb01 | sb01md | done | no |
+| SB02CX | sb02 | sb02cx | done | no |
+| SB02MD | sb02 | sb02md | done | no |
+| SB02MR | sb02 | sb02mr | done | no |
+| SB02MS | sb02 | sb02ms | done | no |
+| SB02MT | sb02 | sb02mt | done | no |
+| SB02MU | sb02 | sb02mu | done | no |
+| SB02MV | sb02 | sb02mv | done | no |
+| SB02MW | sb02 | sb02mw | done | no |
+| SB02MX | sb02 | sb02mx | done | no |
+| SB02ND | sb02 | sb02nd | done | no |
+| SB02OD | sb02 | sb02od | done | no |
+| SB02OU | sb02 | sb02ou | done | no |
+| SB02OV | sb02 | sb02ov | done | no |
+| SB02OW | sb02 | sb02ow | done | no |
+| SB02OX | sb02 | sb02ox | done | no |
+| SB02OY | sb02 | sb02oy | done | no |
+| SB02PD | sb02 | sb02pd | done | no |
+| SB02QD | sb02 | sb02qd | done | no |
+| SB02RD | sb02 | sb02rd | done | no |
+| SB02RU | sb02 | sb02ru | done | no |
+| SB02SD | sb02 | sb02sd | done | no |
+| SB03MD | sb03 | sb03md | done | no |
+| SB03MU | sb03 | sb03mu | done | no |
+| SB03MV | sb03 | sb03mv | done | no |
+| SB03MW | sb03 | sb03mw | done | no |
+| SB03MX | sb03 | sb03mx | done | no |
+| SB03MY | sb03 | sb03my | done | no |
+| SB03OD | sb03 | sb03od | done | no |
+| SB03OR | sb03 | sb03or | done | no |
+| SB03OS | sb03 | sb03os | done | no |
+| SB03OT | sb03 | sb03ot | done | no |
+| SB03OU | sb03 | sb03ou | done | no |
+| SB03OV | sb03 | sb03ov | done | no |
+| SB03OY | sb03 | sb03oy | done | no |
+| SB03OZ | sb03 | sb03oz | done | no |
+| SB03PD | sb03 | sb03pd | done | no |
+| SB03QD | sb03 | sb03qd | done | no |
+| SB03QX | sb03 | sb03qx | done | no |
+| SB03QY | sb03 | sb03qy | done | no |
+| SB03RD | sb03 | sb03rd | done | no |
+| SB03SD | sb03 | sb03sd | done | no |
+| SB03SX | sb03 | sb03sx | done | no |
+| SB03SY | sb03 | sb03sy | done | no |
+| SB03TD | sb03 | sb03td | done | no |
+| SB03UD | sb03 | sb03ud | done | no |
+| SB04MD | sb04 | sb04md | done | no |
+| SB04MR | sb04 | sb04mr | done | no |
+| SB04MU | sb04 | sb04mu | done | no |
+| SB04MW | sb04 | sb04mw | done | no |
+| SB04MY | sb04 | sb04my | done | no |
+| SB04ND | sb04 | sb04nd | done | no |
+| SB04NV | sb04 | sb04nv | done | no |
+| SB04NW | sb04 | sb04nw | done | no |
+| SB04NX | sb04 | sb04nx | done | no |
+| SB04NY | sb04 | sb04ny | done | no |
+| SB04OD | sb04 | sb04od | done | no |
+| SB04OW | sb04 | sb04ow | done | no |
+| SB04PD | sb04 | sb04pd | done | no |
+| SB04PX | sb04 | sb04px | done | no |
+| SB04PY | sb04 | sb04py | done | no |
+| SB04QD | sb04 | sb04qd | done | no |
+| SB04QR | sb04 | sb04qr | done | no |
+| SB04QU | sb04 | sb04qu | done | no |
+| SB04QY | sb04 | sb04qy | done | no |
+| SB04RD | sb04 | sb04rd | done | no |
+| SB04RV | sb04 | sb04rv | done | no |
+| SB04RW | sb04 | sb04rw | done | no |
+| SB04RX | sb04 | sb04rx | done | no |
+| SB04RY | sb04 | sb04ry | done | no |
+| SB06ND | sb06 | sb06nd | done | no |
+| SB08CD | sb08 | sb08cd | done | no |
+| SB08DD | sb08 | sb08dd | done | no |
+| SB08ED | sb08 | sb08ed | done | no |
+| SB08FD | sb08 | sb08fd | done | no |
+| SB08GD | sb08 | sb08gd | done | no |
+| SB08HD | sb08 | sb08hd | done | no |
+| SB08MD | sb08 | sb08md | done | no |
+| SB08MY | sb08 | sb08my | done | no |
+| SB08ND | sb08 | sb08nd | done | no |
+| SB08NY | sb08 | sb08ny | done | no |
+| SB09MD | sb09 | sb09md | done | no |
+| SB10AD | sb10 | sb10ad | done | no |
+| SB10DD | sb10 | sb10dd | done | no |
+| SB10ED | sb10 | sb10ed | done | no |
+| SB10FD | sb10 | sb10fd | done | no |
+| SB10HD | sb10 | sb10hd | done | no |
+| SB10ID | sb10 | sb10id | done | no |
+| SB10JD | sb10 | sb10jd | done | no |
+| SB10KD | sb10 | sb10kd | done | no |
+| SB10LD | sb10 | sb10ld | done | no |
+| SB10MD | sb10 | sb10md | done | no |
+| SB10PD | sb10 | sb10pd | done | no |
+| SB10QD | sb10 | sb10qd | done | no |
+| SB10RD | sb10 | sb10rd | done | no |
+| SB10SD | sb10 | sb10sd | done | no |
+| SB10TD | sb10 | sb10td | done | no |
+| SB10UD | sb10 | sb10ud | done | no |
+| SB10VD | sb10 | sb10vd | done | no |
+| SB10WD | sb10 | sb10wd | done | no |
+| SB10YD | sb10 | sb10yd | done | no |
+| SB10ZD | sb10 | sb10zd | done | no |
+| SB10ZP | sb10 | sb10zp | done | no |
+| SB16AD | sb16 | sb16ad | done | no |
+| SB16AY | sb16 | sb16ay | done | no |
+| SB16BD | sb16 | sb16bd | done | no |
+| SB16CD | sb16 | sb16cd | done | no |
+| SB16CY | sb16 | sb16cy | done | no |
+| SG02AD | sg02 | sg02ad | done | no |
+| SG02CV | sg02 | sg02cv | done | no |
+| SG02CW | sg02 | sg02cw | done | no |
+| SG02CX | sg02 | sg02cx | done | no |
+| SG02ND | sg02 | sg02nd | done | no |
+| SG03AD | sg03 | sg03ad | done | no |
+| SG03AX | sg03 | sg03ax | done | no |
+| SG03AY | sg03 | sg03ay | done | no |
+| SG03BD | sg03 | sg03bd | done | no |
+| SG03BR | sg03 | sg03br | done | no |
+| SG03BS | sg03 | sg03bs | done | no |
+| SG03BT | sg03 | sg03bt | done | no |
+| SG03BU | sg03 | sg03bu | done | no |
+| SG03BV | sg03 | sg03bv | done | no |
+| SG03BW | sg03 | sg03bw | done | no |
+| SG03BX | sg03 | sg03bx | done | no |
+| SG03BY | sg03 | sg03by | done | no |
+| SG03BZ | sg03 | sg03bz | done | no |
+| TB01ID | tb01 | tb01id | done | no |
+| TB01IZ | tb01 | tb01iz | done | no |
+| TB01KD | tb01 | tb01kd | done | no |
+| TB01KX | tb01 | tb01kx | done | no |
+| TB01LD | tb01 | tb01ld | done | no |
+| TB01MD | tb01 | tb01md | done | no |
+| TB01ND | tb01 | tb01nd | done | no |
+| TB01PD | tb01 | tb01pd | done | no |
+| TB01PX | tb01 | tb01px | done | no |
+| TB01TD | tb01 | tb01td | done | no |
+| TB01TY | tb01 | tb01ty | done | no |
+| TB01UD | tb01 | tb01ud | done | no |
+| TB01UX | tb01 | tb01ux | done | no |
+| TB01UY | tb01 | tb01uy | done | no |
+| TB01VD | tb01 | tb01vd | done | no |
+| TB01VY | tb01 | tb01vy | done | no |
+| TB01WD | tb01 | tb01wd | done | no |
+| TB01WX | tb01 | tb01wx | done | no |
+| TB01XD | tb01 | tb01xd | done | no |
+| TB01XZ | tb01 | tb01xz | done | no |
+| TB01YD | tb01 | tb01yd | done | no |
+| TB01ZD | tb01 | tb01zd | done | no |
+| TB03AD | tb03 | tb03ad | done | no |
+| TB03AY | tb03 | tb03ay | done | no |
+| TB04AD | tb04 | tb04ad | done | no |
+| TB04AY | tb04 | tb04ay | done | no |
+| TB04BD | tb04 | tb04bd | done | no |
+| TB04BV | tb04 | tb04bv | done | no |
+| TB04BW | tb04 | tb04bw | done | no |
+| TB04BX | tb04 | tb04bx | done | no |
+| TB04CD | tb04 | tb04cd | done | no |
+| TB05AD | tb05 | tb05ad | done | no |
+| TC01OD | tc01 | tc01od | done | no |
+| TC04AD | tc04 | tc04ad | done | no |
+| TC05AD | tc05 | tc05ad | done | no |
+| TD03AD | td03 | td03ad | done | no |
+| TD03AY | td03 | td03ay | done | no |
+| TD04AD | td04 | td04ad | done | no |
+| TD05AD | td05 | td05ad | done | no |
+| TF01MD | tf01 | tf01md | done | no |
+| TF01MX | tf01 | tf01mx | done | no |
+| TF01MY | tf01 | tf01my | done | no |
+| TF01ND | tf01 | tf01nd | done | no |
+| TF01OD | tf01 | tf01od | done | no |
+| TF01PD | tf01 | tf01pd | done | no |
+| TF01QD | tf01 | tf01qd | done | no |
+| TF01RD | tf01 | tf01rd | done | no |
+| TG01AD | tg01 | tg01ad | done | no |
+| TG01AZ | tg01 | tg01az | done | no |
+| TG01BD | tg01 | tg01bd | done | no |
+| TG01CD | tg01 | tg01cd | done | no |
+| TG01DD | tg01 | tg01dd | done | no |
+| TG01ED | tg01 | tg01ed | done | no |
+| TG01FD | tg01 | tg01fd | done | no |
+| TG01FZ | tg01 | tg01fz | done | no |
+| TG01GD | tg01 | tg01gd | done | no |
+| TG01HD | tg01 | tg01hd | done | no |
+| TG01HU | tg01 | tg01hu | done | no |
+| TG01HX | tg01 | tg01hx | done | no |
+| TG01HY | tg01 | tg01hy | done | no |
+| TG01ID | tg01 | tg01id | done | no |
+| TG01JD | tg01 | tg01jd | done | no |
+| TG01JY | tg01 | tg01jy | done | no |
+| TG01KD | tg01 | tg01kd | done | no |
+| TG01KZ | tg01 | tg01kz | done | no |
+| TG01LD | tg01 | tg01ld | done | no |
+| TG01LY | tg01 | tg01ly | done | no |
+| TG01MD | tg01 | tg01md | done | no |
+| TG01ND | tg01 | tg01nd | done | no |
+| TG01NX | tg01 | tg01nx | done | no |
+| TG01OA | tg01 | tg01oa | done | no |
+| TG01OB | tg01 | tg01ob | done | no |
+| TG01OD | tg01 | tg01od | done | no |
+| TG01OZ | tg01 | tg01oz | done | no |
+| TG01PD | tg01 | tg01pd | done | no |
+| TG01QD | tg01 | tg01qd | done | no |
+| TG01WD | tg01 | tg01wd | done | no |
+| UD01BD | ud01 | ud01bd | done | no |
+| UD01CD | ud01 | ud01cd | done | no |
+| UD01DD | ud01 | ud01dd | done | no |
+| UD01MD | ud01 | ud01md | done | no |
+| UD01MZ | ud01 | ud01mz | done | no |
+| UD01ND | ud01 | ud01nd | done | no |
+| UE01MD | ue01 | ue01md | done | no |
+| ZGEGS | zgeg | zgegs | done | no |
+| ZGEGV | zgeg | zgegv | done | no |
+| ZLATZM | zlat | zlatzm | done | no |
 
 ## Unimplemented list
 
