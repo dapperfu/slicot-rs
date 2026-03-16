@@ -35,6 +35,10 @@ harness = false
 name = "all_routines"
 harness = false
 
+[[bin]]
+name = "bench_csv"
+path = "src/bin/bench_csv.rs"
+
 [profile.release]
 lto = true
 codegen-units = 1
