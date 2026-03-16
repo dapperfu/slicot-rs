@@ -272,3 +272,56 @@ List derived from entries with status `stub` or `in progress` (139 routines).
 - [x] NF01BW — `nf01::nf01bw`
 - [x] NF01BX — `nf01::nf01bx`
 - [x] NF01BY — `nf01::nf01by`
+
+## tb04
+- [x] TB04AD — `tb04::tb04ad`
+- [x] TB04AY — `tb04::tb04ay`
+- [x] TB04BD — `tb04::tb04bd`
+- [x] TB04BV — `tb04::tb04bv`
+- [x] TB04BW — `tb04::tb04bw`
+- [x] TB04BX — `tb04::tb04bx`
+- [x] TB04CD — `tb04::tb04cd`
+
+## td03
+- [x] TD03AY — `td03::td03ay`
+
+## tf01
+- [x] TF01MX — `tf01::tf01mx`
+- [x] TF01MY — `tf01::tf01my`
+- [x] TF01ND — `tf01::tf01nd`
+- [x] TF01OD — `tf01::tf01od`
+- [x] TF01PD — `tf01::tf01pd`
+- [x] TF01QD — `tf01::tf01qd`
+- [x] TF01RD — `tf01::tf01rd`
+
+## tg01
+- [x] TG01AD — `tg01::tg01ad`
+- [x] TG01AZ — `tg01::tg01az`
+- [x] TG01BD — `tg01::tg01bd`
+- [x] TG01CD — `tg01::tg01cd`
+- [x] TG01DD — `tg01::tg01dd`
+- [x] TG01ED — `tg01::tg01ed`
+- [x] TG01FD — `tg01::tg01fd`
+- [x] TG01FZ — `tg01::tg01fz`
+- [x] TG01GD — `tg01::tg01gd`
+- [x] TG01HD — `tg01::tg01hd`
+- [x] TG01HU — `tg01::tg01hu`
+- [x] TG01HX — `tg01::tg01hx`
+- [x] TG01HY — `tg01::tg01hy`
+- [x] TG01ID — `tg01::tg01id`
+- [x] TG01JD — `tg01::tg01jd`
+- [x] TG01JY — `tg01::tg01jy`
+- [x] TG01KD — `tg01::tg01kd`
+- [x] TG01KZ — `tg01::tg01kz`
+- [x] TG01LD — `tg01::tg01ld`
+- [x] TG01LY — `tg01::tg01ly`
+- [x] TG01MD — `tg01::tg01md`
+- [x] TG01ND — `tg01::tg01nd`
+- [x] TG01NX — `tg01::tg01nx`
+- [x] TG01OA — `tg01::tg01oa`
+- [x] TG01OB — `tg01::tg01ob`
+- [x] TG01OD — `tg01::tg01od`
+- [x] TG01OZ — `tg01::tg01oz`
+- [x] TG01PD — `tg01::tg01pd`
+- [x] TG01QD — `tg01::tg01qd`
+- [x] TG01WD — `tg01::tg01wd`
