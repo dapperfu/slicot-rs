@@ -1,5 +1,11 @@
 # slicot-rs
 
+[![Crates.io](https://img.shields.io/crates/v/slicot-rs.svg)](https://crates.io/crates/slicot-rs)
+[![docs.rs](https://img.shields.io/docsrs/slicot-rs)](https://docs.rs/slicot-rs)
+[![CI](https://github.com/control2/slicot-rs/actions/workflows/ci.yml/badge.svg)](https://github.com/control2/slicot-rs/actions/workflows/ci.yml)
+
+This project is intended as a **drop-in replacement for SLICOT** in the Rust ecosystem.
+
 > *"There is nothing more frightful than ignorance in action."*  
 > — Goethe  
 >  
@@ -81,7 +87,7 @@ assert_eq!(info, 0);
 // Lower triangle filled by symmetry: a(1,0) == 2.0
 ```
 
-More examples and a function-by-function reference (with MathJax and SLICOT doc pointers) are in **[docs/FUNCTIONS.md](docs/FUNCTIONS.md)**.
+Runnable examples are in the **`examples/`** directory (`cargo run --example <name>`). More examples and a function-by-function reference (with MathJax and SLICOT doc pointers) are in **[docs/FUNCTIONS.md](docs/FUNCTIONS.md)**.
 
 ---
 
