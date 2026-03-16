@@ -619,16 +619,16 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | TG01PD | tg01 | tg01pd | not started |
 | TG01QD | tg01 | tg01qd | not started |
 | TG01WD | tg01 | tg01wd | not started |
-| UD01BD | ud01 | ud01bd | not started |
-| UD01CD | ud01 | ud01cd | not started |
-| UD01DD | ud01 | ud01dd | not started |
-| UD01MD | ud01 | ud01md | not started |
-| UD01MZ | ud01 | ud01mz | not started |
-| UD01ND | ud01 | ud01nd | not started |
-| UE01MD | ue01 | ue01md | not started |
-| ZGEGS | zgeg | zgegs | not started |
-| ZGEGV | zgeg | zgegv | not started |
-| ZLATZM | zlat | zlatzm | not started |
+| UD01BD | ud01 | ud01bd | done |
+| UD01CD | ud01 | ud01cd | done |
+| UD01DD | ud01 | ud01dd | done |
+| UD01MD | ud01 | ud01md | done |
+| UD01MZ | ud01 | ud01mz | done |
+| UD01ND | ud01 | ud01nd | done |
+| UE01MD | ue01 | ue01md | done |
+| ZGEGS | zgeg | zgegs | done |
+| ZGEGV | zgeg | zgegv | done |
+| ZLATZM | zlat | zlatzm | done |
 
 ## Unimplemented list
 
@@ -696,13 +696,3 @@ The table below lists every routine with status *not started* from the mapping a
 | TG01PD | tg01 | tg01pd | [TG01PD](https://www.slicot.org/objects/software/shared/doc/TG01PD.html) | SLICOT-Reference/src/TG01PD.f |
 | TG01QD | tg01 | tg01qd | [TG01QD](https://www.slicot.org/objects/software/shared/doc/TG01QD.html) | SLICOT-Reference/src/TG01QD.f |
 | TG01WD | tg01 | tg01wd | [TG01WD](https://www.slicot.org/objects/software/shared/doc/TG01WD.html) | SLICOT-Reference/src/TG01WD.f |
-| UD01BD | ud01 | ud01bd | [UD01BD](https://www.slicot.org/objects/software/shared/doc/UD01BD.html) | SLICOT-Reference/src/UD01BD.f |
-| UD01CD | ud01 | ud01cd | [UD01CD](https://www.slicot.org/objects/software/shared/doc/UD01CD.html) | SLICOT-Reference/src/UD01CD.f |
-| UD01DD | ud01 | ud01dd | [UD01DD](https://www.slicot.org/objects/software/shared/doc/UD01DD.html) | SLICOT-Reference/src/UD01DD.f |
-| UD01MD | ud01 | ud01md | [UD01MD](https://www.slicot.org/objects/software/shared/doc/UD01MD.html) | SLICOT-Reference/src/UD01MD.f |
-| UD01MZ | ud01 | ud01mz | [UD01MZ](https://www.slicot.org/objects/software/shared/doc/UD01MZ.html) | SLICOT-Reference/src/UD01MZ.f |
-| UD01ND | ud01 | ud01nd | [UD01ND](https://www.slicot.org/objects/software/shared/doc/UD01ND.html) | SLICOT-Reference/src/UD01ND.f |
-| UE01MD | ue01 | ue01md | [UE01MD](https://www.slicot.org/objects/software/shared/doc/UE01MD.html) | SLICOT-Reference/src/UE01MD.f |
-| ZGEGS | zgeg | zgegs | [ZGEGS](https://www.slicot.org/objects/software/shared/doc/ZGEGS.html) | SLICOT-Reference/src/lapack_aux/ZGEGS.f |
-| ZGEGV | zgeg | zgegv | [ZGEGV](https://www.slicot.org/objects/software/shared/doc/ZGEGV.html) | SLICOT-Reference/src/lapack_aux/ZGEGV.f |
-| ZLATZM | zlat | zlatzm | [ZLATZM](https://www.slicot.org/objects/software/shared/doc/ZLATZM.html) | SLICOT-Reference/src/lapack_aux/ZLATZM.f |
