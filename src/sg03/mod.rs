@@ -6,6 +6,7 @@
 pub mod sg03ad;
 pub mod sg03ax;
 pub mod sg03ay;
+pub mod sg03bd;
 pub mod sg03br;
 pub mod sg03bs;
 pub mod sg03bt;
