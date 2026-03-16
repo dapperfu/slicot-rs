@@ -55,15 +55,24 @@ pub mod sb06;
 pub mod sb08;
 pub mod sb09;
 pub mod sg02;
+pub mod sg03;
 // pub mod sb10;  // disabled: missing submodules
 // pub mod sb16;  // disabled: compile errors in sb16bd/sb16cd
 pub mod tb01;
+pub mod tb03;
+pub mod tb04;
 pub mod tb05;
 pub mod tc01;
 pub mod tc04;
 pub mod tc05;
+pub mod td03;
+pub mod td04;
 pub mod td05;
 pub mod tf01;
+pub mod ud01;
+pub mod ue01;
+pub mod zgeg;
+pub mod zlat;
 
 /// SLICOT .dat/.res I/O for fuzzer and tests (pilot: AB01ND).
 pub mod slicot_io;
