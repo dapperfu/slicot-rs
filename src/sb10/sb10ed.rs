@@ -87,16 +87,16 @@ pub fn sb10ed(
         Some(inv) => inv,
         None => return 7,
     };
-    let f = -&rpbxb_inv * b2.transpose() * &x * a;
+    let f = -&rpbxb_inv * b2.transpose() * &x * &*a;
     let rpcyc = &rz + &c2 * &z * &c2t;
     let rpcyc_inv = match rpcyc.try_inverse() {
         Some(inv) => inv,
         None => return 9,
     };
-    let l = -a * &z * c2.transpose() * &rpcyc_inv;
+    let l = -&*a * &z * c2.transpose() * &rpcyc_inv;
     for i in 0..n {
         for j in 0..n {
-            ak[(i, j)] = a[(i, j)] + (b2 * &f)[(i, j)] + (l * &c2)[(i, j)];
+            ak[(i, j)] = a[(i, j)] + (b2.clone() * &f)[(i, j)] + (l.clone() * &c2)[(i, j)];
         }
     }
     for i in 0..n {

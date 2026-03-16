@@ -5,7 +5,7 @@
 
 use nalgebra::DMatrix;
 
-use crate::sb16::sb16cy;
+use crate::sb16::sb16cy::sb16cy;
 
 /// Continuous ('C') or discrete ('D') time.
 #[derive(Clone, Copy, PartialEq, Eq)]
@@ -77,12 +77,12 @@ pub fn sb16cd(
         return -22;
     }
     let dico_cy = match dico {
-        Dico::Continuous => sb16cy::Dico::Continuous,
-        Dico::Discrete => sb16cy::Dico::Discrete,
+        Dico::Continuous => crate::sb16::sb16cy::Dico::Continuous,
+        Dico::Discrete => crate::sb16::sb16cy::Dico::Discrete,
     };
     let jobcf_cy = match jobcf {
-        Jobcf::Left => sb16cy::Jobcf::Left,
-        Jobcf::Right => sb16cy::Jobcf::Right,
+        Jobcf::Left => crate::sb16::sb16cy::Jobcf::Left,
+        Jobcf::Right => crate::sb16::sb16cy::Jobcf::Right,
     };
 
     let mut s = DMatrix::<f64>::zeros(n, n);
@@ -90,7 +90,7 @@ pub fn sb16cd(
     let mut scalec = 0.0;
     let mut scaleo = 0.0;
     let a_eff = if jobd == Jobd::D {
-        a.clone() + &(g * d * f)
+        a.clone() + &(&*g * d * &*f)
     } else {
         a.clone()
     };
@@ -124,10 +124,10 @@ pub fn sb16cd(
         };
     }
 
-    let ac = &a_eff + b * f + g * c;
+    let ac = &a_eff + &*b * &*f + &*g * &*c;
     let rs = &r * &s;
     let svd = rs.svd(true, true);
-    let sigma = svd.singular_values();
+    let sigma = &svd.singular_values;
     for i in 0..n.min(hsv.len()) {
         hsv[i] = sigma[i];
     }

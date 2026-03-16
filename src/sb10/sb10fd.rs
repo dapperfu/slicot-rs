@@ -157,7 +157,7 @@ pub fn sb10fd(
         }
     }
     let b2_f = &b2 * &f;
-    let h_c2 = h * &c2;
+    let h_c2 = h.clone() * &c2;
     for i in 0..n {
         for j in 0..n {
             ak[(i, j)] = a[(i, j)] + b2_f[(i, j)] + h_c2[(i, j)];

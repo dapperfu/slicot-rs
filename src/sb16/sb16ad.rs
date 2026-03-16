@@ -116,8 +116,8 @@ pub fn sb16ad(
         Some(s) => s,
         None => return 2,
     };
+    let eig = schur.complex_eigenvalues().clone();
     let (q_schur, t_schur) = schur.unpack();
-    let eig = schur.complex_eigenvalues();
     let mut stable_indices = Vec::with_capacity(nc);
     let mut unstable_indices = Vec::with_capacity(nc);
     for (i, c) in eig.iter().enumerate() {
@@ -137,7 +137,7 @@ pub fn sb16ad(
             }
         }
         let bc_new = q_schur.transpose() * bc.clone();
-        let cc_new = cc * &q_schur;
+        let cc_new = &*cc * &q_schur;
         for i in 0..nc {
             for j in 0..p {
                 bc[(i, j)] = bc_new[(i, j)];
@@ -168,7 +168,7 @@ pub fn sb16ad(
     }
     for i in 0..m {
         for j in 0..nc {
-            cc_ord[(i, j)] = (cc * &q_schur)[(i, perm[j])];
+            cc_ord[(i, j)] = (&*cc * &q_schur)[(i, perm[j])];
         }
     }
 
@@ -210,7 +210,7 @@ pub fn sb16ad(
     if dwork.len() < lwork {
         return -28;
     }
-    let info_ay = sb16ay(
+    let info_ay = sb16ay::sb16ay(
         dico_ay,
         sb16ay::Jobc::Standard,
         sb16ay::Jobo::Standard,
@@ -250,11 +250,8 @@ pub fn sb16ad(
     }
 
     let rs = &r * &s;
-    let svd = match rs.svd(true, true) {
-        Some(s) => s,
-        None => return 7,
-    };
-    let sigma = svd.singular_values();
+    let svd = rs.svd(true, true);
+    let sigma = &svd.singular_values;
     for i in 0..(*ncs).min(hsvc.len()) {
         hsvc[i] = sigma[i];
     }

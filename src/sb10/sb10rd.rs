@@ -25,7 +25,7 @@ pub fn sb10rd(
     }
     let mut ak = DMatrix::zeros(n, n);
     let mut bk = DMatrix::zeros(n, nmeas);
-    let mut ck = DMatrix::zeros(ncon, n);
+    let mut ck = DMatrix::<f64>::zeros(ncon, n);
     let mut dk = DMatrix::zeros(ncon, nmeas);
     let info = crate::sb10::sb10fd::sb10fd(n, m, np, ncon, nmeas, gamma, a, b, c, d, &mut ak, &mut bk, f, &mut dk, rcond, 1e-10);
     if info != 0 {

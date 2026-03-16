@@ -29,7 +29,7 @@ pub fn sb10id(
         return -10;
     }
     let qx = c.transpose() * c;
-    let gx = &b * b.transpose() / (factor * factor);
+    let gx = &*b * b.transpose() / (factor * factor);
     let mut a_x = a.clone();
     let mut qx_mut = qx.clone();
     let mut rcond_x = 0.0;
@@ -45,7 +45,7 @@ pub fn sb10id(
         return 1;
     }
     let x = qx_mut;
-    let qy = &b * b.transpose();
+    let qy = &*b * b.transpose();
     let gy = &c.transpose() * c / (factor * factor);
     let at = a.transpose();
     let mut at_mut = at.clone();
@@ -72,7 +72,7 @@ pub fn sb10id(
             ip_minus[(i, j)] -= dd[(i, j)];
         }
     }
-    let inv_ip = match ip_minus.try_inverse() {
+    let inv_ip: DMatrix<f64> = match ip_minus.try_inverse() {
         Some(inv) => inv,
         None => return 4,
     };
@@ -85,7 +85,7 @@ pub fn sb10id(
     let h = -y * c.transpose() / (factor * factor);
     for i in 0..n {
         for j in 0..n {
-            ak[(i, j)] = a[(i, j)] + (b * &f)[(i, j)] + (h * c)[(i, j)];
+            ak[(i, j)] = a[(i, j)] + (b * &f)[(i, j)] + (h.clone() * c)[(i, j)];
         }
     }
     for i in 0..n {

@@ -56,8 +56,8 @@ pub mod sb08;
 pub mod sb09;
 pub mod sg02;
 pub mod sg03;
-// pub mod sb10;  // disabled: missing submodules
-// pub mod sb16;  // disabled: compile errors in sb16bd/sb16cd
+pub mod sb10;
+pub mod sb16;
 pub mod tb01;
 pub mod tb03;
 pub mod tb04;

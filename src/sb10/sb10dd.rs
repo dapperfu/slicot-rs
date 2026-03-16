@@ -30,7 +30,6 @@ pub fn sb10dd(
     if n == 0 {
         return 0;
     }
-    let _ = (m, np, ncon, nmeas, a, b, c, d, ak, bk, ck, dk, x, z, rcond, tol);
     if gamma <= 0.0 {
         return 5;
     }
@@ -92,7 +91,7 @@ pub fn sb10dd(
     let l = -a * &zc * &rpcyc_inv;
     for i in 0..n {
         for j in 0..n {
-            ak[(i, j)] = a[(i, j)] + (b2 * &f)[(i, j)] + (l * &c2)[(i, j)];
+            ak[(i, j)] = a[(i, j)] + (b2.clone() * &f)[(i, j)] + (l.clone() * &c2)[(i, j)];
         }
     }
     for i in 0..n {
