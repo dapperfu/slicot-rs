@@ -15,12 +15,13 @@ fn bench_tb01md(c: &mut Criterion) {
             bencher.iter(|| {
                 let mut a = a.clone();
                 let mut b = b.clone();
+                let mut u = None;
                 let info = tb01md(
                     black_box(JobU::No),
                     black_box(Uplo::Upper),
                     &mut a,
                     &mut b,
-                    None,
+                    &mut u,
                 );
                 assert_eq!(info, 0);
             });
