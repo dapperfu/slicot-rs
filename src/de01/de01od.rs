@@ -41,7 +41,7 @@ pub fn de01od(conv: De01OdConv, n: usize, a: &mut [f64], b: &mut [f64]) -> i32 {
     for i in 0..=(n - nd2p1) {
         let j = nd2p1 - i;
         let kj = nd2p1 + i;
-        if j <= 0 || kj > n {
+        if j == 0 || kj > n {
             break;
         }
         let j0 = j - 1;

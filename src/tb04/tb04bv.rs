@@ -73,12 +73,7 @@ pub fn tb04bv(
                 if d.len() > j * ldd + i {
                     d[j * ldd + i] = 0.0;
                 }
-                for k in 0..=deg_n {
-                    let idx = ij + k;
-                    if idx < gn.len() {
-                        gn[idx] = gn[idx];
-                    }
-                }
+                // gn[ij..=ij+deg_n] unchanged when deg_n < deg_d
                 for k in (deg_n + 1)..md {
                     if ij + k < gn.len() {
                         gn[ij + k] = 0.0;

@@ -87,7 +87,7 @@ pub fn td04ad(
         }
         for j in 0..m {
             for i in 0..porm {
-                let idx = i + j * lduco1 + 0 * lduco1 * lduco2;
+                let idx = i + j * lduco1;
                 d_mat[(i, j)] = ucoeff[idx] / dcoeff[i];
             }
         }

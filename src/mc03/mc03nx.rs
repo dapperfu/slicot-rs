@@ -50,8 +50,7 @@ pub fn mc03nx(
     }
     for i in 0..mp {
         for j in 0..np {
-            a[(dp - 1) * mp + i + ((dp - 1) * mp + j) * lda] =
-                p[i + j * ldp1 + 0 * base_p];
+            a[(dp - 1) * mp + i + ((dp - 1) * mp + j) * lda] = p[i + j * ldp1];
         }
     }
     for ib in 0..dp {

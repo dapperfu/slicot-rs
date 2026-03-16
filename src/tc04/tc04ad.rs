@@ -55,7 +55,7 @@ pub fn tc04ad(
     let mut l_p = DMatrix::<f64>::zeros(porm, porm);
     for i in 0..porm {
         for j in 0..porm {
-            let idx = i + j * ldpco1 + 0 * ldpco1 * ldpco2;
+            let idx = i + j * ldpco1;
             l_p[(i, j)] = pcoeff[idx];
         }
     }
@@ -73,7 +73,7 @@ pub fn tc04ad(
     let mut l_q = DMatrix::<f64>::zeros(porm, porp);
     for i in 0..porm {
         for j in 0..porp {
-            let idx = i + j * ldqco1 + 0 * ldqco1 * ldqco2;
+            let idx = i + j * ldqco1;
             l_q[(i, j)] = qcoeff[idx];
         }
     }
