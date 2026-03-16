@@ -69,6 +69,7 @@ pub mod td03;
 pub mod td04;
 pub mod td05;
 pub mod tf01;
+// pub mod tg01;  // disabled: missing submodules (tg01kd, tg01kz, ...)
 pub mod ud01;
 pub mod ue01;
 pub mod zgeg;
