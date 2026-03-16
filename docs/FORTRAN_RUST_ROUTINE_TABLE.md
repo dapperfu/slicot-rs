@@ -640,6 +640,6 @@ All SLICOT (Fortran) routines and their 1:1 pure Rust implementations. Source: [
 - **Validation script**: Run `./scripts/validate_slicot_done.sh` from the project root to re-validate that every routine marked done remains pure Rust and has at least one test.
 - **Semantics**: Implementations aim for the same semantics and INFO codes as the SLICOT Fortran routines; see plan docs and [SLICOT_MAPPING.md](SLICOT_MAPPING.md).
 
-### Note on sb10 and sb16
+### sb10 and sb16
 
-The **sb10** and **sb16** modules are implemented and listed above as 1:1 pure Rust, but their crate modules are currently **disabled** in `src/lib.rs` (sb10: missing submodules; sb16: compile errors). The implementations exist under `src/sb10/` and `src/sb16/`; once build issues are resolved, they can be re-enabled in the public API.
+The **sb10** and **sb16** modules are implemented 1:1 in pure Rust and are **enabled** in the crate (`src/lib.rs`). Both were previously disabled due to missing submodules (sb10) and compile errors (sb16bd/sb16cd/sb16ad); these have been fixed.
