@@ -1,8 +1,8 @@
 //! SLICOT-style .dat / .res I/O for fuzzer and tests.
 //!
-//! Pilot: AB01ND. Layout matches SLICOT-Reference examples/data and results.
+//! Pilot: AB01ND, AB01MD. Layout matches SLICOT-Reference examples/data and results.
 
-use nalgebra::DMatrix;
+use nalgebra::{DMatrix, DVector};
 use std::io::{BufRead, BufReader, Read, Write};
 
 /// AB01ND input: N, M, TOL, JOBZ, A (N×N), B (N×M).
@@ -234,6 +234,150 @@ pub fn write_ab01nd_res<W: Write>(w: &mut W, res: &Ab01ndRes) -> std::io::Result
         }
     }
     Ok(())
+}
+
+/// AB01MD input: N, TOL, JOBZ, A (N×N), B (N×1).
+#[derive(Clone, Debug)]
+pub struct Ab01mdDat {
+    pub n: usize,
+    pub tol: f64,
+    pub jobz: char,
+    pub a: DMatrix<f64>,
+    pub b: DVector<f64>,
+}
+
+/// AB01MD output: NCONT, A (ncont×ncont), B (ncont×1), Z (N×N optional).
+#[derive(Clone, Debug, Default)]
+pub struct Ab01mdRes {
+    pub ncont: usize,
+    pub a_cont: DMatrix<f64>,
+    pub b_cont: DMatrix<f64>,
+    pub z: Option<DMatrix<f64>>,
+}
+
+/// Parse AB01MD .dat: title, then N TOL JOBZ, then A (N×N), then B (N×1).
+pub fn parse_ab01md_dat<R: Read>(r: R) -> Result<Ab01mdDat, String> {
+    let mut lines = BufReader::new(r).lines();
+    let mut next = |msg: &str| {
+        lines
+            .next()
+            .ok_or_else(|| msg.to_string())?
+            .map_err(|e| e.to_string())
+    };
+    let first = next("missing first line")?;
+    let first = first.trim();
+    let (n, tol, jobz) = if first.starts_with("AB01MD") || first.starts_with(' ') {
+        let line = next("missing N TOL JOBZ line")?;
+        let parts: Vec<&str> = line.split_whitespace().collect();
+        if parts.len() < 3 {
+            return Err("need N TOL JOBZ".to_string());
+        }
+        let n = parts[0].parse::<usize>().map_err(|_| "bad N")?;
+        let tol = parts[1].parse::<f64>().map_err(|_| "bad TOL")?;
+        let jobz = parts[2].chars().next().ok_or("missing JOBZ")?;
+        (n, tol, jobz)
+    } else {
+        let parts: Vec<&str> = first.split_whitespace().collect();
+        if parts.len() < 3 {
+            return Err("need N TOL JOBZ".to_string());
+        }
+        let n = parts[0].parse::<usize>().map_err(|_| "bad N")?;
+        let tol = parts[1].parse::<f64>().map_err(|_| "bad TOL")?;
+        let jobz = parts[2].chars().next().ok_or("missing JOBZ")?;
+        (n, tol, jobz)
+    };
+    let mut a = vec![];
+    for _ in 0..n {
+        let line = next("missing A row")?;
+        for w in line.split_whitespace() {
+            a.push(w.parse::<f64>().map_err(|_| "bad A value")?);
+        }
+    }
+    let mut b = vec![];
+    while b.len() < n {
+        let line = next("missing B row")?;
+        for w in line.split_whitespace() {
+            b.push(w.parse::<f64>().map_err(|_| "bad B value")?);
+            if b.len() == n {
+                break;
+            }
+        }
+    }
+    let a = DMatrix::from_row_slice(n, n, &a);
+    let b = DVector::from_row_slice(&b);
+    Ok(Ab01mdDat { n, tol, jobz, a, b })
+}
+
+/// Parse AB01MD .res: order of controllable, A matrix, B vector, Z matrix.
+pub fn parse_ab01md_res<R: Read>(r: R) -> Result<Ab01mdRes, String> {
+    let lines: Vec<String> = BufReader::new(r).lines().collect::<Result<_, _>>().map_err(|e| e.to_string())?;
+    let mut res = Ab01mdRes::default();
+    let mut i = 0;
+    while i < lines.len() {
+        let s = lines[i].trim();
+        if s.contains("order of the controllable") {
+            res.ncont = s.split('=').nth(1).and_then(|x| x.trim().parse().ok()).unwrap_or(0);
+            i += 1;
+            i += 1; // skip blank / "The state dynamics matrix"
+            if i >= lines.len() {
+                break;
+            }
+            let mut a_rows = vec![];
+            while i < lines.len() && !lines[i].trim().is_empty() && !lines[i].contains("input/state vector") {
+                let row: Vec<f64> = lines[i].split_whitespace().filter_map(|x| x.parse().ok()).collect();
+                if !row.is_empty() {
+                    a_rows.push(row);
+                }
+                i += 1;
+            }
+            if !a_rows.is_empty() {
+                let cols = a_rows[0].len();
+                let flat: Vec<f64> = a_rows.into_iter().flat_map(|r| r.into_iter()).collect();
+                res.a_cont = DMatrix::from_row_slice(res.ncont, cols, &flat);
+            }
+            continue;
+        }
+        if s.contains("input/state vector") || s.contains("input/state matrix") {
+            i += 1;
+            let mut b_rows = vec![];
+            while i < lines.len() && !lines[i].trim().is_empty() && !lines[i].contains("similarity transformation") {
+                let row: Vec<f64> = lines[i].split_whitespace().filter_map(|x| x.parse().ok()).collect();
+                if !row.is_empty() {
+                    b_rows.push(row);
+                }
+                i += 1;
+            }
+            if !b_rows.is_empty() {
+                let cols = b_rows[0].len();
+                let flat: Vec<f64> = b_rows.into_iter().flat_map(|r| r.into_iter()).collect();
+                res.b_cont = DMatrix::from_row_slice(res.ncont, cols, &flat);
+            }
+            continue;
+        }
+        if s.contains("similarity transformation matrix Z") {
+            i += 1;
+            let n = res.a_cont.nrows();
+            let mut z_rows = vec![];
+            for _ in 0..n {
+                if i < lines.len() {
+                    let row: Vec<f64> = lines[i].split_whitespace().filter_map(|x| x.parse().ok()).collect();
+                    if !row.is_empty() {
+                        z_rows.push(row);
+                    }
+                    i += 1;
+                }
+            }
+            if !z_rows.is_empty() {
+                let nz = z_rows.len();
+                let cols = z_rows[0].len();
+                let flat: Vec<f64> = z_rows.into_iter().flat_map(|r| r.into_iter()).collect();
+                res.z = Some(DMatrix::from_row_slice(nz, cols, &flat));
+            }
+            break;
+        }
+        i += 1;
+    }
+    Ok(res)
 }
 
 /// Relative tolerance comparison: |a - b| <= rel_tol * max(|a|, |b|, 1.0).
