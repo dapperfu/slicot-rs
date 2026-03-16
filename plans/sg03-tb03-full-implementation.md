@@ -56,7 +56,7 @@ SG03 Fortran uses LAPACK (e.g. DGGES for generalized Schur, DLAMCH, DLABAD). Rep
 | 3 | Implement SG03BR, SG03BY (with tests). |
 | 4 | Implement SG03BX, SG03BW (with tests). |
 | 5 | Implement SG03BS, SG03BT (with tests). |
-| 6 | Implement SG03BU, SG03BV (with tests). |
+| 6 | Implement SG03BU, SG03BV (with tests). **Done.** |
 | 7 | Implement SG03AX, SG03AY (with tests). |
 | 8 | Implement SG03AD, SG03BD, SG03BZ (with example-based tests for AD, BD). |
 | 9 | Implement TB03AY then TB03AD (with example-based test for TB03AD). |
