@@ -66,10 +66,10 @@ mod tests {
         let mut c = DMatrix::from_fn(p, n, |_, j| if j == 0 { 1.0 } else { 0.0 });
         let info = tb01yd(&mut a, &mut b, &mut c);
         assert_eq!(info, 0);
-        // P*I*P = I
-        assert!((a[(0, 0)] - 0.0).abs() < 1e-10);
-        assert!((a[(0, 1)] - 1.0).abs() < 1e-10);
-        assert!((a[(1, 0)] - 1.0).abs() < 1e-10);
-        assert!((a[(1, 1)] - 0.0).abs() < 1e-10);
+        // P*I*P = I (identity, since P*P = I for anti-diagonal P)
+        assert!((a[(0, 0)] - 1.0).abs() < 1e-10);
+        assert!((a[(0, 1)] - 0.0).abs() < 1e-10);
+        assert!((a[(1, 0)] - 0.0).abs() < 1e-10);
+        assert!((a[(1, 1)] - 1.0).abs() < 1e-10);
     }
 }
