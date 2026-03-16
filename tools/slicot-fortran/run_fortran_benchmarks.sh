@@ -6,12 +6,12 @@
 set -e
 cd "$(dirname "$0")/../.."
 SLICOT_REF="${SLICOT_REF:-SLICOT-Reference}"
-BENCH_DIR="scripts/slicot-fortran/bench"
+BENCH_DIR="tools/slicot-fortran/bench"
 
 # Build slicot.a and lpkaux.a if missing
 if [ ! -f "$SLICOT_REF/slicot.a" ] || [ ! -f "$SLICOT_REF/lpkaux.a" ]; then
   echo "Building Fortran SLICOT (lpkaux, slicot)..."
-  ./scripts/slicot-fortran/build_fortran.sh lpkaux.a slicot
+  ./tools/slicot-fortran/build_fortran.sh lpkaux.a slicot
   # examples target may fail without OpenBLAS; we only need slicot.a
 fi
 

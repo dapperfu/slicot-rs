@@ -15,6 +15,8 @@ program bench_slicot
 
   call system_clock(count_rate=count_rate, count_max=count_max)
 
+  print '(A)', 'routine,n,time_us'
+
   ! MA02ED: store by symmetry (upper triangle given)
   do i = 1, nsizes
     n = sizes(i)
@@ -37,7 +39,7 @@ program bench_slicot
       if (niter >= 10000000) exit
     end do
     t_per_call_us = (c1 - c0) * 1.0d6 / (count_rate * niter)
-    print '(A,I5,A,F12.3,A)', 'MA02ED  n=', n, '  ', t_per_call_us, ' us/call'
+    print '(A,I0,A,F12.6)', 'MA02ED,', n, ',', t_per_call_us
     deallocate(A)
   end do
 
@@ -63,7 +65,7 @@ program bench_slicot
       if (niter >= 10000000) exit
     end do
     t_per_call_us = (c1 - c0) * 1.0d6 / (count_rate * niter)
-    print '(A,I5,A,F12.3,A)', 'MA02ES  n=', n, '  ', t_per_call_us, ' us/call'
+    print '(A,I0,A,F12.6)', 'MA02ES,', n, ',', t_per_call_us
     deallocate(A)
   end do
 
@@ -89,7 +91,7 @@ program bench_slicot
       if (niter >= 10000000) exit
     end do
     t_per_call_us = (c1 - c0) * 1.0d6 / (count_rate * niter)
-    print '(A,I5,A,F12.3,A)', 'DLACPY  n=', n, '  ', t_per_call_us, ' us/call'
+    print '(A,I0,A,F12.6)', 'DLACPY_SLC,', n, ',', t_per_call_us
     deallocate(A, B)
   end do
 
