@@ -15,6 +15,20 @@ Rust SLICOT implementations are validated against the Fortran reference by fuzzi
 
 See [fuzz/README.md](../fuzz/README.md) for target list, corpus location, and interpretation.
 
+## 1:1 integration test (Rust vs Fortran)
+
+A dedicated integration test ensures that Rust output matches Fortran 1:1 for a fixed AB01ND input when the Fortran reference is available:
+
+```bash
+# With Fortran built and SLICOT_EXAMPLES_DIR set (runs comparison):
+SLICOT_EXAMPLES_DIR=/path/to/examples cargo test --test fortran_1to1_compare
+
+# Without Fortran (test runs Rust only and skips comparison; passes):
+cargo test --test fortran_1to1_compare
+```
+
+The test lives in `tests/fortran_1to1_compare.rs`. It asserts INFO, NCONT, INDCON, and matrix equality (within relative tolerance) between Rust and Fortran TAB01ND.
+
 ## Expect-fail for stubs
 
 When a Rust routine is still a stub (returns `INFO != 0`), the fuzzer does not compare outputs; the run is treated as expect-fail. Once the implementation is complete, comparison runs and any mismatch causes a panic.
