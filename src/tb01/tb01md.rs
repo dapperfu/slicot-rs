@@ -76,7 +76,7 @@ pub fn tb01md(
     uplo: Uplo,
     a: &mut DMatrix<f64>,
     b: &mut DMatrix<f64>,
-    mut u: Option<&mut DMatrix<f64>>,
+    u: &mut Option<&mut DMatrix<f64>>,
 ) -> i32 {
     let n = a.nrows();
     let m = b.ncols();
@@ -86,7 +86,7 @@ pub fn tb01md(
     if (jobu == JobU::Init || jobu == JobU::Update) && u.is_none() {
         return -10;
     }
-    if let Some(ref uu) = u {
+    if let Some(ref uu) = *u {
         if uu.nrows() != n || uu.ncols() != n {
             return -10;
         }
@@ -101,7 +101,7 @@ pub fn tb01md(
     let mut dwork = vec![0.0_f64; n.max(m.saturating_sub(1))];
 
     if jobu == JobU::Init {
-        if let Some(ref mut uu) = u {
+        if let Some(ref mut uu) = *u {
             uu.fill(0.0);
             for i in 0..n {
                 uu[(i, i)] = 1.0;
@@ -132,7 +132,7 @@ pub fn tb01md(
         apply_householder_right(a, n, row_start, row_next, len, &v, tau, &mut dwork);
 
         if ljoba {
-            if let Some(ref mut uu) = u {
+            if let Some(ref mut uu) = *u {
                 apply_householder_right_mat(uu, n, row_start, row_next, len, &v, tau, &mut dwork);
             }
         }
@@ -191,7 +191,7 @@ pub fn tb01md(
         apply_householder_right(a, n, row_start, row_next, len, &v, tau, &mut dwork);
 
         if ljoba {
-            if let Some(ref mut uu) = u {
+            if let Some(ref mut uu) = *u {
                 apply_householder_right_mat(uu, n, row_start, row_next, len, &v, tau, &mut dwork);
             }
         }
@@ -302,7 +302,8 @@ mod tests {
         let mut a = DMatrix::from_row_slice(n, n, &[1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0]);
         let mut b = DMatrix::from_row_slice(n, m, &[1.0, 0.0, 0.0, 0.0, 1.0, 0.0]);
         let mut u = DMatrix::identity(n, n);
-        let info = tb01md(JobU::Init, Uplo::Upper, &mut a, &mut b, Some(&mut u));
+        let mut u_opt = Some(&mut u);
+        let info = tb01md(JobU::Init, Uplo::Upper, &mut a, &mut b, &mut u_opt);
         assert_eq!(info, 0);
         // B should have zeros below diagonal in first column (controller Hessenberg)
         assert!(b[(1, 0)].abs() < 1e-10 || b[(2, 0)].abs() < 1e-10);
@@ -314,7 +315,8 @@ mod tests {
         let m = 1usize;
         let mut a = DMatrix::from_row_slice(n, n, &[1.0, 0.0, 0.0, 1.0]);
         let mut b = DMatrix::from_row_slice(n, m, &[1.0, 0.0]);
-        let info = tb01md(JobU::No, Uplo::Upper, &mut a, &mut b, None);
+        let mut nopt = None;
+        let info = tb01md(JobU::No, Uplo::Upper, &mut a, &mut b, &mut nopt);
         assert_eq!(info, 0);
     }
 
@@ -324,7 +326,8 @@ mod tests {
         let m = 1usize;
         let mut a = DMatrix::from_row_slice(n, n, &[1.0, 0.0, 0.0, 1.0]);
         let mut b = DMatrix::from_row_slice(n, m, &[1.0, 0.0]);
-        let info = tb01md(JobU::No, Uplo::Lower, &mut a, &mut b, None);
+        let mut nopt = None;
+        let info = tb01md(JobU::No, Uplo::Lower, &mut a, &mut b, &mut nopt);
         assert_eq!(info, -2); // Lower not yet implemented
     }
 }
