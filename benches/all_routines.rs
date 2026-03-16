@@ -687,10 +687,10 @@ fn bench_stubs_ab13(c: &mut Criterion) {
 }
 
 fn bench_stubs_ab07(c: &mut Criterion) {
-    use slicot_rs::ab07::{ab07md::ab07md, ab07nd::ab07nd};
+    use slicot_rs::ab07::{ab07md::ab07md_nm, ab07nd::ab07nd_nm};
     let routines: &[(&str, fn(usize, usize) -> i32)] = &[
-        ("ab07md", ab07md),
-        ("ab07nd", ab07nd),
+        ("ab07md", ab07md_nm),
+        ("ab07nd", ab07nd_nm),
     ];
     bench_stub_nm!(c, "ab07", routines);
 }

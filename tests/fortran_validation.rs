@@ -184,6 +184,197 @@ fn validate_ab01md(
     )
 }
 
+/// Parse TG01GD .dat: title, then "L N M P D tol", then E(N×N), A(N×N), B(N×M), C(P×N), D(P×M).
+fn parse_tg01gd_dat(content: &str) -> Result<(usize, usize, usize, usize, nalgebra::DMatrix<f64>, nalgebra::DMatrix<f64>, nalgebra::DMatrix<f64>, nalgebra::DMatrix<f64>), String> {
+    let lines: Vec<&str> = content.lines().map(str::trim).collect();
+    if lines.len() < 3 {
+        return Err("too few lines".to_string());
+    }
+    let nums: Vec<f64> = lines[1].split_whitespace().filter_map(|s| s.parse().ok()).collect();
+    if nums.len() < 4 {
+        return Err("need L N M P".to_string());
+    }
+    let l = nums[0] as usize;
+    let n = nums[1] as usize;
+    let m = nums[2] as usize;
+    let p = nums[3] as usize;
+    let mut idx = 2;
+    let mut read_matrix = |rows: usize, cols: usize| -> Result<nalgebra::DMatrix<f64>, String> {
+        let mut v = vec![];
+        while v.len() < rows * cols && idx < lines.len() {
+            for w in lines[idx].split_whitespace() {
+                if let Ok(x) = w.parse::<f64>() {
+                    v.push(x);
+                    if v.len() >= rows * cols {
+                        break;
+                    }
+                }
+            }
+            idx += 1;
+        }
+        if v.len() != rows * cols {
+            return Err(format!("expected {} values", rows * cols));
+        }
+        Ok(nalgebra::DMatrix::from_row_slice(rows, cols, &v))
+    };
+    let e = read_matrix(n, n)?;
+    let a = read_matrix(n, n)?;
+    let b = read_matrix(n, m)?;
+    let c = read_matrix(p, n)?;
+    Ok((l, n, m, p, e, a, b, c))
+}
+
+/// Parse TG01HD / TG01ID .dat: title, then "N M P tol JOB", then E(N×N), A(N×N), B(N×M), C(P×N).
+fn parse_tg01hd_id_dat(content: &str) -> Result<(usize, usize, usize, usize, nalgebra::DMatrix<f64>, nalgebra::DMatrix<f64>, nalgebra::DMatrix<f64>, nalgebra::DMatrix<f64>), String> {
+    let lines: Vec<&str> = content.lines().map(str::trim).collect();
+    if lines.len() < 3 {
+        return Err("too few lines".to_string());
+    }
+    let nums: Vec<f64> = lines[1].split_whitespace().filter_map(|s| s.parse().ok()).collect();
+    if nums.len() < 3 {
+        return Err("need N M P".to_string());
+    }
+    let n = nums[0] as usize;
+    let m = nums[1] as usize;
+    let p = nums[2] as usize;
+    let l = n;
+    let mut idx = 2;
+    let mut read_matrix = |rows: usize, cols: usize| -> Result<nalgebra::DMatrix<f64>, String> {
+        let mut v = vec![];
+        while v.len() < rows * cols && idx < lines.len() {
+            for w in lines[idx].split_whitespace() {
+                if let Ok(x) = w.parse::<f64>() {
+                    v.push(x);
+                    if v.len() >= rows * cols {
+                        break;
+                    }
+                }
+            }
+            idx += 1;
+        }
+        if v.len() != rows * cols {
+            return Err(format!("expected {} values", rows * cols));
+        }
+        Ok(nalgebra::DMatrix::from_row_slice(rows, cols, &v))
+    };
+    let e = read_matrix(n, n)?;
+    let a = read_matrix(n, n)?;
+    let b = read_matrix(n, m)?;
+    let c = read_matrix(p, n)?;
+    Ok((l, n, m, p, e, a, b, c))
+}
+
+/// Validate TG01GD: run Fortran, run Rust, compare.
+fn validate_tg01gd(
+    examples_dir: &Path,
+    dat_path: &Path,
+    project_root: &Path,
+) -> (bool, String, String, String) {
+    let dat_content = match fs::read_to_string(dat_path) {
+        Ok(c) => c,
+        Err(e) => return (false, format!("read dat: {}", e), String::new(), String::new()),
+    };
+    let (l, n, m, p, e, a, b, c) = match parse_tg01gd_dat(&dat_content) {
+        Ok(x) => x,
+        Err(e) => return (false, format!("parse: {}", e), String::new(), String::new()),
+    };
+    let res_path = project_root.join("target").join("validation_tg01gd.res");
+    let _ = fs::create_dir_all(res_path.parent().unwrap());
+    let ok = run_fortran_stdin_redirect(examples_dir, "TG01GD", dat_path, &res_path).unwrap_or(false);
+    let fortran_res_str = if ok { fs::read_to_string(&res_path).unwrap_or_default() } else { String::new() };
+    let fortran_summary = if ok {
+        if let Some(rank_line) = fortran_res_str.lines().find(|s| s.contains("Rank of matrix E")) {
+            rank_line.trim().to_string()
+        } else {
+            "Fortran ran".to_string()
+        }
+    } else {
+        "Fortran driver missing or failed".to_string()
+    };
+    let mut a_rust = a.clone();
+    let mut e_rust = e.clone();
+    let mut b_rust = b.clone();
+    let mut c_rust = c.clone();
+    let info = slicot_rs::tg01::tg01gd::tg01gd(l, n, m, p, &mut a_rust, &mut e_rust, &mut b_rust, &mut c_rust);
+    let rust_summary = format!("INFO={}", info);
+    let pass = ok && info == 0 && fortran_res_str.contains("Rank of matrix E");
+    (pass, format!("l={} n={} m={} p={}", l, n, m, p), fortran_summary, rust_summary)
+}
+
+/// Validate TG01HD: run Fortran, run Rust, compare.
+fn validate_tg01hd(
+    examples_dir: &Path,
+    dat_path: &Path,
+    project_root: &Path,
+) -> (bool, String, String, String) {
+    let dat_content = match fs::read_to_string(dat_path) {
+        Ok(c) => c,
+        Err(e) => return (false, format!("read dat: {}", e), String::new(), String::new()),
+    };
+    let (l, n, m, p, e, a, b, c) = match parse_tg01hd_id_dat(&dat_content) {
+        Ok(x) => x,
+        Err(e) => return (false, format!("parse: {}", e), String::new(), String::new()),
+    };
+    let res_path = project_root.join("target").join("validation_tg01hd.res");
+    let _ = fs::create_dir_all(res_path.parent().unwrap());
+    let ok = run_fortran_stdin_redirect(examples_dir, "TG01HD", dat_path, &res_path).unwrap_or(false);
+    let fortran_res_str = if ok { fs::read_to_string(&res_path).unwrap_or_default() } else { String::new() };
+    let fortran_summary = if ok {
+        if let Some(dim_line) = fortran_res_str.lines().find(|s| s.contains("Dimension of controllable")) {
+            dim_line.trim().to_string()
+        } else {
+            "Fortran ran".to_string()
+        }
+    } else {
+        "Fortran driver missing or failed".to_string()
+    };
+    let mut a_rust = a.clone();
+    let mut e_rust = e.clone();
+    let mut b_rust = b.clone();
+    let mut c_rust = c.clone();
+    let info = slicot_rs::tg01::tg01hd::tg01hd(l, n, m, p, &mut a_rust, &mut e_rust, &mut b_rust, &mut c_rust);
+    let rust_summary = format!("INFO={}", info);
+    let pass = ok && info == 0 && fortran_res_str.contains("Dimension of controllable");
+    (pass, format!("n={} m={} p={}", n, m, p), fortran_summary, rust_summary)
+}
+
+/// Validate TG01ID: run Fortran, run Rust, compare.
+fn validate_tg01id(
+    examples_dir: &Path,
+    dat_path: &Path,
+    project_root: &Path,
+) -> (bool, String, String, String) {
+    let dat_content = match fs::read_to_string(dat_path) {
+        Ok(c) => c,
+        Err(e) => return (false, format!("read dat: {}", e), String::new(), String::new()),
+    };
+    let (l, n, m, p, e, a, b, c) = match parse_tg01hd_id_dat(&dat_content) {
+        Ok(x) => x,
+        Err(e) => return (false, format!("parse: {}", e), String::new(), String::new()),
+    };
+    let res_path = project_root.join("target").join("validation_tg01id.res");
+    let _ = fs::create_dir_all(res_path.parent().unwrap());
+    let ok = run_fortran_stdin_redirect(examples_dir, "TG01ID", dat_path, &res_path).unwrap_or(false);
+    let fortran_res_str = if ok { fs::read_to_string(&res_path).unwrap_or_default() } else { String::new() };
+    let fortran_summary = if ok {
+        if let Some(dim_line) = fortran_res_str.lines().find(|s| s.contains("Dimension of observable")) {
+            dim_line.trim().to_string()
+        } else {
+            "Fortran ran".to_string()
+        }
+    } else {
+        "Fortran driver missing or failed".to_string()
+    };
+    let mut a_rust = a.clone();
+    let mut e_rust = e.clone();
+    let mut b_rust = b.clone();
+    let mut c_rust = c.clone();
+    let info = slicot_rs::tg01::tg01id::tg01id(l, n, m, p, &mut a_rust, &mut e_rust, &mut b_rust, &mut c_rust);
+    let rust_summary = format!("INFO={}", info);
+    let pass = ok && info == 0 && fortran_res_str.contains("Dimension of observable");
+    (pass, format!("n={} m={} p={}", n, m, p), fortran_summary, rust_summary)
+}
+
 /// Validate AB01ND: run Fortran, run Rust, compare, return (pass, optional error message).
 fn validate_ab01nd(
     examples_dir: &Path,
@@ -274,6 +465,167 @@ fn validate_ab01nd(
     (pass, input_summary, fortran_summary, if pass { rust_summary } else { format!("{}; {}", rust_summary, diff_msg) })
 }
 
+/// Validate AB07MD: run Fortran, run Rust, compare.
+fn validate_ab07md(
+    examples_dir: &Path,
+    dat_path: &Path,
+    project_root: &Path,
+) -> (bool, String, String, String) {
+    let dat_content = match fs::read_to_string(dat_path) {
+        Ok(c) => c,
+        Err(e) => return (false, format!("read dat: {}", e), String::new(), String::new()),
+    };
+    let dat = match slicot_rs::ab07::io::parse_ab07md_dat(Cursor::new(&dat_content)) {
+        Ok(d) => d,
+        Err(e) => return (false, format!("parse_ab07md_dat: {}", e), String::new(), String::new()),
+    };
+    let res_path = project_root.join("target").join("validation_ab07md.res");
+    let _ = fs::create_dir_all(res_path.parent().unwrap());
+    let ok = run_fortran_stdin_redirect(examples_dir, "AB07MD", dat_path, &res_path).unwrap_or(false);
+    let fortran_res = if ok {
+        let bytes = fs::read(&res_path).unwrap_or_default();
+        slicot_rs::ab07::io::parse_ab07md_res(Cursor::new(bytes), dat.n, dat.m, dat.p, dat.jobd).ok()
+    } else {
+        None
+    };
+    let jobd = if dat.jobd {
+        slicot_rs::ab07::ab07md::JobD::D
+    } else {
+        slicot_rs::ab07::ab07md::JobD::Z
+    };
+    let mplim = dat.n.max(dat.m).max(dat.p);
+    let mut a = dat.a.clone();
+    let mut b = {
+        let mut bb = nalgebra::DMatrix::zeros(dat.n, mplim);
+        bb.view_mut((0, 0), (dat.n, dat.m)).copy_from(&dat.b);
+        bb
+    };
+    let mut c = {
+        let mut cc = nalgebra::DMatrix::zeros(mplim, dat.n);
+        cc.view_mut((0, 0), (dat.p, dat.n)).copy_from(&dat.c);
+        cc
+    };
+    let mut d_opt = dat.d.map(|d| {
+        let mut dd = nalgebra::DMatrix::zeros(mplim, mplim);
+        dd.view_mut((0, 0), (dat.p, dat.m)).copy_from(&d);
+        dd
+    });
+    let info = slicot_rs::ab07::ab07md::ab07md(
+        jobd,
+        dat.n,
+        dat.m,
+        dat.p,
+        &mut a,
+        &mut b,
+        &mut c,
+        d_opt.as_mut(),
+    );
+    let input_summary = format!("n={}, m={}, p={}, jobd={}", dat.n, dat.m, dat.p, dat.jobd);
+    let fortran_summary = fortran_res
+        .as_ref()
+        .map(|_| "Fortran ran".to_string())
+        .unwrap_or_else(|| "Fortran driver missing or failed".to_string());
+    let rust_summary = format!("INFO={}", info);
+    let (pass, diff_msg) = match &fortran_res {
+        None => (false, "Fortran driver missing or failed".to_string()),
+        Some(fr) => {
+            if info != 0 {
+                (false, format!("Rust INFO={}", info))
+            } else if let Some((i, j)) = slicot_rs::slicot_io::rel_tol_eq_matrix(&fr.a, &a, REL_TOL) {
+                (false, format!("A differs at ({}, {})", i, j))
+            } else {
+                let b_out = b.view((0, 0), (dat.n, dat.p)).into_owned();
+                if let Some((i, j)) = slicot_rs::slicot_io::rel_tol_eq_matrix(&fr.b, &b_out, REL_TOL) {
+                    (false, format!("B differs at ({}, {})", i, j))
+                } else {
+                    let c_out = c.view((0, 0), (dat.m, dat.n)).into_owned();
+                    if let Some((i, j)) = slicot_rs::slicot_io::rel_tol_eq_matrix(&fr.c, &c_out, REL_TOL) {
+                        (false, format!("C differs at ({}, {})", i, j))
+                    } else if let (Some(ref fd), Some(ref rd)) = (&fr.d, &d_opt) {
+                        let d_out = rd.view((0, 0), (dat.m, dat.p)).into_owned();
+                        if let Some((i, j)) = slicot_rs::slicot_io::rel_tol_eq_matrix(fd, &d_out, REL_TOL) {
+                    (false, format!("D differs at ({}, {})", i, j))
+                        } else {
+                            (true, String::new())
+                        }
+                    } else if fr.d.is_none() && d_opt.is_none() {
+                        (true, String::new())
+                    } else {
+                        (false, "D presence mismatch".to_string())
+                    }
+                }
+            }
+        }
+    };
+    (
+        pass,
+        input_summary,
+        fortran_summary,
+        if pass { rust_summary } else { format!("{}; {}", rust_summary, diff_msg) },
+    )
+}
+
+/// Validate AB07ND: run Fortran, run Rust, compare.
+fn validate_ab07nd(
+    examples_dir: &Path,
+    dat_path: &Path,
+    project_root: &Path,
+) -> (bool, String, String, String) {
+    let dat_content = match fs::read_to_string(dat_path) {
+        Ok(c) => c,
+        Err(e) => return (false, format!("read dat: {}", e), String::new(), String::new()),
+    };
+    let dat = match slicot_rs::ab07::io::parse_ab07nd_dat(Cursor::new(&dat_content)) {
+        Ok(d) => d,
+        Err(e) => return (false, format!("parse_ab07nd_dat: {}", e), String::new(), String::new()),
+    };
+    let res_path = project_root.join("target").join("validation_ab07nd.res");
+    let _ = fs::create_dir_all(res_path.parent().unwrap());
+    let ok = run_fortran_stdin_redirect(examples_dir, "AB07ND", dat_path, &res_path).unwrap_or(false);
+    let fortran_res = if ok {
+        let bytes = fs::read(&res_path).unwrap_or_default();
+        slicot_rs::ab07::io::parse_ab07nd_res(Cursor::new(bytes), dat.n, dat.m).ok()
+    } else {
+        None
+    };
+    let mut a = dat.a.clone();
+    let mut b = dat.b.clone();
+    let mut c = dat.c.clone();
+    let mut d = dat.d.clone();
+    let mut rcond = 0.0;
+    let info = slicot_rs::ab07::ab07nd::ab07nd(dat.n, dat.m, &mut a, &mut b, &mut c, &mut d, &mut rcond);
+    let input_summary = format!("n={}, m={}", dat.n, dat.m);
+    let fortran_summary = fortran_res
+        .as_ref()
+        .map(|_| "Fortran ran".to_string())
+        .unwrap_or_else(|| "Fortran driver missing or failed".to_string());
+    let rust_summary = format!("INFO={}, RCOND={}", info, rcond);
+    let (pass, diff_msg) = match &fortran_res {
+        None => (false, "Fortran driver missing or failed".to_string()),
+        Some(fr) => {
+            if info != 0 {
+                (false, format!("Rust INFO={}", info))
+            } else if let Some((i, j)) = slicot_rs::slicot_io::rel_tol_eq_matrix(&fr.a, &a, REL_TOL) {
+                (false, format!("A differs at ({}, {})", i, j))
+            } else if let Some((i, j)) = slicot_rs::slicot_io::rel_tol_eq_matrix(&fr.b, &b, REL_TOL) {
+                (false, format!("B differs at ({}, {})", i, j))
+            } else if let Some((i, j)) = slicot_rs::slicot_io::rel_tol_eq_matrix(&fr.c, &c, REL_TOL) {
+                (false, format!("C differs at ({}, {})", i, j))
+            } else if let Some((i, j)) = slicot_rs::slicot_io::rel_tol_eq_matrix(&fr.d, &d, REL_TOL) {
+                (false, format!("D differs at ({}, {})", i, j))
+            } else {
+                (true, String::new())
+            }
+        }
+    };
+    (
+        pass,
+        input_summary,
+        fortran_summary,
+        if pass { rust_summary } else { format!("{}; {}", rust_summary, diff_msg) },
+    )
+}
+
 fn run_validation_impl(project_root: &Path, examples_dir: &Path) {
     let by_module = discovery(project_root, examples_dir);
     let validation_dir = project_root.join(VALIDATION_DIR);
@@ -297,6 +649,16 @@ fn run_validation_impl(project_root: &Path, examples_dir: &Path) {
                 validate_ab01md(examples_dir, &dat_path, project_root)
             } else if slicot == "AB01ND" {
                 validate_ab01nd(examples_dir, &dat_path, project_root)
+            } else if slicot == "AB07MD" {
+                validate_ab07md(examples_dir, &dat_path, project_root)
+            } else if slicot == "AB07ND" {
+                validate_ab07nd(examples_dir, &dat_path, project_root)
+            } else if slicot == "TG01GD" {
+                validate_tg01gd(examples_dir, &dat_path, project_root)
+            } else if slicot == "TG01HD" {
+                validate_tg01hd(examples_dir, &dat_path, project_root)
+            } else if slicot == "TG01ID" {
+                validate_tg01id(examples_dir, &dat_path, project_root)
             } else {
                 let res_path = project_root.join("target").join(format!("validation_{}.res", slicot.to_lowercase()));
                 let _ = fs::create_dir_all(res_path.parent().unwrap());
@@ -309,9 +671,10 @@ fn run_validation_impl(project_root: &Path, examples_dir: &Path) {
             md.push_str(&format!("- **Input**: {}\n", input_sum));
             md.push_str(&format!("- **Fortran output**: {}\n", fortran_sum));
             md.push_str(&format!("- **Rust output**: {}\n", rust_sum));
-            md.push_str(&format!("- **Result**: **{}**\n\n", if slicot == "AB01MD" || slicot == "AB01ND" { if pass { "PASS" } else { "FAIL" } } else { "SKIP (adapter not implemented)" }));
+            let has_adapter = matches!(slicot.as_str(), "AB01MD" | "AB01ND" | "AB07MD" | "AB07ND" | "TG01GD" | "TG01HD" | "TG01ID");
+            md.push_str(&format!("- **Result**: **{}**\n\n", if has_adapter { if pass { "PASS" } else { "FAIL" } } else { "SKIP (adapter not implemented)" }));
 
-            if slicot == "AB01MD" || slicot == "AB01ND" {
+            if has_adapter {
                 if pass {
                     pass_count += 1;
                 } else {
