@@ -27,12 +27,12 @@ DO NOT use stubs. Implement FULL functionality 1:1 from SLICOT Fortran.
 Abbreviated sequence:
 1. Tier 0: Primitives (DLAMCH, DLABAD, DLAPY2, DLAPY3, DLANV2, DLASY2, DLARFG, BLAS)
 2. Tier 1: SB03OV ✅, SB04PX ✅, MB04NY ✅, MB04OY ✅
-3. Tier 2: SB03OY, SB03OR ✅, MB04ND ✅, MB04OD ✅
-4. Tier 3: SB03OT, SB03OU
-5. Tier 4: MB03UD
+3. Tier 2: SB03OY ✅, SB03OR ✅, MB04ND ✅, MB04OD ✅
+4. Tier 3: SB03OT ✅, SB03OU
+5. Tier 4: MB03UD ✅
 6. Tier 5: AB09AX
 7. Tier 6: AB09AD (TB01ID, TB01WD already in crate)
 
 ## Status
-- In progress: SB03OU/SB03OT/SB03OY chain and AB09AX/AB09AD.
-- SB03OV + DLAPY3: done.
+- In progress: SB03OU, AB09AX, AB09AD.
+- SB03OY (discrete alpha fix), SB03OT (full port), MB03UD (SVD via nalgebra), SB03OV + DLAPY3: done.
