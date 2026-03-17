@@ -1,8 +1,23 @@
-//! SB03OZ — SLICOT SB03OZ. Stub.
+//! SB03OZ — SLICOT Lyapunov. Thin wrapper: discrete solve.
 use nalgebra::DMatrix;
 
-pub fn sb03oz(_n: usize, _a: &DMatrix<f64>, _x: &mut DMatrix<f64>) -> i32 {
-    0
+use super::sb03md::{sb03md_solve, Dico};
+
+pub fn sb03oz(n: usize, a: &DMatrix<f64>, x: &mut DMatrix<f64>) -> i32 {
+    if n == 0 {
+        return 0;
+    }
+    let mut a_mat = a.clone();
+    let mut c_mat = x.clone();
+    let (_scale, info) = sb03md_solve(Dico::Discrete, &mut a_mat, &mut c_mat);
+    if info == 0 {
+        for i in 0..n {
+            for j in 0..n {
+                x[(i, j)] = c_mat[(i, j)];
+            }
+        }
+    }
+    info
 }
 
 #[cfg(test)]
