@@ -30,9 +30,9 @@ Abbreviated sequence:
 3. Tier 2: SB03OY ✅, SB03OR ✅, MB04ND ✅, MB04OD ✅
 4. Tier 3: SB03OT ✅, SB03OU ✅
 5. Tier 4: MB03UD ✅
-6. Tier 5: AB09AX
-7. Tier 6: AB09AD (TB01ID, TB01WD already in crate)
+6. Tier 5: AB09AX ✅
+7. Tier 6: AB09AD ✅ (TB01ID, TB01WD already in crate)
 
 ## Status
-- In progress: AB09AX, AB09AD.
+- AB09AX: full port. AB09AD: full port (TB01ID, TB01WD, AB09AX).
 - SB03OY (discrete alpha fix), SB03OT (full port), MB03UD (SVD via nalgebra), SB03OV + DLAPY3: done.
