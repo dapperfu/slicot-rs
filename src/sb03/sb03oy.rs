@@ -222,7 +222,7 @@ pub fn sb03oy_full(
     };
 
     let alpha = if discr {
-        (ONE - absb).abs() * (ONE + absb).sqrt()
+        ((ONE - absb) * (ONE + absb)).abs().sqrt()
     } else {
         (TWO * e1).abs().sqrt()
     };
