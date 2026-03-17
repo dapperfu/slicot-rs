@@ -82,7 +82,7 @@ pub fn ab09ax(
     let ku = 0;
     let n_mp = n * min(n, m).max(p);
     let ktau = ku + n_mp;
-    let kw = ktau + n;
+    let _kw = ktau + n;
     let mut scalec = ONE;
     let mut scaleo = ONE;
 
