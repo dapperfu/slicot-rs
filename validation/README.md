@@ -4,9 +4,13 @@ This folder contains validation results comparing each Rust SLICOT routine again
 
 ## How to run
 
-- **Full validation** (requires Fortran built):  
+- **Canonical full run** (build FORTRAN, build Rust, run 1:1 validation; fails on any mismatch):  
+  `./run.sh`  
+  From project root. This builds Fortran (unless `--no-fortran`), builds Rust tests, runs the validation test, and exits non-zero if any validated routine does not match FORTRAN. See [../README.md](../README.md#one-command-to-build-and-validate).
+
+- **Validation only** (assumes Fortran and Rust already built):  
   `./tools/validation/run_all.sh`  
-  This builds Fortran if needed, then runs the validation runner and overwrites `validation/*.md`.
+  Builds Fortran if needed, then runs the validation runner and overwrites `validation/*.md`.
 
 - **Subset (cargo test)** (skips if Fortran missing):  
   `SLICOT_EXAMPLES_DIR=/path/to/SLICOT-Reference/examples cargo test --test fortran_validation`  
