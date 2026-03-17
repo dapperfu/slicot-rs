@@ -94,10 +94,8 @@ pub fn tb01md(
     if n == 0 || m == 0 {
         return 0;
     }
-    if uplo != Uplo::Upper {
-        return -2; // Lower not yet implemented in pilot
-    }
     let n1 = n - 1;
+    let m1 = m + 1;
     let mut dwork = vec![0.0_f64; n.max(m.saturating_sub(1))];
 
     if jobu == JobU::Init {
@@ -111,7 +109,8 @@ pub fn tb01md(
 
     let ljoba = jobu == JobU::Init || jobu == JobU::Update;
 
-    // Phase 1: transformations involving both B and A (J = 0..min(m, n-1)); Upper only
+    if uplo == Uplo::Upper {
+    // Phase 1: transformations involving both B and A (J = 0..min(m, n-1))
     for j in 0..(m.min(n1)) {
         let nj = n - j; // number of rows in block (0-based: j..n-1)
         let (par1, par2, par3, par4, par5) = (j, j, j + 1, m, n);
@@ -159,7 +158,7 @@ pub fn tb01md(
         }
     }
 
-    // Phase 2: transformations only involving A (J = m..n-2); Upper only
+    // Phase 2: transformations only involving A (J = m..n-2)
     for j in m..n1 {
         let nj = n - j;
         let (par1, par2, par3, par4, par5, par6) = (j - m, j, j + 1, n, j - m, n);
@@ -198,6 +197,81 @@ pub fn tb01md(
 
         for ii in par3..(par4 + 1).min(n) {
             a[(ii, col_a)] = 0.0;
+        }
+    }
+    } else {
+        // Lower controller Hessenberg (UPLO = 'L'); 1:1 with Fortran
+        for j in 0..(m.min(n1)) {
+            let j1 = j + 1;
+            let nj = n - j1;
+            let par1_1 = m - j1 + 1;
+            let par2_1 = nj + 1;
+            let par4_1 = m - j1;
+            let par5_1 = nj;
+            let col_b = par1_1.saturating_sub(1);
+            let row_start = par2_1.saturating_sub(1);
+            let len = nj;
+            if row_start + len + 1 > n || col_b >= m {
+                continue;
+            }
+            let mut x = DVector::from_fn(len + 1, |i, _| b[(row_start + i, col_b)]);
+            let tau = householder_gen(&mut x);
+            if tau == 0.0 {
+                for ii in 0..par5_1.min(n) {
+                    b[(ii, col_b)] = 0.0;
+                }
+                continue;
+            }
+            let v = DVector::from_fn(len + 1, |i, _| if i == 0 { 1.0 } else { x[i] });
+            apply_householder_left(a, row_start, row_start + 1, len, 0, n, &v, tau, &mut dwork);
+            apply_householder_right(a, n, row_start, row_start + 1, len, &v, tau, &mut dwork);
+            if ljoba {
+                if let Some(ref mut uu) = *u {
+                    apply_householder_right_mat(uu, n, row_start, row_start + 1, len, &v, tau, &mut dwork);
+                }
+            }
+            if j != m - 1 && par4_1 > 0 {
+                apply_householder_left(b, row_start, row_start + 1, len, 0, par4_1, &v, tau, &mut dwork);
+            }
+            for ii in 0..par5_1.min(n) {
+                b[(ii, col_b)] = 0.0;
+            }
+        }
+        for j in m..n1 {
+            let j1 = j + 1; // 1-based J
+            let nj = n - j1;
+            let par1_1 = n + m1 - j1;
+            let par2_1 = nj + 1;
+            let par4_1 = nj;
+            let par5_1 = 1;
+            let par6_1 = n + m - j1;
+            let col_a = par1_1.saturating_sub(1);
+            let row_start = par2_1.saturating_sub(1);
+            let len = nj;
+            let col_start = 0;
+            let col_count = par6_1;
+            if row_start + len + 1 > n || col_a >= n {
+                continue;
+            }
+            let mut x = DVector::from_fn(len + 1, |i, _| a[(row_start + i, col_a)]);
+            let tau = householder_gen(&mut x);
+            if tau == 0.0 {
+                for ii in 0..par4_1.min(n) {
+                    a[(ii, col_a)] = 0.0;
+                }
+                continue;
+            }
+            let v = DVector::from_fn(len + 1, |i, _| if i == 0 { 1.0 } else { x[i] });
+            apply_householder_left(a, row_start, row_start + 1, len, col_start, col_count, &v, tau, &mut dwork);
+            apply_householder_right(a, n, row_start, row_start + 1, len, &v, tau, &mut dwork);
+            if ljoba {
+                if let Some(ref mut uu) = *u {
+                    apply_householder_right_mat(uu, n, row_start, row_start + 1, len, &v, tau, &mut dwork);
+                }
+            }
+            for ii in 0..par4_1.min(n) {
+                a[(ii, col_a)] = 0.0;
+            }
         }
     }
 
@@ -321,13 +395,13 @@ mod tests {
     }
 
     #[test]
-    fn test_tb01md_lower_not_implemented() {
+    fn test_tb01md_lower() {
         let n = 2usize;
         let m = 1usize;
         let mut a = DMatrix::from_row_slice(n, n, &[1.0, 0.0, 0.0, 1.0]);
         let mut b = DMatrix::from_row_slice(n, m, &[1.0, 0.0]);
         let mut nopt = None;
         let info = tb01md(JobU::No, Uplo::Lower, &mut a, &mut b, &mut nopt);
-        assert_eq!(info, -2); // Lower not yet implemented
+        assert_eq!(info, 0);
     }
 }
