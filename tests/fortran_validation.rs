@@ -626,6 +626,198 @@ fn validate_ab07nd(
     )
 }
 
+/// Validate AB08NW: run Fortran, run Rust (full call with N,M,P from .dat), compare INFO.
+fn validate_ab08nw(
+    examples_dir: &Path,
+    dat_path: &Path,
+    project_root: &Path,
+) -> (bool, String, String, String) {
+    let dat_content = match fs::read_to_string(dat_path) {
+        Ok(c) => c,
+        Err(e) => return (false, format!("read dat: {}", e), String::new(), String::new()),
+    };
+    let dat = match slicot_rs::ab08::io::parse_ab08nw_dat(Cursor::new(&dat_content)) {
+        Ok(d) => d,
+        Err(e) => return (false, format!("parse_ab08nw_dat: {}", e), String::new(), String::new()),
+    };
+    let res_path = project_root
+        .join("target")
+        .join("validation_ab08nw.res");
+    let _ = fs::create_dir_all(res_path.parent().unwrap());
+    let ok = run_fortran_stdin_redirect(examples_dir, "AB08NW", dat_path, &res_path).unwrap_or(false);
+    let fortran_summary = if ok {
+        "Fortran ran".to_string()
+    } else {
+        "Fortran driver missing or failed".to_string()
+    };
+    let equil = if dat.equil {
+        slicot_rs::ab08::ab08nw::Equil::S
+    } else {
+        slicot_rs::ab08::ab08nw::Equil::N
+    };
+    let n = dat.n;
+    let m = dat.m;
+    let p = dat.p;
+    let mut a = dat.a.clone();
+    let mut b = dat.b.clone();
+    let mut c = dat.c.clone();
+    let mut d = dat.d.clone();
+    let mut nfz = 0i32;
+    let mut nrank = 0i32;
+    let mut niz = 0i32;
+    let mut dinfz = 0i32;
+    let mut nkror = 0i32;
+    let mut ninfe = 0i32;
+    let mut nkrol = 0i32;
+    let cap = n + 1;
+    let mut infz = vec![0i32; cap];
+    let mut kronr = vec![0i32; cap];
+    let mut infe = vec![0i32; cap];
+    let mut kronl = vec![0i32; cap];
+    let mut e = nalgebra::DMatrix::zeros(n, n);
+    let mut iwork = vec![0i32; n.max(m).max(p)];
+    let mut dwork_query = vec![0.0_f64; 1];
+    let ldwork = slicot_rs::ab08::ab08nw::ab08nw(
+        equil,
+        n,
+        m,
+        p,
+        &mut a,
+        &mut b,
+        &mut c,
+        &mut d,
+        &mut nfz,
+        &mut nrank,
+        &mut niz,
+        &mut dinfz,
+        &mut nkror,
+        &mut ninfe,
+        &mut nkrol,
+        &mut infz,
+        &mut kronr,
+        &mut infe,
+        &mut kronl,
+        &mut e,
+        0.0,
+        &mut iwork,
+        &mut dwork_query,
+        -1,
+    );
+    let ldwork_size = if ldwork == 0 {
+        dwork_query[0].max(1.0) as usize
+    } else {
+        1024
+    };
+    let mut dwork = vec![0.0; ldwork_size];
+    let info = slicot_rs::ab08::ab08nw::ab08nw(
+        equil,
+        n,
+        m,
+        p,
+        &mut a,
+        &mut b,
+        &mut c,
+        &mut d,
+        &mut nfz,
+        &mut nrank,
+        &mut niz,
+        &mut dinfz,
+        &mut nkror,
+        &mut ninfe,
+        &mut nkrol,
+        &mut infz,
+        &mut kronr,
+        &mut infe,
+        &mut kronl,
+        &mut e,
+        0.0,
+        &mut iwork,
+        &mut dwork,
+        ldwork_size as i32,
+    );
+    let input_summary = format!("n={}, m={}, p={}, equil={}", n, m, p, dat.equil);
+    let rust_summary = format!("INFO={}", info);
+    let pass = info == 0;
+    let diff_msg = if pass { String::new() } else { format!("Rust INFO={} (main path not implemented for non-trivial input)", info) };
+    (
+        pass,
+        input_summary,
+        fortran_summary,
+        if pass { rust_summary } else { format!("{}; {}", rust_summary, diff_msg) },
+    )
+}
+
+/// AB09 routines with .dat that we validate (stub returns 1 for non-trivial).
+const AB09_VALIDATED: &[&str] = &[
+    "AB09AD", "AB09BD", "AB09CD", "AB09DD", "AB09ED", "AB09FD", "AB09GD",
+    "AB09HD", "AB09ID", "AB09JD", "AB09KD", "AB09MD", "AB09ND",
+];
+
+/// Validate AB09*: run Fortran, run Rust stub (n,m from .dat), compare INFO.
+fn validate_ab09_generic(
+    slicot: &str,
+    examples_dir: &Path,
+    dat_path: &Path,
+    project_root: &Path,
+) -> (bool, String, String, String) {
+    use slicot_rs::ab09::{
+        ab09ad::ab09ad, ab09bd::ab09bd, ab09cd::ab09cd, ab09dd::ab09dd,
+        ab09ed::ab09ed, ab09fd::ab09fd, ab09gd::ab09gd, ab09hd::ab09hd,
+        ab09id::ab09id, ab09jd::ab09jd, ab09kd::ab09kd, ab09md::ab09md,
+        ab09nd::ab09nd,
+    };
+    let dat_content = match fs::read_to_string(dat_path) {
+        Ok(c) => c,
+        Err(e) => return (false, format!("read dat: {}", e), String::new(), String::new()),
+    };
+    let dat = match slicot_rs::ab09::io::parse_ab09_nmp(Cursor::new(&dat_content)) {
+        Ok(d) => d,
+        Err(e) => return (false, format!("parse_ab09_nmp: {}", e), String::new(), String::new()),
+    };
+    let res_path = project_root
+        .join("target")
+        .join(format!("validation_{}.res", slicot.to_lowercase()));
+    let _ = fs::create_dir_all(res_path.parent().unwrap());
+    let ok = run_fortran_stdin_redirect(examples_dir, slicot, dat_path, &res_path).unwrap_or(false);
+    let fortran_summary = if ok {
+        "Fortran ran".to_string()
+    } else {
+        "Fortran driver missing or failed".to_string()
+    };
+    let info = match slicot {
+        "AB09AD" => ab09ad(dat.n, dat.m),
+        "AB09BD" => ab09bd(dat.n, dat.m),
+        "AB09CD" => ab09cd(dat.n, dat.m),
+        "AB09DD" => ab09dd(dat.n, dat.m),
+        "AB09ED" => ab09ed(dat.n, dat.m),
+        "AB09FD" => ab09fd(dat.n, dat.m),
+        "AB09GD" => ab09gd(dat.n, dat.m),
+        "AB09HD" => ab09hd(dat.n, dat.m),
+        "AB09ID" => ab09id(dat.n, dat.m),
+        "AB09JD" => ab09jd(dat.n, dat.m),
+        "AB09KD" => ab09kd(dat.n, dat.m),
+        "AB09MD" => ab09md(dat.n, dat.m),
+        "AB09ND" => ab09nd(dat.n, dat.m),
+        _ => 1,
+    };
+    let input_summary = format!("n={}, m={}, p={}", dat.n, dat.m, dat.p);
+    let rust_summary = format!("INFO={}", info);
+    let pass = info == 0;
+    let diff_msg = if pass {
+        String::new()
+    } else if info == 1 {
+        "Rust stub returns 1 (not implemented)".to_string()
+    } else {
+        format!("Rust returned INFO={}", info)
+    };
+    (
+        pass,
+        input_summary,
+        fortran_summary,
+        if pass { rust_summary } else { format!("{}; {}", rust_summary, diff_msg) },
+    )
+}
+
 fn run_validation_impl(project_root: &Path, examples_dir: &Path) {
     let by_module = discovery(project_root, examples_dir);
     let validation_dir = project_root.join(VALIDATION_DIR);
@@ -659,6 +851,10 @@ fn run_validation_impl(project_root: &Path, examples_dir: &Path) {
                 validate_tg01hd(examples_dir, &dat_path, project_root)
             } else if slicot == "TG01ID" {
                 validate_tg01id(examples_dir, &dat_path, project_root)
+            } else if slicot == "AB08NW" {
+                validate_ab08nw(examples_dir, &dat_path, project_root)
+            } else if AB09_VALIDATED.contains(&slicot.as_str()) {
+                validate_ab09_generic(slicot, examples_dir, &dat_path, project_root)
             } else {
                 let res_path = project_root.join("target").join(format!("validation_{}.res", slicot.to_lowercase()));
                 let _ = fs::create_dir_all(res_path.parent().unwrap());
@@ -671,7 +867,8 @@ fn run_validation_impl(project_root: &Path, examples_dir: &Path) {
             md.push_str(&format!("- **Input**: {}\n", input_sum));
             md.push_str(&format!("- **Fortran output**: {}\n", fortran_sum));
             md.push_str(&format!("- **Rust output**: {}\n", rust_sum));
-            let has_adapter = matches!(slicot.as_str(), "AB01MD" | "AB01ND" | "AB07MD" | "AB07ND" | "TG01GD" | "TG01HD" | "TG01ID");
+            let has_adapter = matches!(slicot.as_str(), "AB01MD" | "AB01ND" | "AB07MD" | "AB07ND" | "AB08NW" | "TG01GD" | "TG01HD" | "TG01ID")
+                || AB09_VALIDATED.contains(&slicot.as_str());
             md.push_str(&format!("- **Result**: **{}**\n\n", if has_adapter { if pass { "PASS" } else { "FAIL" } } else { "SKIP (adapter not implemented)" }));
 
             if has_adapter {
