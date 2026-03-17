@@ -13,16 +13,18 @@ Fully implement every function listed; DO NOT leave main path undone.
 - [ ] FB01VD
 
 ### AB09 (20)
-- [ ] AB09IX, AB09HD, AB09JV, AB09KX, AB09IY, AB09GD, AB09CX, AB09CD
+- [ ] AB09IX, AB09HD, AB09JV, AB09KX, AB09IY, AB09GD
+- [ ] AB09CX, AB09CD
 - [ ] AB09JD, AB09ED, AB09HX, AB09HY, AB09JW
 - [x] AB09DD
 - [ ] AB09KD, AB09FD
 - [ ] AB09JX, AB09ND, AB09ID, AB09MD
+- [x] AB09BX, AB09BD
 
 ## Dependency order (AB09)
-1. **AB09DD** — SPA formulas (Ar = A11 + A12*inv(g*I-A22)*A21, etc.). **DONE.**
-2. AB09BX — Singular perturbation with alpha (calls AB09DD, SB03OU, MB03UD).
-3. AB09BD — SPA with D (calls AB09BX, TB01ID, TB01WD).
+1. **AB09DD** — SPA formulas. **DONE.**
+2. **AB09BX** — SPA (calls AB09DD, SB03OU, MB03UD). **DONE.**
+3. **AB09BD** — SPA with D (calls AB09BX, TB01ID, TB01WD). **DONE.**
 4. AB09CD — (calls AB09DD or similar).
 5. AB09MD — (calls AB09AX, TB01KD).
 6. AB09ND — (calls AB09BX, TB01KD).
@@ -31,4 +33,6 @@ Fully implement every function listed; DO NOT leave main path undone.
 9. AB09CX, AB09HX, AB09IX, AB09HY, AB09IY, AB09JV, AB09JW, AB09JX, AB09KX.
 
 ## Status
-- AB09DD: full port (ab09dd_full + ab09dd(n,m) wrapper; LU solve, RCOND, DGEMM updates via temps).
+- AB09DD: full port.
+- AB09BX: full port (ab09bx_core, ab09bx_full, ab09bx(n,m)); SB03OU×2, MB03UD, NMINR, AB09DD.
+- AB09BD: full port (TB01ID, TB01WD, AB09BX with D).
