@@ -91,6 +91,24 @@ Runnable examples are in the **`examples/`** directory (`cargo run --example <na
 
 ---
 
+## One command to build and validate
+
+From the repo root, a single script builds the FORTRAN reference, compiles Rust (library and tests), and runs 1:1 validation (Rust vs FORTRAN). The script **exits non-zero** if any validated routine does not match FORTRAN:
+
+```bash
+./run.sh
+```
+
+Options:
+
+- `./run.sh --no-fortran` — skip FORTRAN build (e.g. already built).
+- `./run.sh --done-check` — also run `tools/validate_slicot_done.sh` (pure Rust + has tests).
+- `./run.sh --all-targets` — also run `cargo build --release --all-targets` (lib, bins, benches).
+
+Prerequisites: **gfortran**, **OpenBLAS** (see [docs/FORTRAN_BUILD.md](docs/FORTRAN_BUILD.md)). Validation results are written to `validation/*.md` and `validation/FAILURES.md`.
+
+---
+
 ## Documentation and references
 
 | Resource | Description |
