@@ -1,5 +1,6 @@
 //! MB04 — SLICOT MB04* routines (matrix operations)
 
+pub(crate) mod blas;
 pub mod mb04ad;
 pub mod mb04az;
 pub mod mb04bd;

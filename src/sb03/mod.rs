@@ -1,5 +1,6 @@
 //! SB03 — SLICOT SB03* routines (Lyapunov, Sylvester)
 
+pub(crate) mod dlasy2;
 pub mod sb03md;
 pub mod sb03mu;
 pub mod sb03mv;
