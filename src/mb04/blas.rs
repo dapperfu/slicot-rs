@@ -136,6 +136,125 @@ pub(crate) fn dscal(n: usize, alpha: f64, x: &mut [f64], incx: usize) {
     }
 }
 
+/// DSWAP: swap x and y.
+#[inline]
+pub(crate) fn dswap(n: usize, x: &mut [f64], incx: usize, y: &mut [f64], incy: usize) {
+    if n == 0 {
+        return;
+    }
+    for i in 0..n {
+        let xi = x[i * incx];
+        let yi = y[i * incy];
+        x[i * incx] = yi;
+        y[i * incy] = xi;
+    }
+}
+
+/// DTRMV: x := A*x (trans=false) or A'*x (trans=true). A upper triangular, non-unit, n×n.
+#[inline]
+pub(crate) fn dtrmv(
+    uplo_upper: bool,
+    trans: bool,
+    n: usize,
+    a: &[f64],
+    lda: usize,
+    x: &mut [f64],
+    incx: usize,
+) {
+    if n == 0 {
+        return;
+    }
+    if trans {
+        // x := A'*x, A upper => x_i = sum_{j>=i} A(j,i)*x_j
+        for i in (0..n).rev() {
+            let mut t = 0.0_f64;
+            for j in i..n {
+                t += a[j + i * lda] * x[j * incx];
+            }
+            x[i * incx] = t;
+        }
+    } else {
+        // x := A*x, A upper => x_i = sum_{j<=i} A(i,j)*x_j
+        for i in 0..n {
+            let mut t = 0.0_f64;
+            for j in 0..=i {
+                t += a[i + j * lda] * x[j * incx];
+            }
+            x[i * incx] = t;
+        }
+    }
+}
+
+/// DTRMM side='R': B(m,n) := alpha*B*op(A), A n×n upper.
+#[inline]
+pub(crate) fn dtrmm_right(
+    trans_a: bool,
+    m: usize,
+    n: usize,
+    alpha: f64,
+    a: &[f64],
+    lda: usize,
+    b: &mut [f64],
+    ldb: usize,
+) {
+    if m == 0 || n == 0 || alpha == 0.0 {
+        return;
+    }
+    for j in (0..n).rev() {
+        if alpha != 1.0 {
+            for i in 0..m {
+                b[i + j * ldb] *= alpha;
+            }
+        }
+        for i in (0..j).rev() {
+            let aij = if trans_a { a[j + i * lda] } else { a[i + j * lda] };
+            if aij != 0.0 {
+                for k in 0..m {
+                    b[k + j * ldb] += aij * b[k + i * ldb];
+                }
+            }
+        }
+    }
+}
+
+/// DTRMM side='L': B(m,n) := alpha*op(A)*B, A m×m upper.
+#[inline]
+pub(crate) fn dtrmm_left(
+    trans_a: bool,
+    m: usize,
+    n: usize,
+    alpha: f64,
+    a: &[f64],
+    lda: usize,
+    b: &mut [f64],
+    ldb: usize,
+) {
+    if m == 0 || n == 0 || alpha == 0.0 {
+        return;
+    }
+    for j in 0..n {
+        if trans_a {
+            // B := alpha*A'*B => B(i,j) = alpha * sum_{k>=i} A(k,i)*B(k,j)
+            for i in 0..m {
+                let mut t = 0.0_f64;
+                for k in i..m {
+                    t += a[k + i * lda] * b[k + j * ldb];
+                }
+                b[i + j * ldb] = alpha * t;
+            }
+        } else {
+            // B := alpha*A*B => B(i,j) = alpha * sum_{k<=i} A(i,k)*B(k,j)
+            for i in 0..m {
+                let mut t = 0.0_f64;
+                for k in 0..=i {
+                    t += a[i + k * lda] * b[k + j * ldb];
+                }
+                b[i + j * ldb] = alpha * t;
+            }
+        }
+    }
+}
+
 /// DLARFG: Generate real Householder reflector H = I - tau*u*u', u = (1; v).
 /// On entry: alpha is scalar, x[0..n-1] is the rest of the vector.
 /// On exit: alpha is overwritten by beta (so H*[alpha;x] = [beta;0]), x is overwritten by v, tau is set.
