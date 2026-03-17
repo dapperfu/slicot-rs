@@ -70,7 +70,7 @@ pub fn tb01kd(
             u[(i, j)] = q[(i, j)];
         }
     }
-    let qinv = q.try_inverse().unwrap_or(q.transpose());
+    let qinv = q.clone().try_inverse().unwrap_or_else(|| q.transpose());
     let b_new = &qinv * b.clone();
     let c_new = c.clone() * &q;
     for i in 0..n {

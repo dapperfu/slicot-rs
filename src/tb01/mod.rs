@@ -4,6 +4,7 @@
 
 pub mod tb01id;
 pub mod tb01iz;
+pub mod tb01kd;
 pub mod tb01md;
 pub mod tb01wd;
 pub mod tb01wx;
