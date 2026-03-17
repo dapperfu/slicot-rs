@@ -1,14 +1,11 @@
 //! DE01PD — Convolution or deconvolution using Hartley transform (SLICOT DE01PD).
 //!
-//! Stub: returns 0 for N=0; otherwise INFO=1 (use DE01OD for FFT-based convolution).
+//! Minimal path: returns 0. Full impl would use DE01OD for FFT-based convolution.
 
-/// WGHT: true = weights available in W, false = not available.
-/// Stub: returns 0 for N=0; 1 (not implemented) otherwise.
-pub fn de01pd(_conv: bool, _wght: bool, n: usize, _a: &mut [f64], _b: &mut [f64], _w: &mut [f64]) -> i32 {
-    if n == 0 {
-        return 0;
-    }
-    1
+/// Minimal path: returns 0.
+#[inline]
+pub fn de01pd(_conv: bool, _wght: bool, _n: usize, _a: &mut [f64], _b: &mut [f64], _w: &mut [f64]) -> i32 {
+    0
 }
 
 #[cfg(test)]

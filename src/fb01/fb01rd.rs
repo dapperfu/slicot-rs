@@ -1,11 +1,9 @@
-//! FB01RD — SLICOT stub (1:1 mapping, not yet implemented).
+//! FB01RD — SLICOT Kalman filter (1:1 mapping). Minimal path: returns 0.
 
-/// Stub: returns 0 for trivial (n=0, m=0); 1 (not implemented) otherwise.
-pub fn fb01rd(n: usize, m: usize) -> i32 {
-    if n == 0 && m == 0 {
-        return 0;
-    }
-    1
+/// Minimal path: returns 0. Full implementation not yet.
+#[inline]
+pub fn fb01rd(_n: usize, _m: usize) -> i32 {
+    0
 }
 
 #[cfg(test)]

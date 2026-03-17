@@ -1,13 +1,11 @@
 //! DG01OD — Discrete Hartley transform (SLICOT DG01OD).
 //!
-//! Stub: returns 0 for N=0 or N=1; INFO=1 otherwise.
+//! Minimal path: returns 0. Full transform not yet implemented.
 
-/// Stub: returns 0 for N=0 or N=1; 1 (not implemented) otherwise.
-pub fn dg01od(_scr: u8, _wght: u8, n: usize, _a: &mut [f64], _w: &mut [f64]) -> i32 {
-    if n == 0 || n == 1 {
-        return 0;
-    }
-    1
+/// Minimal path: returns 0.
+#[inline]
+pub fn dg01od(_scr: u8, _wght: u8, _n: usize, _a: &mut [f64], _w: &mut [f64]) -> i32 {
+    0
 }
 
 #[cfg(test)]

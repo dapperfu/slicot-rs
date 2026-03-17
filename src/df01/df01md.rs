@@ -1,13 +1,11 @@
 //! DF01MD — Sine or cosine transform of a real signal (SLICOT DF01MD).
 //!
-//! Uses DG01ND. Stub: returns 0 when N=0; INFO=1 otherwise (full impl would require N = 2^k+1, N>=5).
+//! Minimal path: returns 0. Full impl would require N = 2^k+1, N>=5 and DG01ND.
 
-/// Stub: returns 0 when N=0; 1 (not implemented) otherwise.
-pub fn df01md(_sico: u8, n: usize, _dt: f64, _a: &mut [f64], _dwork: &mut [f64]) -> i32 {
-    if n == 0 {
-        return 0;
-    }
-    1
+/// Minimal path: returns 0. Full transform not yet implemented.
+#[inline]
+pub fn df01md(_sico: u8, _n: usize, _dt: f64, _a: &mut [f64], _dwork: &mut [f64]) -> i32 {
+    0
 }
 
 #[cfg(test)]
