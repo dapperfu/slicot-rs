@@ -407,6 +407,294 @@ pub fn ab09bx_core(
     0
 }
 
+/// Reduction from preformed R*S (in ti) and S in dwork[ktau..ktau+n*n]. Used by AB09IX.
+/// Caller must set ti = R*S and dwork[ktau..ktau+n*n] = S. scalec, scaleo are inputs.
+pub fn ab09bx_reduce_from_rs(
+    dico: u8,
+    job: u8,
+    ordsel: u8,
+    n: usize,
+    m: usize,
+    p: usize,
+    nr: &mut usize,
+    a: &mut [f64],
+    lda: usize,
+    b: &mut [f64],
+    ldb: usize,
+    c: &mut [f64],
+    ldc: usize,
+    d: &mut [f64],
+    ldd: usize,
+    hsv: &mut [f64],
+    ti: &mut [f64],
+    ldti: usize,
+    t: &mut [f64],
+    ldt: usize,
+    scalec: f64,
+    scaleo: f64,
+    tol1: f64,
+    tol2: f64,
+    iwork: &mut [i32],
+    dwork: &mut [f64],
+    iwarn: &mut i32,
+) -> i32 {
+    let bal = job == b'B' || job == b'b';
+    let fixord = ordsel == b'F' || ordsel == b'f';
+    let min_nmp = min(n, min(m, p));
+    let ku = 0;
+    let n_mp = n * min(n, m).max(p);
+    let ktau = ku + n_mp;
+    let packed_size = n * n;
+    let ldwork_min = ktau + packed_size + 5 * n;
+    if min_nmp == 0 {
+        *nr = 0;
+        return 0;
+    }
+    if fixord && *nr == 0 {
+        *nr = 0;
+        return 0;
+    }
+    if dwork.len() < ldwork_min {
+        return -25;
+    }
+    let (buf_b, rest) = dwork.split_at_mut(ktau);
+    let (rest_s, mb03_work) = rest.split_at_mut(packed_size);
+    let kw_next = ktau + packed_size;
+
+    let ierr = mb03ud(
+        Mb03udJobQ::Compute,
+        Mb03udJobP::Compute,
+        n,
+        ti,
+        ldti,
+        &mut buf_b[ku..],
+        n,
+        hsv,
+        mb03_work,
+    );
+    if ierr != 0 {
+        return 2;
+    }
+
+    dscal(n, ONE / scalec / scaleo, hsv, 1);
+
+    let rtol = (n as f64) * f64::EPSILON;
+    let mut atol = rtol * hsv[0];
+    if fixord {
+        if *nr > 0 && hsv[*nr - 1] <= atol {
+            *nr = 0;
+            *iwarn = 1;
+        }
+    } else {
+        atol = if tol1 > 0.0 { tol1.max(atol) } else { atol };
+        *nr = 0;
+        for j in 0..n {
+            if hsv[j] <= atol {
+                break;
+            }
+            *nr += 1;
+        }
+    }
+
+    if *nr == 0 {
+        let mut rcond = 0.0;
+        let ab09dd_dwork_len = 4 * n;
+        let (dd_dwork, _) = dwork.split_at_mut(ab09dd_dwork_len.min(dwork.len()));
+        let (dd_iwork, _) = iwork.split_at_mut((2 * n).min(iwork.len()));
+        let _ = ab09dd_full(
+            dico,
+            n,
+            m,
+            p,
+            0,
+            a,
+            lda,
+            b,
+            ldb,
+            c,
+            ldc,
+            d,
+            ldd,
+            &mut rcond,
+            dd_iwork,
+            dd_dwork,
+        );
+        if !iwork.is_empty() {
+            iwork[0] = 0;
+        }
+        dwork[0] = (kw_next + 5 * n) as f64;
+        return 0;
+    }
+
+    let nr1 = *nr + 1;
+    let mut nminr = *nr;
+    let atol2 = if tol2 > 0.0 {
+        tol2.max(rtol * hsv[0])
+    } else {
+        rtol * hsv[0]
+    };
+    for j in nr1..n {
+        if hsv[j] <= atol2 {
+            break;
+        }
+        nminr += 1;
+    }
+    let ns = nminr - *nr;
+
+    dtrmm_left(true, n, nminr, ONE, t, ldt, &mut buf_b[ku..], n);
+    ma02ad_full(nminr, n, ti, ldti, t, ldt);
+    dtrmm_left(false, n, nminr, ONE, &*rest_s, n, t, ldt);
+
+    if bal {
+        for j in 0..*nr {
+            let temp = ONE / hsv[j].sqrt();
+            dscal(n, temp, &mut t[j * ldt..], 1);
+            dscal(n, temp, &mut buf_b[ku + j * n..], 1);
+        }
+    } else {
+        let t1 = DMatrix::from_fn(n, *nr, |i, j| t[i + j * ldt]);
+        let qr_t = t1.qr();
+        let q_t = qr_t.q();
+        for j in 0..*nr {
+            for i in 0..n {
+                t[i + j * ldt] = q_t[(i, j)];
+            }
+        }
+        let u1 = DMatrix::from_fn(n, *nr, |i, j| buf_b[ku + i + j * n]);
+        let qr_u = u1.qr();
+        let q_u = qr_u.q();
+        for j in 0..*nr {
+            for i in 0..n {
+                buf_b[ku + i + j * n] = q_u[(i, j)];
+            }
+        }
+        if ns > 0 {
+            let t2 = DMatrix::from_fn(n, ns, |i, j| t[i + (nr1 - 1 + j) * ldt]);
+            let qr_t2 = t2.qr();
+            let q_t2 = qr_t2.q();
+            for j in 0..ns {
+                for i in 0..n {
+                    t[i + (nr1 - 1 + j) * ldt] = q_t2[(i, j)];
+                }
+            }
+            let u2 = DMatrix::from_fn(n, ns, |i, j| buf_b[ku + i + (*nr + j) * n]);
+            let qr_u2 = u2.qr();
+            let q_u2 = qr_u2.q();
+            for j in 0..ns {
+                for i in 0..n {
+                    buf_b[ku + i + (*nr + j) * n] = q_u2[(i, j)];
+                }
+            }
+        }
+    }
+
+    ma02ad_full(n, nminr, &buf_b[ku..], n, ti, ldti);
+
+    if !bal {
+        let w1 = DMatrix::from_fn(*nr, *nr, |i, j| {
+            (0..n).map(|k| ti[i + k * ldti] * t[k + j * ldt]).sum()
+        });
+        let lu1 = w1.lu();
+        let ti1 = DMatrix::from_fn(*nr, n, |i, j| ti[i + j * ldti]);
+        if let Some(sol) = lu1.solve(&ti1) {
+            for j in 0..n {
+                for i in 0..*nr {
+                    ti[i + j * ldti] = sol[(i, j)];
+                }
+            }
+        } else {
+            return 2;
+        }
+        if ns > 0 {
+            let w2 = DMatrix::from_fn(ns, ns, |i, j| {
+                (0..n)
+                    .map(|k| ti[nr1 - 1 + i + k * ldti] * t[k + (nr1 - 1 + j) * ldt])
+                    .sum()
+            });
+            let lu2 = w2.lu();
+            let ti2 = DMatrix::from_fn(ns, n, |i, j| ti[nr1 - 1 + i + j * ldti]);
+            if let Some(sol) = lu2.solve(&ti2) {
+                for j in 0..n {
+                    for i in 0..ns {
+                        ti[nr1 - 1 + i + j * ldti] = sol[(i, j)];
+                    }
+                }
+            } else {
+                return 2;
+            }
+        }
+    }
+
+    for j in 0..n {
+        let k = min(j + 1, n);
+        dgemv(
+            false,
+            nminr,
+            k,
+            ONE,
+            ti,
+            ldti,
+            &a[j * lda..],
+            1,
+            ZERO,
+            &mut buf_b[ku + j * n..],
+            1,
+        );
+    }
+    dgemm(
+        nminr,
+        nminr,
+        n,
+        ONE,
+        &buf_b[ku..],
+        n,
+        t,
+        ldt,
+        ZERO,
+        a,
+        lda,
+    );
+
+    dlacpy_full(n, m, b, ldb, &mut buf_b[ku..], n);
+    dgemm(nminr, m, n, ONE, ti, ldti, &buf_b[ku..], n, ZERO, b, ldb);
+
+    dlacpy_full(p, n, c, ldc, &mut buf_b[ku..], p);
+    dgemm(p, nminr, n, ONE, &buf_b[ku..], p, t, ldt, ZERO, c, ldc);
+
+    let mut rcond = 0.0;
+    let ab09dd_dwork_len = 4 * n;
+    let ab09dd_iwork_len = 2 * n;
+    let (dd_dwork, _) = dwork.split_at_mut(ab09dd_dwork_len.min(dwork.len()));
+    let (dd_iwork, _) = iwork.split_at_mut(ab09dd_iwork_len.min(iwork.len()));
+    let ierr = ab09dd_full(
+        dico,
+        nminr,
+        m,
+        p,
+        *nr,
+        a,
+        lda,
+        b,
+        ldb,
+        c,
+        ldc,
+        d,
+        ldd,
+        &mut rcond,
+        dd_iwork,
+        dd_dwork,
+    );
+    if ierr != 0 {
+        return 2;
+    }
+
+    if !iwork.is_empty() {
+        iwork[0] = nminr as i32;
+    }
+    dwork[0] = (kw_next + 5 * n) as f64;
+    0
+}
+
 /// DMatrix wrapper: fixed order (ordsel='F'). D is P×M.
 pub fn ab09bx_full(
     dico: u8,
