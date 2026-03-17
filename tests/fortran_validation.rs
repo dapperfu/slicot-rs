@@ -915,6 +915,21 @@ fn run_validation_impl(project_root: &Path, examples_dir: &Path) {
         existing
     };
     fs::write(&readme_path, &new_readme).ok();
+
+    if !failures.is_empty() {
+        let list: String = failures
+            .iter()
+            .map(|(slicot, module)| format!("  {} ({})", slicot, module))
+            .collect::<Vec<_>>()
+            .join("\n");
+        panic!(
+            "1:1 validation failed for {} routine(s). Rust output did not match FORTRAN.\n\
+             Failed: {}\n\
+             See validation/FAILURES.md for details.",
+            failures.len(),
+            list
+        );
+    }
 }
 
 #[test]
