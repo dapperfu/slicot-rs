@@ -465,7 +465,7 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | SB04MD | sb04 | sb04md | done | stub | no |
 | SB04MR | sb04 | sb04mr | done | stub | no |
 | SB04MU | sb04 | sb04mu | done | stub | no |
-| SB04MW | sb04 | sb04mw | done | stub | no |
+| SB04MW | sb04 | sb04mw | done | full | no |
 | SB04MY | sb04 | sb04my | done | stub | no |
 | SB04ND | sb04 | sb04nd | done | stub | no |
 | SB04NV | sb04 | sb04nv | done | stub | no |
