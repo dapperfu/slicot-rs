@@ -21,10 +21,11 @@ pub enum Mb01PdType {
     Hessenberg,
 }
 
-/// Scales or undoes scaling of A so its norm is in a safe range. ANRM is the norm of the original A (for scale) or the norm when scaled (for unscale). Supports only TYPE 'G'.
+/// Scales or undoes scaling of A so its norm is in a safe range. ANRM is the norm of the original A (for scale) or the norm when scaled (for unscale).
+/// Supports TYPE 'G' (full) and 'H' (Hessenberg) for Unscale; Hessenberg uses the same factor for the whole matrix.
 ///
 /// # Returns
-/// 0 on success; < 0 if the i-th argument is invalid.
+/// 0 on success; 1 if TYPE not supported; < 0 if the i-th argument is invalid.
 pub fn mb01pd(
     scun: Mb01PdScun,
     typ: Mb01PdType,
@@ -37,7 +38,7 @@ pub fn mb01pd(
     _nrows: &[i32],
     a: &mut DMatrix<f64>,
 ) -> i32 {
-    if typ != Mb01PdType::General {
+    if typ != Mb01PdType::General && (typ != Mb01PdType::Hessenberg || scun != Mb01PdScun::Unscale) {
         return 1;
     }
     if anrm < 0.0 {

@@ -5,8 +5,8 @@ One-to-one mapping of SLICOT (Fortran) routines to Pure Rust in the `slicot-rs` 
 | SLICOT | Rust module | Rust function | Status | Implementation | Validated |
 |--------|-------------|---------------|--------|----------------|-----------|
 | AB01MD | ab01 | ab01md | done | full | no |
-| AB01ND | ab01 | ab01nd | done | stub | no |
-| AB01OD | ab01 | ab01od | done | stub | no |
+| AB01ND | ab01 | ab01nd | done | full | no |
+| AB01OD | ab01 | ab01od | done | full | no |
 | AB04MD | ab04 | ab04md | done | full | no |
 | AB05MD | ab05 | ab05md | done | full | no |
 | AB05ND | ab05 | ab05nd | done | full | no |
